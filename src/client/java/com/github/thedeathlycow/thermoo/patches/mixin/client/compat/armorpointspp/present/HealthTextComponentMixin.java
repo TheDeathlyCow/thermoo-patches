@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.armorpointspp.present;
 
+import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudCompat;
 import dev.cheos.armorpointspp.core.RenderContext;
 import dev.cheos.armorpointspp.core.RenderableText;
@@ -47,7 +48,7 @@ public class HealthTextComponentMixin {
                             .withColor(
                                     temperature < 0f
                                             ? ctx.config.hex(IConfig.HexOption.TEXT_COLOR_FROSTBITE)
-                                            : LibhudCompat.ORANGE
+                                            : ThermooPatches.getConfig().armorPointsPPConfig.overheatingTextColor
                             )
             );
             text.append(
