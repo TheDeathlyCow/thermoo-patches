@@ -23,6 +23,9 @@
         ],
         "libhud": [
             "com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudCompat"
+        ],
+        "modmenu": [
+            "com.github.thedeathlycow.thermoo.patches.ThermooPatchesModMenu"
         ]
     },
     "mixins": [

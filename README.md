@@ -23,4 +23,4 @@ Note that other temperature mods, like EnvironmentZ and Tough as Nails are not c
 
 # Contributing 
 
-If you want a patch for Thermoo to be added, please either create an issue or submit a pull request! The most important thing for any patch is that they MUST be optional. If the mod they are patching for is not loaded, then nothing should crash or break. The only mods that are required by Thermoo Patches are Fabric API and, of course, Thermoo. 
+If you want a patch for Thermoo to be added, please either create an issue or submit a pull request! The most important thing for any patch is that they MUST be optional. If the mod they are patching for is not loaded, then nothing should crash or break. The only mods that are required by Thermoo Patches are Fabric API, Cloth Config, and, of course, Thermoo. 

@@ -1,5 +1,8 @@
 package com.github.thedeathlycow.thermoo.patches;
 
+import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
@@ -18,8 +21,13 @@ public class ThermooPatches implements ModInitializer {
         return new Identifier(MODID, path);
     }
 
+    public static ThermooPatchesConfig getConfig() {
+        return AutoConfig.getConfigHolder(ThermooPatchesConfig.class).get();
+    }
+
     @Override
     public void onInitialize() {
+        AutoConfig.register(ThermooPatchesConfig.class, GsonConfigSerializer::new);
         checkMultiDependency(IntegratedMod.ARMOR_POINTS_PP, IntegratedMod.LIBHUD);
         logPatchedMods();
     }

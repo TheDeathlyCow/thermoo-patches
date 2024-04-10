@@ -1,0 +1,6 @@
+{
+    "text.autoconfig.thermoo-patches.title": "Thermoo Patches Config",
+    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig": "Armor Points++ Config",
+    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig.@Tooltip": "Requires BOTH Armor Points++ and libhud",
+    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig.overheatingTextColor": "Overheating text color"
+}
