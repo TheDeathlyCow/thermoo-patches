@@ -22,7 +22,7 @@
             "com.github.thedeathlycow.thermoo.patches.ThermooPatchesClient"
         ],
         "libhud": [
-            "com.github.thedeathlycow.thermoo.patches.libhud.LibhudCompat"
+            "com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudCompat"
         ]
     },
     "mixins": [

@@ -1,7 +1,6 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Contract;
@@ -22,6 +21,10 @@ public class ThermooPatches implements ModInitializer {
     @Override
     public void onInitialize() {
 
+        if (IntegratedMod.ARMOR_POINTS_PP.isModLoaded() != IntegratedMod.LIBHUD.isModLoaded()) {
+            throw new IllegalStateException("BOTH libhud AND Armor Points++ are required for Thermoo Patches to work. " +
+                    "You can get libhud here: https://modrinth.com/mod/libhud, and Armor Points++ here: https://modrinth.com/mod/armorpoints");
+        }
 
         logPatchedMods();
     }
@@ -49,7 +52,8 @@ public class ThermooPatches implements ModInitializer {
 
     public enum IntegratedMod {
 
-        LIBHUD("libhud");
+        LIBHUD("libhud"),
+        ARMOR_POINTS_PP("armorpointspp");
 
         private final String id;
 
