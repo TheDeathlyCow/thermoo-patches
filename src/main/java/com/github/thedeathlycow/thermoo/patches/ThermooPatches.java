@@ -20,13 +20,17 @@ public class ThermooPatches implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
-        if (IntegratedMod.ARMOR_POINTS_PP.isModLoaded() != IntegratedMod.LIBHUD.isModLoaded()) {
-            throw new IllegalStateException("BOTH libhud AND Armor Points++ are required for Thermoo Patches to work. " +
-                    "You can get libhud here: https://modrinth.com/mod/libhud, and Armor Points++ here: https://modrinth.com/mod/armorpoints");
-        }
-
+        checkMultiDependency(IntegratedMod.ARMOR_POINTS_PP, IntegratedMod.LIBHUD);
         logPatchedMods();
+    }
+
+    private static void checkMultiDependency(ThermooPatches.IntegratedMod... requiredMods) {
+        boolean isNotMet = Arrays.stream(requiredMods)
+                .map(ThermooPatches.IntegratedMod::isModLoaded)
+                .reduce(false, (acc, isLoaded) -> acc ^ isLoaded);
+        if (isNotMet) {
+            throw new MultiDependencyException(requiredMods);
+        }
     }
 
     private static void logPatchedMods() {
@@ -41,28 +45,33 @@ public class ThermooPatches implements ModInitializer {
                         }
                 );
 
-
-        String loadedMods = builder.toString();
-        if (loadedMods.isEmpty()) {
-            LOGGER.info("No Thermoo patches available for current mod set.");
+        if (builder.isEmpty()) {
+            LOGGER.warn("No Thermoo patches available for current mod set!");
         } else {
-            LOGGER.info("Initialized Thermoo Patches for the following mods: {}", loadedMods);
+            LOGGER.info("Initialized Thermoo Patches for the following mods: {}", builder);
         }
     }
 
     public enum IntegratedMod {
 
-        LIBHUD("libhud"),
-        ARMOR_POINTS_PP("armorpointspp");
+        LIBHUD("libhud", "https://modrinth.com/mod/libhud"),
+        ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints");
 
         private final String id;
 
-        IntegratedMod(String id) {
+        private final String modpage;
+
+        IntegratedMod(String id, String modpage) {
             this.id = id;
+            this.modpage = modpage;
         }
 
         public String getId() {
             return id;
+        }
+
+        public String getModpage() {
+            return modpage;
         }
 
         public boolean isModLoaded() {
