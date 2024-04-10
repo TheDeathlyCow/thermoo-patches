@@ -2,6 +2,8 @@ package com.github.thedeathlycow.thermoo.patches.armorpointspp;
 
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
+import dev.cheos.armorpointspp.config.ApppConfig;
+import dev.cheos.armorpointspp.core.adapter.IConfig;
 import dev.cheos.armorpointspp.core.render.Components;
 import dev.cheos.libhud.LibhudGui;
 import dev.cheos.libhud.VanillaComponents;
@@ -47,6 +49,10 @@ public class LibhudCompat implements LibhudApi {
             heartPositionsPool[i] = new Vector2i(baseX + i * 8, heartYPositions[i]);
         }
 
+        int displayMaxHealth = ApppConfig.instance().bool(IConfig.BooleanOption.HEALTH_BG_ALWAYS_SHOW_10)
+                ? MAX_DISPLAY_HEALTH
+                : Math.min(MathHelper.ceil(player.getMaxHealth()), MAX_DISPLAY_HEALTH);
+
         StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR
                 .invoker()
                 .render(
@@ -54,7 +60,7 @@ public class LibhudCompat implements LibhudApi {
                         player,
                         heartPositionsPool,
                         Math.min(MathHelper.ceil(player.getHealth()), MAX_DISPLAY_HEALTH),
-                        Math.min(MathHelper.ceil(player.getMaxHealth()), MAX_DISPLAY_HEALTH)
+                        displayMaxHealth
                 );
     }
 
