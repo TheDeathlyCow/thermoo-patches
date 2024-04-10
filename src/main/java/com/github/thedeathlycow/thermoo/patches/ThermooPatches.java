@@ -3,6 +3,8 @@ package com.github.thedeathlycow.thermoo.patches;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,12 +14,19 @@ public class ThermooPatches implements ModInitializer {
     public static final String MODID = "thermoo-patches";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
-    @Override
-    public void onInitialize() {
-        logPatchMods();
+    @Contract("_->new")
+    public static Identifier id(String path) {
+        return new Identifier(MODID, path);
     }
 
-    private static void logPatchMods() {
+    @Override
+    public void onInitialize() {
+
+
+        logPatchedMods();
+    }
+
+    private static void logPatchedMods() {
         var builder = new StringBuilder();
         Arrays.stream(IntegratedMod.values())
                 .filter(IntegratedMod::isModLoaded)
@@ -40,7 +49,7 @@ public class ThermooPatches implements ModInitializer {
 
     public enum IntegratedMod {
 
-        ARMOR_POINTS_PP("armorpointspp");
+        LIBHUD("libhud");
 
         private final String id;
 

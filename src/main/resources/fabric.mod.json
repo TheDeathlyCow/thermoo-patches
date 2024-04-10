@@ -1,42 +1,45 @@
 {
-	"schemaVersion": 1,
-	"id": "thermoo-patches",
-	"version": "${version}",
-	"name": "Thermoo Patches",
-	"description": "Integrations and compatibility patches for Thermoo and other mods",
-	"authors": [
-		"TheDeathlyCow"
-	],
-	"contact": {
-		"homepage": "https://github.com/TheDeathlyCow/",
-		"sources": "https://github.com/TheDeathlyCow/thermoo-patches"
-	},
-	"license": "LGPL-3",
-	"icon": "assets/thermoo-patches/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.github.thedeathlycow.thermoo.patches.ThermooPatches"
-		],
-		"client": [
-			"com.github.thedeathlycow.thermoo.patches.ThermooPatchesClient"
-		]
-	},
-	"mixins": [
-		"thermoo-patches.mixins.json",
-		{
-			"config": "thermoo-patches.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.15.7",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*",
-		"thermoo": ">=2.3"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+    "schemaVersion": 1,
+    "id": "thermoo-patches",
+    "version": "${version}",
+    "name": "Thermoo Patches",
+    "description": "Integrations and compatibility patches for Thermoo and other mods",
+    "authors": [
+        "TheDeathlyCow"
+    ],
+    "contact": {
+        "homepage": "https://github.com/TheDeathlyCow/",
+        "sources": "https://github.com/TheDeathlyCow/thermoo-patches"
+    },
+    "license": "LGPL-3",
+    "icon": "assets/thermoo-patches/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.github.thedeathlycow.thermoo.patches.ThermooPatches"
+        ],
+        "client": [
+            "com.github.thedeathlycow.thermoo.patches.ThermooPatchesClient"
+        ],
+        "libhud": [
+            "com.github.thedeathlycow.thermoo.patches.libhud.LibhudCompat"
+        ]
+    },
+    "mixins": [
+        "thermoo-patches.mixins.json",
+        {
+            "config": "thermoo-patches.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+    "depends": {
+        "fabricloader": ">=0.15.7",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*",
+        "thermoo": ">=2.3"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
 }
