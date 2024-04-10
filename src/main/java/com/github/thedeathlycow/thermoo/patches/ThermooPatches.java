@@ -24,6 +24,33 @@ public class ThermooPatches implements ModInitializer {
         logPatchedMods();
     }
 
+    public enum IntegratedMod {
+
+        LIBHUD("libhud", "https://modrinth.com/mod/libhud"),
+        ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints");
+
+        private final String id;
+
+        private final String modpage;
+
+        IntegratedMod(String id, String modpage) {
+            this.id = id;
+            this.modpage = modpage;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getModpage() {
+            return modpage;
+        }
+
+        public boolean isModLoaded() {
+            return FabricLoader.getInstance().isModLoaded(id);
+        }
+    }
+
     private static void checkMultiDependency(ThermooPatches.IntegratedMod... requiredMods) {
         boolean isNotMet = Arrays.stream(requiredMods)
                 .map(ThermooPatches.IntegratedMod::isModLoaded)
@@ -49,33 +76,6 @@ public class ThermooPatches implements ModInitializer {
             LOGGER.warn("No Thermoo patches available for current mod set!");
         } else {
             LOGGER.info("Initialized Thermoo Patches for the following mods: {}", builder);
-        }
-    }
-
-    public enum IntegratedMod {
-
-        LIBHUD("libhud", "https://modrinth.com/mod/libhud"),
-        ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints");
-
-        private final String id;
-
-        private final String modpage;
-
-        IntegratedMod(String id, String modpage) {
-            this.id = id;
-            this.modpage = modpage;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public String getModpage() {
-            return modpage;
-        }
-
-        public boolean isModLoaded() {
-            return FabricLoader.getInstance().isModLoaded(id);
         }
     }
 }
