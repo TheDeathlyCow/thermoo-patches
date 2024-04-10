@@ -12,11 +12,14 @@ import dev.cheos.libhud.api.LibhudApi;
 import dev.cheos.libhud.api.event.RegisterComponentsEvent;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.MathHelper;
 import org.joml.Vector2i;
 
 public class LibhudCompat implements LibhudApi {
+
+    public static final int ORANGE = 0xFFA500;
 
     private static final Vector2i[] heartPositionsPool = new Vector2i[10];
 
@@ -24,7 +27,7 @@ public class LibhudCompat implements LibhudApi {
 
     public static final Component.NamedComponent TEMPERATURE_OVERLAY = Component.named(
             ThermooPatches.id("temperature_overlay"),
-            LibhudCompat::capturePlayerHealth
+            LibhudCompat::invokeTemperatureOverlay
     );
 
     @Override
@@ -32,16 +35,23 @@ public class LibhudCompat implements LibhudApi {
         event.registerAbove(VanillaComponents.HEALTH, TEMPERATURE_OVERLAY);
     }
 
-    private static void capturePlayerHealth(
+    private static void invokeTemperatureOverlay(
             LibhudGui gui,
             DrawContext graphics,
             float partialTicks,
             int screenWidth, int screenHeight
     ) {
-        PlayerEntity player = MinecraftClient.getInstance().player;
+        MinecraftClient client = MinecraftClient.getInstance();
+        ClientPlayerInteractionManager interactionManager = client.interactionManager;
+        if (interactionManager != null && !interactionManager.hasStatusBars()) {
+            return;
+        }
+
+        PlayerEntity player = client.player;
         if (player == null) {
             return;
         }
+
 
         int baseX = screenWidth / 2 - 91;
         int[] heartYPositions = Components.HEALTH.lastHeartY();

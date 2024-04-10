@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.armorpointspp.present;
 
+import com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudCompat;
 import dev.cheos.armorpointspp.core.RenderContext;
 import dev.cheos.armorpointspp.core.RenderableText;
 import dev.cheos.armorpointspp.core.adapter.IConfig;
@@ -33,7 +34,8 @@ public class HealthTextComponentMixin {
     private void renderTemperaturePercentage(RenderContext ctx, CallbackInfoReturnable<Boolean> cir, RenderableText text) {
         float temperature = MinecraftClient.getInstance().player.thermoo$getTemperatureScale();
 
-        if (temperature != 0.0f && ctx.config.bool(IConfig.BooleanOption.FROSTBITE_TEXT_ENABLE)) {
+        // the 1% prevents flashing
+        if (Math.abs(temperature) >= 0.01f && ctx.config.bool(IConfig.BooleanOption.FROSTBITE_TEXT_ENABLE)) {
             text.append(
                     new RenderableText(",")
                             .padRight(1.0f)
@@ -43,11 +45,9 @@ public class HealthTextComponentMixin {
                     new RenderableText(Math.round(temperature * 100f))
                             .padRight(1.0f)
                             .withColor(
-                                    ctx.config.hex(
-                                            temperature > 0f
-                                                    ? IConfig.HexOption.TEXT_COLOR_ABSORPTION
-                                                    : IConfig.HexOption.TEXT_COLOR_FROSTBITE
-                                    )
+                                    temperature < 0f
+                                            ? ctx.config.hex(IConfig.HexOption.TEXT_COLOR_FROSTBITE)
+                                            : LibhudCompat.ORANGE
                             )
             );
             text.append(

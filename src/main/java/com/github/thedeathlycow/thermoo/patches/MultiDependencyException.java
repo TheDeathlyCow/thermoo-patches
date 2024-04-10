@@ -3,7 +3,8 @@ package com.github.thedeathlycow.thermoo.patches;
 import java.util.Arrays;
 
 /**
- * Used to express that multiple mods are required at the same time, because Fabric
+ * Used to express that multiple mods are (optionally) required at the same time, because fabric.mod.json doesn't have
+ * that functionality
  */
 public class MultiDependencyException extends RuntimeException {
 
