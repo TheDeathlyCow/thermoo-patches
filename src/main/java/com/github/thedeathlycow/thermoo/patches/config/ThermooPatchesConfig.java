@@ -13,4 +13,8 @@ public class ThermooPatchesConfig extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Gui.Tooltip
     public ArmorPointsPPConfig armorPointsPPConfig = new ArmorPointsPPConfig();
 
+    @ConfigEntry.Gui.CollapsibleObject
+    @ConfigEntry.Gui.Tooltip
+    public ImmersiveWeatheringConfig immersiveWeatheringConfig = new ImmersiveWeatheringConfig();
+
 }

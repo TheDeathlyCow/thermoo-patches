@@ -69,6 +69,7 @@ dependencies {
     // integrations
     modCompileOnly "maven.modrinth:libhud:${project.libhud_version}"
     modCompileOnly "maven.modrinth:armorpoints:${project.armorpointspp_version}"
+    modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
 }
 
 processResources {

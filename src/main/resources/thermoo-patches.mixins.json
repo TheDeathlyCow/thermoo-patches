@@ -1,8 +1,10 @@
 {
 	"required": true,
 	"package": "com.github.thedeathlycow.thermoo.patches.mixin.common",
+	"plugin": "com.github.thedeathlycow.thermoo.patches.mixin.common.compat.Plugin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
+		"compat.immersive_weathering.present.IcicleBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
