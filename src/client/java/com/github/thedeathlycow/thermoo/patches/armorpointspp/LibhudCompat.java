@@ -10,9 +10,15 @@ import dev.cheos.libhud.api.LibhudApi;
 import dev.cheos.libhud.api.event.RegisterComponentsEvent;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import org.joml.Vector2i;
 
 public class LibhudCompat implements LibhudApi {
+
+    private static final Vector2i[] heartPositionsPool = new Vector2i[10];
+
+    private static final int MAX_DISPLAY_HEALTH = 20;
 
     public static final Component.NamedComponent TEMPERATURE_OVERLAY = Component.named(
             ThermooPatches.id("temperature_overlay"),
@@ -30,21 +36,25 @@ public class LibhudCompat implements LibhudApi {
             float partialTicks,
             int screenWidth, int screenHeight
     ) {
+        PlayerEntity player = MinecraftClient.getInstance().player;
+        if (player == null) {
+            return;
+        }
+
         int baseX = screenWidth / 2 - 91;
         int[] heartYPositions = Components.HEALTH.lastHeartY();
-        var positions = new Vector2i[heartYPositions.length];
         for (int i = 0; i < heartYPositions.length; i++) {
-            positions[i] = new Vector2i(baseX + i * 8, heartYPositions[i]);
+            heartPositionsPool[i] = new Vector2i(baseX + i * 8, heartYPositions[i]);
         }
 
         StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR
                 .invoker()
                 .render(
                         graphics,
-                        MinecraftClient.getInstance().player,
-                        positions,
-                        20,
-                        20
+                        player,
+                        heartPositionsPool,
+                        Math.min(MathHelper.ceil(player.getHealth()), MAX_DISPLAY_HEALTH),
+                        Math.min(MathHelper.ceil(player.getMaxHealth()), MAX_DISPLAY_HEALTH)
                 );
     }
 
