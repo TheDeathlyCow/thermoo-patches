@@ -3,15 +3,15 @@
 	"id": "thermoo-patches",
 	"version": "${version}",
 	"name": "Thermoo Patches",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Integrations and compatibility patches for Thermoo and other mods",
 	"authors": [
-		"Me!"
+		"TheDeathlyCow"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/TheDeathlyCow/",
+		"sources": "https://github.com/TheDeathlyCow/thermoo-patches"
 	},
-	"license": "CC0-1.0",
+	"license": "LGPL-3",
 	"icon": "assets/thermoo-patches/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -30,10 +30,11 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.15.9",
+		"fabricloader": ">=0.15.7",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"thermoo": ">=2.3"
 	},
 	"suggests": {
 		"another-mod": "*"
