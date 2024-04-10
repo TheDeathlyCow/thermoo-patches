@@ -9,4 +9,6 @@ public class ImmersiveWeatheringConfig implements ConfigData {
 
     public int freezingFromIcicleFall = -3000;
 
+    public int freezingFromEatingIcicle = -500;
+
 }
