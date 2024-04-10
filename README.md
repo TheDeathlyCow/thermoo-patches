@@ -1,0 +1,21 @@
+# Thermoo Patches
+
+Thermoo Patches provides compatibility patches and integrations for [Thermoo](https://github.com/TheDeathlyCow/thermoo/) based mods, including [Frostiful](https://github.com/TheDeathlyCow/frostiful/) and [Scorchful](https://github.com/TheDeathlyCow/scorchful/), and other non-Thermoo mods where it would make sense for them to have Thermoo integration.
+
+# List of Patches
+
+Thermoo Patches is still a WIP. The following patches are currently planned:
+- Armor Points++ / libhud
+- Serene Seasons 
+- Immersive Weathering
+- Spell Engine 
+- Ad Astra
+
+The following patches are currently included in Thermoo itself, but will be moved to this mod in 1.20.2+:
+- Colorful Hearts
+- Overflowing Bars
+- Fabric Seasons
+
+# Contributing 
+
+If you want a patch for Thermoo to be added, please either create an issue or submit a pull request! The most important thing for any patch is that they MUST be optional. If the mod they are patching for is not loaded, then nothing should crash or break. The only mods that are required by Thermoo Patches are Fabric API and, of course, Thermoo. 
