@@ -16,9 +16,7 @@ public class MultiDependencyException extends RuntimeException {
         var stringBuilder = new StringBuilder("Sorry, you must install ALL of the following mods in order for them to work with Thermoo Patches: ");
         Arrays.stream(requiredMods).forEach(mod -> {
             stringBuilder.append("\n - ");
-            stringBuilder.append(mod.getId());
-            stringBuilder.append(": ");
-            stringBuilder.append(mod.getModpage());
+            stringBuilder.append(mod);
         });
         return stringBuilder.toString();
     }

@@ -35,7 +35,8 @@ public class ThermooPatches implements ModInitializer {
     public enum IntegratedMod {
 
         LIBHUD("libhud", "https://modrinth.com/mod/libhud"),
-        ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints");
+        ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints"),
+        IMMERSIVE_WEATHERING("immersive_weathering", "https://modrinth.com/mod/immersive-weathering");
 
         private final String id;
 
@@ -57,6 +58,11 @@ public class ThermooPatches implements ModInitializer {
         public boolean isModLoaded() {
             return FabricLoader.getInstance().isModLoaded(id);
         }
+
+        @Override
+        public String toString() {
+            return String.format("%s: %s", this.id, this.modpage);
+        }
     }
 
     private static void checkMultiDependency(ThermooPatches.IntegratedMod... requiredMods) {
@@ -76,7 +82,7 @@ public class ThermooPatches implements ModInitializer {
                         mod -> {
                             builder.append('\n');
                             builder.append(" - ");
-                            builder.append(mod.id);
+                            builder.append(mod.getId());
                         }
                 );
 
