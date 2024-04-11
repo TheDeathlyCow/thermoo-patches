@@ -21,9 +21,9 @@ public class LibhudCompat implements LibhudApi {
 
     public static final int ORANGE = 0xFFA500;
 
-    private static final Vector2i[] heartPositionsPool = new Vector2i[10];
-
     private static final int MAX_DISPLAY_HEALTH = 20;
+
+    private static final Vector2i[] heartPositionsPool = new Vector2i[MAX_DISPLAY_HEALTH / 2];
 
     public static final Component.NamedComponent TEMPERATURE_OVERLAY = Component.named(
             ThermooPatches.id("temperature_overlay"),
@@ -51,7 +51,6 @@ public class LibhudCompat implements LibhudApi {
         if (player == null) {
             return;
         }
-
 
         int baseX = screenWidth / 2 - 91;
         int[] heartYPositions = Components.HEALTH.lastHeartY();

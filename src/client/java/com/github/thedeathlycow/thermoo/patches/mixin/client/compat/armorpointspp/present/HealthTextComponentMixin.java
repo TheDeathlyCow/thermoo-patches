@@ -1,7 +1,6 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.armorpointspp.present;
 
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
-import com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudCompat;
 import dev.cheos.armorpointspp.core.RenderContext;
 import dev.cheos.armorpointspp.core.RenderableText;
 import dev.cheos.armorpointspp.core.adapter.IConfig;
