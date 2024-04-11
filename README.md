@@ -13,9 +13,9 @@ Thermoo Patches is still a WIP. The following patches are currently planned:
 - [ ] Origins (and some of its major add-ons)
 
 The following patches are currently included in Thermoo itself, but will be moved to this mod in 1.20.2+:
-- Colorful Hearts
-- Overflowing Bars
-- Fabric Seasons
+- [ ] Colorful Hearts
+- [ ] Overflowing Bars
+- [x] Fabric Seasons
 
 Note that other temperature mods, like EnvironmentZ and Tough as Nails are not currently planned. This is because these mods are largely redundant with Frostiful and Scorchful installed, so unfortunately I don't consider adding them to be a very worthwhile use of my time. Feel free to PR these (or make your own separate patch mod) if you want them.  
 

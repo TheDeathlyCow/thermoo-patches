@@ -70,6 +70,7 @@ dependencies {
     modCompileOnly "maven.modrinth:libhud:${project.libhud_version}"
     modCompileOnly "maven.modrinth:armorpoints:${project.armorpointspp_version}"
     modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
+    modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
 }
 
 processResources {

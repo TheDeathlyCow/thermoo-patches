@@ -1,10 +1,10 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
+import com.github.thedeathlycow.thermoo.patches.fabricseasons.FabricSeasonsProvider;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
@@ -15,6 +15,8 @@ import java.util.Arrays;
 public class ThermooPatches implements ModInitializer {
     public static final String MODID = "thermoo-patches";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
+
+    public static final boolean ENABLE_THERMOO_INTEGRATIONS = false;
 
     @Contract("_->new")
     public static Identifier id(String path) {
@@ -29,45 +31,13 @@ public class ThermooPatches implements ModInitializer {
     public void onInitialize() {
         AutoConfig.register(ThermooPatchesConfig.class, GsonConfigSerializer::new);
         checkMultiDependency(IntegratedMod.ARMOR_POINTS_PP, IntegratedMod.LIBHUD);
+        FabricSeasonsProvider.registerSeasonProviderEvent();
         logPatchedMods();
     }
 
-    public enum IntegratedMod {
-
-        LIBHUD("libhud", "https://modrinth.com/mod/libhud"),
-        ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints"),
-        IMMERSIVE_WEATHERING("immersive_weathering", "https://modrinth.com/mod/immersive-weathering");
-
-        private final String id;
-
-        private final String modpage;
-
-        IntegratedMod(String id, String modpage) {
-            this.id = id;
-            this.modpage = modpage;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public String getModpage() {
-            return modpage;
-        }
-
-        public boolean isModLoaded() {
-            return FabricLoader.getInstance().isModLoaded(id);
-        }
-
-        @Override
-        public String toString() {
-            return String.format("%s: %s", this.id, this.modpage);
-        }
-    }
-
-    private static void checkMultiDependency(ThermooPatches.IntegratedMod... requiredMods) {
+    private static void checkMultiDependency(IntegratedMod... requiredMods) {
         boolean isNotMet = Arrays.stream(requiredMods)
-                .map(ThermooPatches.IntegratedMod::isModLoaded)
+                .map(IntegratedMod::isModLoaded)
                 .reduce(false, (acc, isLoaded) -> acc ^ isLoaded);
         if (isNotMet) {
             throw new MultiDependencyException(requiredMods);

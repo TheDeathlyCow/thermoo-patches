@@ -8,11 +8,11 @@ import java.util.Arrays;
  */
 public class MultiDependencyException extends RuntimeException {
 
-    public MultiDependencyException(ThermooPatches.IntegratedMod[] requiredMods) {
+    public MultiDependencyException(IntegratedMod[] requiredMods) {
         super(buildMessage(requiredMods));
     }
 
-    private static String buildMessage(ThermooPatches.IntegratedMod[] requiredMods) {
+    private static String buildMessage(IntegratedMod[] requiredMods) {
         var stringBuilder = new StringBuilder("Sorry, you must install ALL of the following mods in order for them to work with Thermoo Patches: ");
         Arrays.stream(requiredMods).forEach(mod -> {
             stringBuilder.append("\n - ");
