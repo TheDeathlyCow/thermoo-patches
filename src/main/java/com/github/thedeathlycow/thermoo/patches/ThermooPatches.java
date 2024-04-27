@@ -16,8 +16,6 @@ public class ThermooPatches implements ModInitializer {
     public static final String MODID = "thermoo-patches";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
-    public static final boolean ENABLE_THERMOO_INTEGRATIONS = false;
-
     @Contract("_->new")
     public static Identifier id(String path) {
         return new Identifier(MODID, path);
