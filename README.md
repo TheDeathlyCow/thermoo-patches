@@ -10,7 +10,9 @@ Thermoo Patches is still a WIP. The following patches are currently planned:
 - [x] Immersive Weathering
 - [ ] Spell Engine 
 - [ ] Ad Astra
-- [x] Origins (and some of its major add-ons)
+- [x] Origins
+- [x] Mob Origins
+- [x] Extra Origins
 
 The following patches are currently included in Thermoo itself, but will be moved to this mod in 1.20.2+:
 - [x] Colorful Hearts
