@@ -5,17 +5,17 @@ Thermoo Patches provides compatibility patches and integrations for [Thermoo](ht
 # List of Patches
 
 Thermoo Patches is still a WIP. The following patches are currently planned:
-- [x] Armor Points++ / libhud
-- [ ] Serene Seasons 
-- [x] Immersive Weathering
-- [ ] Spell Engine 
+- [x] Armor Points++ / libhud: Temperature now properly displays on HUD, temperature percent also shown next to health text.
+- [x] Colorful Hearts: Temperature now properly displays on HUD.
+- [x] Overflowing Bars: Temperature now properly displays on HUD.
+- [x] Fabric Seasons: Makes Frostiful/Scorchful aware of current season.
+- [ ] Serene Seasons: Makes Frostiful/Scorchful aware of current season.
+- [x] Immersive Weathering: Eating Icicles and Ice Sickles cools the player.
+- [ ] Spell Engine
 - [ ] Ad Astra
-- [ ] Origins (and some of its major add-ons)
-
-The following patches are currently included in Thermoo itself, but will be moved to this mod in 1.20.2+:
-- [x] Colorful Hearts
-- [x] Overflowing Bars
-- [x] Fabric Seasons
+- [x] Origins: Blazeborn is immune to heat and vulnerable to cold.
+- [x] Mob Origins: Snow Golem is immune to cold and vulnerable to heat. Snow Golem temperature system also removed (redundant with Thermoo).
+- [x] Extra Origins: Piglin origin has extra heat resistance
 
 Note that other temperature mods, like EnvironmentZ and Tough as Nails are not currently planned. This is because these mods are largely redundant with Frostiful and Scorchful installed, so unfortunately I don't consider adding them to be a very worthwhile use of my time. Feel free to PR these (or make your own separate patch mod) if you want them.  
 

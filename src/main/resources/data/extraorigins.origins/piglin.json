@@ -1,0 +1,17 @@
+{
+    "powers": [
+        "extraorigins:all_that_glitters",
+        "extraorigins:crossbow_master",
+        "extraorigins:piglin_neutrality",
+        "origins:nether_spawn",
+        "extraorigins:homesick",
+        "extraorigins:golden_gluttony",
+        "extraorigins:flabby",
+        "extraorigins:soul_spooked",
+        "thermoo-patches:extra_heat_resistance"
+    ],
+    "icon": "minecraft:golden_sword",
+    "order": 1,
+    "impact": 3,
+    "loading_priority": 1000
+}

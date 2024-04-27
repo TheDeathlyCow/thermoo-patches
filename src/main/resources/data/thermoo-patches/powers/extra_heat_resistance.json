@@ -1,0 +1,9 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "Bonus Heat Resistance",
+        "attribute": "thermoo:generic.heat_resistance",
+        "value": 5,
+        "operation": "addition"
+    }
+}
