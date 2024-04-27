@@ -1,3 +1,7 @@
 tiny	2	0	intermediary	named
 c	net/minecraft/class_329	net/minecraft/client/gui/hud/InGameHud
 	m	(Lnet/minecraft/class_332;)V	method_1741	rrenderMountHealth
+c	net/minecraft/class_3829	net/minecraft/util/Clearable
+	m	()V	method_5448	cclear
+c	net/minecraft/class_437	net/minecraft/client/gui/screen/Screen
+	m	()V	method_25419	cclose

@@ -11,7 +11,8 @@ public enum IntegratedMod {
     FABRIC_SEASONS("seasons", "https://modrinth.com/mod/fabric-seasons"),
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
     MOB_ORIGINS("moborigins", "https://modrinth.com/mod/moborigins"),
-    EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins");
+    EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins"),
+    AD_ASTRA("ad_astra", "https://modrinth.com/mod/ad-astra");
 
     private final String id;
 
