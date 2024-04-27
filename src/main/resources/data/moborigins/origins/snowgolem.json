@@ -1,9 +1,6 @@
 {
     "powers": [
         "origins:water_vulnerability",
-        "moborigins:temperature",
-        "moborigins:overheat",
-        "moborigins:melting",
         "moborigins:stronger_snowballs",
         "moborigins:snow_trail",
         "moborigins:frigid_strength",
