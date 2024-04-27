@@ -9,7 +9,7 @@ Thermoo Patches is still a WIP. The following patches are currently planned:
 - [x] Colorful Hearts: Temperature now properly displays on HUD.
 - [x] Overflowing Bars: Temperature now properly displays on HUD.
 - [x] Fabric Seasons: Makes Frostiful/Scorchful aware of current season.
-- [ ] Serene Seasons: Makes Frostiful/Scorchful aware of current season.
+- [ ] Serene Seasons: Makes Frostiful/Scorchful aware of current season (coming to 1.20.4+ only).
 - [x] Immersive Weathering: Eating Icicles and Ice Sickles cools the player.
 - [ ] Spell Engine
 - [ ] Ad Astra
