@@ -7,6 +7,7 @@ public enum IntegratedMod {
     LIBHUD("libhud", "https://modrinth.com/mod/libhud"),
     ARMOR_POINTS_PP("armorpointspp", "https://modrinth.com/mod/armorpoints"),
     COLORFUL_HEARTS("colorfulhearts", "https://modrinth.com/mod/colorful-hearts"),
+    OVERFLOWING_BARS("overflowingbars", "https://modrinth.com/mod/overflowing-bars"),
     IMMERSIVE_WEATHERING("immersive_weathering", "https://modrinth.com/mod/immersive-weathering"),
     FABRIC_SEASONS("seasons", "https://modrinth.com/mod/fabric-seasons"),
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
