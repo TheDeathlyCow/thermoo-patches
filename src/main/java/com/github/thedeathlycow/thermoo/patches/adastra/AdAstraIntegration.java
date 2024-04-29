@@ -9,7 +9,6 @@ import com.github.thedeathlycow.thermoo.patches.config.AdAstraConfig;
 import earth.terrarium.adastra.api.events.AdAstraEvents;
 import earth.terrarium.adastra.api.planets.Planet;
 import earth.terrarium.adastra.api.planets.PlanetApi;
-import earth.terrarium.adastra.api.systems.PlanetData;
 import earth.terrarium.adastra.api.systems.TemperatureApi;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
