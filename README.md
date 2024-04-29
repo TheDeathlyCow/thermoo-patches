@@ -9,10 +9,10 @@ Thermoo Patches is still a WIP. The following patches are currently planned:
 - [x] Colorful Hearts: Temperature now properly displays on HUD.
 - [x] Overflowing Bars: Temperature now properly displays on HUD.
 - [x] Fabric Seasons: Makes Frostiful/Scorchful aware of current season.
-- [ ] Serene Seasons: Makes Frostiful/Scorchful aware of current season.
+- [ ] Serene Seasons: Makes Frostiful/Scorchful aware of current season (coming to 1.20.4+ only).
 - [x] Immersive Weathering: Eating Icicles and Ice Sickles cools the player.
 - [ ] Spell Engine
-- [ ] Ad Astra
+- [x] Ad Astra: Adds more extreme temperatures on various planets, and disables the normal temperature effects
 - [x] Origins: Blazeborn is immune to heat and vulnerable to cold.
 - [x] Mob Origins: Snow Golem is immune to cold and vulnerable to heat. Snow Golem temperature system also removed (redundant with Thermoo).
 - [x] Extra Origins: Piglin origin has extra heat resistance

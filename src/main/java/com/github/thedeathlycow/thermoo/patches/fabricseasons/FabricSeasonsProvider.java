@@ -3,7 +3,6 @@ package com.github.thedeathlycow.thermoo.patches.fabricseasons;
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasonEvents;
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasons;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
-import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import io.github.lucaargolo.seasons.FabricSeasons;
 import io.github.lucaargolo.seasons.utils.Season;
 
