@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.common.compat.immersive_weathering.present;
 
-import com.github.thedeathlycow.thermoo.patches.immersiveweathering.IcicleFreezeHandler;
+import com.github.thedeathlycow.thermoo.patches.compat.immersiveweathering.IcicleFreezeHandler;
 import com.ordana.immersive_weathering.blocks.IcicleBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

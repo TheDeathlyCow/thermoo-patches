@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.fabricseasons;
+package com.github.thedeathlycow.thermoo.patches.compat.fabricseasons;
 
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasonEvents;
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasons;

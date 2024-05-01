@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.immersiveweathering;
+package com.github.thedeathlycow.thermoo.patches.compat.immersiveweathering;
 
 import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
 import com.github.thedeathlycow.thermoo.api.temperature.TemperatureAware;

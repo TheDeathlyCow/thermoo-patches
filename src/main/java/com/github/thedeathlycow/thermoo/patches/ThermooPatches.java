@@ -1,8 +1,8 @@
 package com.github.thedeathlycow.thermoo.patches;
 
-import com.github.thedeathlycow.thermoo.patches.adastra.AdAstraIntegration;
+import com.github.thedeathlycow.thermoo.patches.compat.adastra.AdAstraIntegration;
 import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
-import com.github.thedeathlycow.thermoo.patches.fabricseasons.FabricSeasonsProvider;
+import com.github.thedeathlycow.thermoo.patches.compat.fabricseasons.FabricSeasonsProvider;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;

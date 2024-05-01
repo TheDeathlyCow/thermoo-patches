@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.adastra;
+package com.github.thedeathlycow.thermoo.patches.compat.adastra;
 
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentController;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentControllerDecorator;

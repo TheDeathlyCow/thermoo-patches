@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.common.compat.immersive_weathering.present;
 
-import com.github.thedeathlycow.thermoo.patches.immersiveweathering.IcicleFreezeHandler;
+import com.github.thedeathlycow.thermoo.patches.compat.immersiveweathering.IcicleFreezeHandler;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.ordana.immersive_weathering.items.IceSickleItem;
