@@ -27,5 +27,5 @@
     
     "text.autoconfig.thermoo-patches.option.adAstraConfig": "Ad Astra Config",
     "text.autoconfig.thermoo-patches.option.adAstraConfig.@Tooltip": "Requires Ad Astra",
-    "text.autoconfig.thermoo-patches.option.adAstraConfig.enableSpacePassiveTemperature": "Enable passive temperature in Outer Space"
+    "text.autoconfig.thermoo-patches.option.adAstraConfig.spaceSuitsBlockPassiveTemperatureOnEarth": "Wearing a Space Suit blocks passive temperature on Earth and Glacio"
 }

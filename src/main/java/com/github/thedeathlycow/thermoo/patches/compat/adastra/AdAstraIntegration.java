@@ -10,6 +10,8 @@ import earth.terrarium.adastra.api.events.AdAstraEvents;
 import earth.terrarium.adastra.api.planets.Planet;
 import earth.terrarium.adastra.api.planets.PlanetApi;
 import earth.terrarium.adastra.api.systems.TemperatureApi;
+import earth.terrarium.adastra.common.items.armor.SpaceSuitItem;
+import earth.terrarium.adastra.common.tags.ModItemTags;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -37,6 +39,22 @@ public class AdAstraIntegration {
                 EnvironmentControllerInitializeEvent.OVERRIDE_PHASE,
                 SpaceEnvironmentController::new
         );
+
+        PlayerEnvironmentEvents.CAN_APPLY_PASSIVE_TEMPERATURE_CHANGE.register(
+                (change, player) -> {
+                    AdAstraConfig config = ThermooPatches.getConfig().adAstraConfig;
+                    if (config.spaceSuitsBlockPassiveTemperatureOnEarth()) {
+                        Planet planet = PlanetApi.API.getPlanet(player.getWorld());
+                        if (planet != null && !planet.oxygen()) {
+                            return true;
+                        }
+
+                        return !SpaceSuitItem.hasFullSet(player, ModItemTags.SPACE_SUITS);
+                    }
+
+                    return true;
+                }
+        );
     }
 
     static int getPlanetTemperature(World world, BlockPos pos) {
@@ -45,8 +63,7 @@ public class AdAstraIntegration {
             return 0;
         }
 
-        AdAstraConfig config = ThermooPatches.getConfig().adAstraConfig;
-        if (config.enableSpacePassiveTemperature() && !planet.oxygen()) {
+        if (!planet.oxygen()) {
             double temperatureCelsius = TemperatureApi.API.getTemperature(world, pos);
             return TemperatureConverter.celsiusToTemperatureTick(temperatureCelsius);
         } else {
