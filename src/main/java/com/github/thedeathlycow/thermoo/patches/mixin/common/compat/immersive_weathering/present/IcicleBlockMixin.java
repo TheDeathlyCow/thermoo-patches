@@ -12,8 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(
-        value = IcicleBlock.class,
-        remap = false
+        value = IcicleBlock.class
 )
 public class IcicleBlockMixin {
 

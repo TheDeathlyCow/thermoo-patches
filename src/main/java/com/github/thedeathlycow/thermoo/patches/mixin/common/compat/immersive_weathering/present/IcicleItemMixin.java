@@ -9,8 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(
-        value = IcicleItem.class,
-        remap = false
+        value = IcicleItem.class
 )
 public class IcicleItemMixin {
 
