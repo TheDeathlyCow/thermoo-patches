@@ -21,19 +21,11 @@ public class IcicleFreezeHandler {
         entity.thermoo$addTemperature(freezing, HeatingModes.ACTIVE);
     }
 
-    public static void onLandedUpon(
-            World world,
-            BlockState state,
-            BlockPos pos,
-            Entity entity,
-            float fallDistance
-    ) {
-        if (state.get(IcicleBlock.VERTICAL_DIRECTION) == Direction.UP && state.get(IcicleBlock.THICKNESS) == Thickness.TIP) {
-            if (entity instanceof TemperatureAware temperatureAware) {
-                ThermooPatchesConfig config = ThermooPatches.getConfig();
-                int freezing = config.immersiveWeatheringConfig.freezingFromIcicleFall;
-                temperatureAware.thermoo$addTemperature(freezing, HeatingModes.ACTIVE);
-            }
+    public static void applyIcicleFreezing(Entity entity) {
+        if (entity instanceof TemperatureAware temperatureAware) {
+            ThermooPatchesConfig config = ThermooPatches.getConfig();
+            int freezing = config.immersiveWeatheringConfig.freezingFromIcicleFall;
+            temperatureAware.thermoo$addTemperature(freezing, HeatingModes.ACTIVE);
         }
     }
 
