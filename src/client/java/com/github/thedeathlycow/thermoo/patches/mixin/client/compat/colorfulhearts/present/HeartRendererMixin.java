@@ -1,83 +1,79 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.colorfulhearts.present;
 
-import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import com.github.thedeathlycow.thermoo.patches.HeartOverlayRecorder;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import terrails.colorfulhearts.heart.Heart;
-import terrails.colorfulhearts.heart.HeartType;
+import terrails.colorfulhearts.api.heart.drawing.Heart;
 import terrails.colorfulhearts.render.HeartRenderer;
 
-import java.util.Arrays;
-
-@Mixin(
-        value = HeartRenderer.class,
-        remap = false
-)
-@Environment(EnvType.CLIENT)
+@Mixin(HeartRenderer.class)
 public class HeartRendererMixin {
+
+    @Unique
+    private int thermoo_patches$heartIndex = 0;
 
     @Inject(
             method = "renderPlayerHearts",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lterrails/colorfulhearts/heart/Heart;draw(Lnet/minecraft/client/util/math/MatrixStack;IIZZLterrails/colorfulhearts/heart/HeartType;)V",
-                    remap = true,
-                    shift = At.Shift.AFTER
-            ),
-            locals = LocalCapture.CAPTURE_FAILEXCEPTION
+            at = @At("HEAD")
     )
-    private void captureHeartPositions(
+    private void recordExtraInformation(
             DrawContext guiGraphics,
             PlayerEntity player,
             int x, int y,
-            int maxHealth, int currentHealth,
-            int displayHealth, int absorption,
-            boolean renderHighlight,
-            CallbackInfo ci,
-            int healthHearts, int displayHealthHearts,
-            boolean absorptionSameRow,
-            int regenIndex,
-            HeartType heartType,
-            int index,
-            Heart heart,
-            int xPos, int yPos,
-            boolean highlightHeart
+            int maxHealth, int currentHealth, int displayHealth,
+            int absorption,
+            boolean blinking,
+            CallbackInfo ci
     ) {
-        HeartOverlayRecorder.INSTANCE.setHeartPosition(index, xPos, yPos);
+        var recorder = HeartOverlayRecorder.INSTANCE;
+        recorder.setPlayer(player);
+        recorder.setDisplayHealth(displayHealth);
+    }
+
+    @WrapOperation(
+            method = "renderPlayerHearts",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lterrails/colorfulhearts/api/heart/drawing/Heart;draw(Lnet/minecraft/client/gui/DrawContext;IIZZZ)V"
+            )
+    )
+    private void captureHeartPositions(
+            Heart instance,
+            DrawContext guiGraphics,
+            int x, int y,
+            boolean hardcore,
+            boolean highlightContainer,
+            boolean highlightHeart,
+            Operation<Void> original
+    ) {
+        HeartOverlayRecorder.INSTANCE.setHeartPosition(thermoo_patches$heartIndex, x, y);
+        thermoo_patches$heartIndex++;
+
+        original.call(instance, guiGraphics, x, y, hardcore, highlightContainer, highlightHeart);
     }
 
     @Inject(
             method = "renderPlayerHearts",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lcom/mojang/blaze3d/systems/RenderSystem;disableBlend()V",
-                    shift = At.Shift.BEFORE
-            )
+            at = @At("TAIL")
     )
-    private void drawColdHeartOverlayBar(
-            DrawContext drawContext,
+    private void resetIndex(
+            DrawContext guiGraphics,
             PlayerEntity player,
             int x, int y,
-            int maxHealth, int currentHealth, int displayHealth, int absorption,
-            boolean renderHighlight,
+            int maxHealth,
+            int currentHealth,
+            int displayHealth,
+            int absorption,
+            boolean blinking,
             CallbackInfo ci
     ) {
-        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker()
-                .render(
-                        drawContext,
-                        player,
-                        HeartOverlayRecorder.INSTANCE.getHeartPositions(),
-                        displayHealth,
-                        20
-                );
-        Arrays.fill(HeartOverlayRecorder.INSTANCE.getHeartPositions(), null);
+        thermoo_patches$heartIndex = 0;
     }
 }

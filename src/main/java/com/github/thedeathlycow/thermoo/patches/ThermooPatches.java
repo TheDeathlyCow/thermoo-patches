@@ -35,6 +35,8 @@ public class ThermooPatches implements ModInitializer {
             AdAstraIntegration.init();
         }
         logPatchedMods();
+
+
     }
 
     private static void checkMultiDependency(IntegratedMod... requiredMods) {
