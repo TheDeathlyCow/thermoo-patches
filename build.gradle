@@ -74,7 +74,7 @@ dependencies {
     modCompileOnly "maven.modrinth:overflowing-bars:${project.overflowingbars_version}"
     modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
     modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
-    modCompileOnly ("earth.terrarium.adastra:ad_astra-fabric-${project.minecraft_version}:${project.ad_astra_version}")
+    modCompileOnly ("earth.terrarium.adastra:adastra-fabric-${project.minecraft_version}:${project.ad_astra_version}")
 }
 
 processResources {
