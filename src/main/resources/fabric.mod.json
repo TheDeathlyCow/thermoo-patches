@@ -47,6 +47,12 @@
         "frostiful": "*",
         "scorchful": "*"
     },
+    "breaks": {
+        "armorpointspp": "*",
+        "overflowingbars": "*",
+        "immersive_weathering": "*",
+        "seasons": "*"
+    },
     "custom": {
         "modmenu": {
             "links": {
