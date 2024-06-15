@@ -27,6 +27,9 @@
         ],
         "modmenu": [
             "com.github.thedeathlycow.thermoo.patches.ThermooPatchesModMenu"
+        ],
+        "colorfulhearts": [
+            "com.github.thedeathlycow.thermoo.patches.colorfulhearts.ColorfulHeartsEventListeners"
         ]
     },
     "mixins": [
