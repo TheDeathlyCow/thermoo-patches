@@ -11,6 +11,9 @@
     "power.thermoo-patches.heat_immune.name": "Heating Immunity",
     "power.thermoo-patches.heat_immune.description": "You are immune to warm temperatures.",
     
+    "power.thermoo-patches.heat_benefit.name": "Thermophilia",
+    "power.thermoo-patches.heat_benefit.description": "You are empowered by Heat.",
+    
     "power.thermoo-patches.heat_vulnerability.name": "Thermophobia",
     "power.thermoo-patches.heat_vulnerability.description": "You are warmed much faster than humans.",
     
