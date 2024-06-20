@@ -5,12 +5,19 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-                "type": "#thermoo:benefits_from_heat"
+                "type": "minecraft:player",
+                "equipment": {
+                    "chest": {
+                        "items": [
+                            "frostiful:frostology_cloak"
+                        ]
+                    }
+                }
             }
         },
         {
             "condition": "apoli:power",
-            "power": "thermoo-patches:heat_lover"
+            "power": "thermoo-patches:cold_lover"
         }
     ],
     "fabric:load_conditions": [
@@ -18,7 +25,7 @@
             "condition": "fabric:all_mods_loaded",
             "values": [
                 "origins",
-                "scorchful"
+                "frostiful"
             ]
         }
     ]
