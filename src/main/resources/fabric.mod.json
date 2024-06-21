@@ -27,6 +27,9 @@
         ],
         "modmenu": [
             "com.github.thedeathlycow.thermoo.patches.ThermooPatchesModMenu"
+        ],
+        "colorfulhearts": [
+            "com.github.thedeathlycow.thermoo.patches.colorfulhearts.ColorfulHeartsEventListeners"
         ]
     },
     "mixins": [
@@ -37,15 +40,21 @@
         }
     ],
     "depends": {
-        "fabricloader": ">=0.15.7",
-        "minecraft": "~1.20.1",
+        "fabricloader": ">=0.15.10",
+        "minecraft": "1.20.4",
         "java": ">=17",
-        "fabric-api": "*",
-        "thermoo": ">=2.3"
+        "fabric-api": ">=0.97.0",
+        "thermoo": ">=3.2"
     },
     "suggests": {
         "frostiful": "*",
         "scorchful": "*"
+    },
+    "breaks": {
+        "armorpointspp": "*",
+        "overflowingbars": "*",
+        "immersive_weathering": "*",
+        "seasons": "*"
     },
     "custom": {
         "modmenu": {

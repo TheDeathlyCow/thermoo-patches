@@ -8,7 +8,7 @@
         "origins:flame_particles",
         "origins:damage_from_snowballs",
         "origins:damage_from_potions",
-        "thermoo-patches:heat_immune",
+        "thermoo-patches:heat_lover",
         "thermoo-patches:cold_vulnerability"
     ],
     "icon": {
@@ -16,5 +16,13 @@
     },
     "order": 1,
     "impact": 3,
-    "loading_priority": 1000
+    "loading_priority": 1,
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins"
+            ]
+        }
+    ]
 }

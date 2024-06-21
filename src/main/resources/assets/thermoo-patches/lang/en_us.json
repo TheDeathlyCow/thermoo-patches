@@ -2,6 +2,9 @@
     "power.thermoo-patches.cold_immune.name": "Freezing Immunity",
     "power.thermoo-patches.cold_immune.description": "You are immune to cold temperatures.",
     
+    "power.thermoo-patches.cold_lover.name": "Cryophilia",
+    "power.thermoo-patches.cold_lover.description": "You are empowered by Cold, but melt when warm.",
+    
     "power.thermoo-patches.cold_vulnerability.name": "Cryophobia",
     "power.thermoo-patches.cold_vulnerability.description": "You freeze much faster than humans.",
     
@@ -10,6 +13,9 @@
     
     "power.thermoo-patches.heat_immune.name": "Heating Immunity",
     "power.thermoo-patches.heat_immune.description": "You are immune to warm temperatures.",
+    
+    "power.thermoo-patches.heat_lover.name": "Thermophilia",
+    "power.thermoo-patches.heat_lover.description": "You are empowered by Heat, but freeze when cold.",
     
     "power.thermoo-patches.heat_vulnerability.name": "Thermophobia",
     "power.thermoo-patches.heat_vulnerability.description": "You are warmed much faster than humans.",

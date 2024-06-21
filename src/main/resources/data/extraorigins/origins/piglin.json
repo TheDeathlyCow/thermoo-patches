@@ -13,5 +13,14 @@
     "icon": "minecraft:golden_sword",
     "order": 1,
     "impact": 3,
-    "loading_priority": 1
+    "loading_priority": 1,
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "extraorigins"
+            ]
+        }
+    ]
 }

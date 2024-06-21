@@ -4,11 +4,20 @@
         "moborigins:stronger_snowballs",
         "moborigins:snow_trail",
         "moborigins:frigid_strength",
-        "thermoo-patches:cold_immune",
+        "thermoo-patches:cold_lover",
         "thermoo-patches:heat_vulnerability"
     ],
     "icon": "minecraft:snowball",
     "order": 4,
     "impact": 3,
-    "loading_priority": 1
+    "loading_priority": 1,
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "moborigins"
+            ]
+        }
+    ]
 }

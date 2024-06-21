@@ -1,0 +1,32 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type": "minecraft:player",
+                "equipment": {
+                    "chest": {
+                        "items": [
+                            "frostiful:frostology_cloak"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "condition": "apoli:power",
+            "power": "thermoo-patches:cold_lover"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "frostiful"
+            ]
+        }
+    ]
+}

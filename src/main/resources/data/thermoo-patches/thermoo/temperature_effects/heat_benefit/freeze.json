@@ -1,0 +1,26 @@
+{
+    "type": "thermoo:damage",
+    "entity": {
+        "condition": "minecraft:reference",
+        "name": "scorchful:benefits_from_heat"
+    },
+    "entity_type": "minecraft:player",
+    "temperature_scale_range": {
+        "max": -0.01
+    },
+    "config": {
+        "amount": 1.0,
+        "damage_interval": 20,
+        "damage_type": "minecraft:freeze"
+    },
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "scorchful"
+            ]
+        }
+    ],
+    "loading_priority": 1
+}
