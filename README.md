@@ -8,6 +8,8 @@
 <img src="https://i.imgur.com/MjlOmH0.png" alt="Requires Thermoo badge" width="300"/>
 </a>
 
+Have trouble? Get help on Discord: https://discord.gg/aqASuWebRU
+
 Thermoo Patches provides compatibility patches and integrations for [Thermoo](https://github.com/TheDeathlyCow/thermoo/)
 based mods, including [Frostiful](https://github.com/TheDeathlyCow/frostiful/)
 and [Scorchful](https://github.com/TheDeathlyCow/scorchful/), and other non-Thermoo mods where it would make sense for

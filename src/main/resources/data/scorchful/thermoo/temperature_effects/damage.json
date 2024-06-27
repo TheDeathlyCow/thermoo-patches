@@ -1,0 +1,25 @@
+{
+    "type": "thermoo:damage",
+    "entity": {
+        "condition": "minecraft:reference",
+        "name": "thermoo-patches:can_heat"
+    },
+    "temperature_scale_range": {
+        "min": 0.99
+    },
+    "config": {
+        "amount": 1,
+        "damage_interval": 20,
+        "damage_type": "scorchful:heat"
+    },
+    "loading_priority": 1,
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "scorchful"
+            ]
+        }
+    ]
+}
