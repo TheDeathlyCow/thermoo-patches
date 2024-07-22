@@ -21,7 +21,7 @@ public class SpaceEnvironmentController extends EnvironmentControllerDecorator {
     @Override
     public int getLocalTemperatureChange(World world, BlockPos pos) {
         Planet planet = PlanetApi.API.getPlanet(world);
-        if (planet != null && !planet.oxygen()) {
+        if (AdAstraIntegration.isNotEarthLike(planet)) {
             // we still calculate this because it may not necessarily apply to a player
             // eg, may want to have it for the scorchful thermometer
             return AdAstraIntegration.getPlanetTemperature(world, pos);
@@ -34,7 +34,7 @@ public class SpaceEnvironmentController extends EnvironmentControllerDecorator {
     public int getEnvironmentTemperatureForPlayer(PlayerEntity player, int localTemperature) {
         World world = player.getWorld();
         Planet planet = PlanetApi.API.getPlanet(world);
-        if (planet != null && !planet.oxygen()) {
+        if (AdAstraIntegration.isNotEarthLike(planet)) {
             // cancel for thermoo, use ad astra api
             return 0;
         }
