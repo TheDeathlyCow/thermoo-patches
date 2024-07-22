@@ -10,8 +10,6 @@ import earth.terrarium.adastra.api.events.AdAstraEvents;
 import earth.terrarium.adastra.api.planets.Planet;
 import earth.terrarium.adastra.api.planets.PlanetApi;
 import earth.terrarium.adastra.api.systems.TemperatureApi;
-import earth.terrarium.adastra.common.items.armor.SpaceSuitItem;
-import earth.terrarium.adastra.common.tags.ModItemTags;
 import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -55,9 +53,10 @@ public class AdAstraIntegration {
                             return TriState.DEFAULT;
                         }
 
-                        if (SpaceSuitItem.hasFullSet(player, ModItemTags.SPACE_SUITS)) {
-                            return TriState.FALSE;
-                        }
+                        // TODO: update when ad astra is on 1.21
+//                        if (SpaceSuitItem.hasFullSet(player, ModItemTags.SPACE_SUITS)) {
+//                            return TriState.FALSE;
+//                        }
                     }
 
                     return TriState.DEFAULT;

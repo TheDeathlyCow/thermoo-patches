@@ -55,7 +55,8 @@
         "overflowingbars": "*",
         "immersive_weathering": "*",
         "seasons": "*",
-        "origins": ">1.13.0-alpha.5"
+        "origins": ">1.13.0-alpha.5",
+        "ad_astra": "*"
     },
     "custom": {
         "modmenu": {
