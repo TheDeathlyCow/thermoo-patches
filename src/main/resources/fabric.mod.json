@@ -54,7 +54,8 @@
         "armorpointspp": "*",
         "overflowingbars": "*",
         "immersive_weathering": "*",
-        "seasons": "*"
+        "seasons": "*",
+        "origins": ">1.13.0-alpha.5"
     },
     "custom": {
         "modmenu": {
