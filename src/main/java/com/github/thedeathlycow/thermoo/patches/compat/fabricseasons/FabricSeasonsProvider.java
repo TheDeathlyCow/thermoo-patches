@@ -1,7 +1,7 @@
 package com.github.thedeathlycow.thermoo.patches.compat.fabricseasons;
 
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasonEvents;
-import com.github.thedeathlycow.thermoo.api.season.ThermooSeasons;
+import com.github.thedeathlycow.thermoo.api.season.ThermooSeason;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import io.github.lucaargolo.seasons.FabricSeasons;
 import io.github.lucaargolo.seasons.utils.Season;
@@ -16,10 +16,10 @@ public class FabricSeasonsProvider {
                 Season fabricSeason = FabricSeasons.getCurrentSeason(world);
                 return Optional.ofNullable(
                         switch (fabricSeason) {
-                            case WINTER -> ThermooSeasons.WINTER;
-                            case SUMMER -> ThermooSeasons.SUMMER;
-                            case FALL -> ThermooSeasons.AUTUMN;
-                            case SPRING -> ThermooSeasons.SPRING;
+                            case WINTER -> ThermooSeason.WINTER;
+                            case SUMMER -> ThermooSeason.SUMMER;
+                            case FALL -> ThermooSeason.AUTUMN;
+                            case SPRING -> ThermooSeason.SPRING;
                             default -> null;
                         }
                 );

@@ -1,9 +1,9 @@
 {
     "type": "origins:attribute",
     "modifier": {
-        "name": "Frost Resistance Immunity",
+        "id": "thermoo-patches:frost_resistance_immunity",
         "attribute": "thermoo:generic.frost_resistance",
         "value": 10000,
-        "operation": "addition"
+        "operation": "add_value"
     }
 }

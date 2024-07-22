@@ -20,7 +20,7 @@ public class ThermooPatches implements ModInitializer {
 
     @Contract("_->new")
     public static Identifier id(String path) {
-        return new Identifier(MODID, path);
+        return Identifier.of(MODID, path);
     }
 
     public static ThermooPatchesConfig getConfig() {

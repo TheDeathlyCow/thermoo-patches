@@ -1,9 +1,9 @@
 {
     "type": "origins:attribute",
     "modifier": {
-        "name": "Heat Resistance Immunity",
+        "id": "thermoo-patches:heat_resistance_immunity",
         "attribute": "thermoo:generic.heat_resistance",
         "value": 10000,
-        "operation": "addition"
+        "operation": "add_value"
     }
 }

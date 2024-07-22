@@ -10,8 +10,7 @@ import earth.terrarium.adastra.api.events.AdAstraEvents;
 import earth.terrarium.adastra.api.planets.Planet;
 import earth.terrarium.adastra.api.planets.PlanetApi;
 import earth.terrarium.adastra.api.systems.TemperatureApi;
-import earth.terrarium.adastra.common.items.armor.SpaceSuitItem;
-import earth.terrarium.adastra.common.tags.ModItemTags;
+import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -19,6 +18,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class AdAstraIntegration {
+
+
+    public static boolean isNotEarthLike(Planet planet) {
+        return planet != null && !planet.oxygen();
+    }
 
     public static void init() {
         // prevent ad astra temperature ticks for players - to be replaced by Thermoo env controller
@@ -45,42 +49,40 @@ public class AdAstraIntegration {
                     AdAstraConfig config = ThermooPatches.getConfig().adAstraConfig;
                     if (config.spaceSuitsBlockPassiveTemperatureOnEarth()) {
                         Planet planet = PlanetApi.API.getPlanet(player.getWorld());
-                        if (planet != null && !planet.oxygen()) {
-                            return true;
+                        if (isNotEarthLike(planet)) {
+                            return TriState.DEFAULT;
                         }
 
-                        return !SpaceSuitItem.hasFullSet(player, ModItemTags.SPACE_SUITS);
+                        // TODO: update when ad astra is on 1.21
+//                        if (SpaceSuitItem.hasFullSet(player, ModItemTags.SPACE_SUITS)) {
+//                            return TriState.FALSE;
+//                        }
                     }
 
-                    return true;
+                    return TriState.DEFAULT;
                 }
         );
     }
 
     static int getPlanetTemperature(World world, BlockPos pos) {
         Planet planet = PlanetApi.API.getPlanet(world);
-        if (planet == null) {
-            return 0;
-        }
-
-        if (!planet.oxygen()) {
+        if (isNotEarthLike(planet)) {
             double temperatureCelsius = TemperatureApi.API.getTemperature(world, pos);
             return TemperatureConverter.celsiusToTemperatureTick(temperatureCelsius);
-        } else {
-            return 0;
         }
+        return 0;
     }
 
     private static void temperatureTick(ServerWorld world, LivingEntity entity) {
         int temperatureChange = getPlanetTemperature(world, entity.getBlockPos());
 
-        boolean applyChange = true;
+        TriState applyChange = TriState.DEFAULT;
         if (entity instanceof PlayerEntity player) {
             applyChange = PlayerEnvironmentEvents.CAN_APPLY_PASSIVE_TEMPERATURE_CHANGE.invoker()
                     .canApplyChange(temperatureChange, player);
         }
 
-        if (applyChange) {
+        if (applyChange == TriState.TRUE) {
             // note: temperature tick only occurs once per second
             entity.thermoo$addTemperature(temperatureChange * 20, HeatingModes.PASSIVE);
         }
