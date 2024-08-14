@@ -34,6 +34,7 @@ public class SereneSeasonsProvider {
                             .getTropicalSeason();
 
                     return Optional.ofNullable(switch (tropicalSeason) {
+                        // use the mid-season as that is when the weather effects kick in
                         case MID_DRY -> ThermooSeason.TROPICAL_DRY;
                         case MID_WET -> ThermooSeason.TROPICAL_WET;
                         default -> null;
