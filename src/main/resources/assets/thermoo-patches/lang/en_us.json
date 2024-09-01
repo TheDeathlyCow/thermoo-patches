@@ -29,9 +29,5 @@
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig": "Immersive Weathering Config",
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.@Tooltip": "Requires Immersive Weathering",
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromIcicleFall": "Freezing from falling on icicle",
-    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Freezing from eating icicles and Ice Sickles",
-    
-    "text.autoconfig.thermoo-patches.option.adAstraConfig": "Ad Astra Config",
-    "text.autoconfig.thermoo-patches.option.adAstraConfig.@Tooltip": "Requires Ad Astra",
-    "text.autoconfig.thermoo-patches.option.adAstraConfig.spaceSuitsBlockPassiveTemperatureOnEarth": "Wearing a Space Suit blocks passive temperature on Earth and Glacio"
+    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Freezing from eating icicles and Ice Sickles"
 }

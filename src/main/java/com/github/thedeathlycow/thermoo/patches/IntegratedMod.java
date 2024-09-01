@@ -13,9 +13,7 @@ public enum IntegratedMod {
     SERENE_SEASONS("sereneseasons", "https://modrinth.com/mod/serene-seasons"),
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
     MOB_ORIGINS("moborigins", "https://modrinth.com/mod/moborigins"),
-    EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins"),
-    AD_ASTRA("ad_astra", "https://modrinth.com/mod/ad-astra");
-
+    EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins");
     private final String id;
 
     private final String modpage;
