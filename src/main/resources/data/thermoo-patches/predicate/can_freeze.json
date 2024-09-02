@@ -9,7 +9,7 @@
             "condition": "minecraft:inverted",
             "term": {
                 "condition": "apoli:power",
-                "power": "thermoo-patches:cold_lover"
+                "power": "thermoo-patches:ignores_cold_effects"
             }
         }
     ],

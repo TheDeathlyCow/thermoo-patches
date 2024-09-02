@@ -75,3 +75,8 @@ there.
 | `thermoo-patches:ignores_heat_effects`   | Makes the affected entity immune to Scorchful's *negative* temperature effects                                                    |
 | `thermoo-patches:heat_vulnerability`     | Doubles the amount of heating that affected entities receive from warm temperature changes.                                       |
 | `thermoo-patches:extra_heat_resistance`  | Gives affected entities 50% resistance to warm temperature changes                                                                |
+
+| Predicate ID                 | Description                                                                                                       |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). | 
+| `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat (use instead of `scorchful:can_heat`).   | 
