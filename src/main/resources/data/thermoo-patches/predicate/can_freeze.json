@@ -1,0 +1,25 @@
+{
+    "condition": "minecraft:all_of",
+    "terms": [
+        {
+            "condition": "minecraft:reference",
+            "name": "frostiful:can_freeze"
+        },
+        {
+            "condition": "minecraft:inverted",
+            "term": {
+                "condition": "apoli:power",
+                "power": "thermoo-patches:cold_lover"
+            }
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "frostiful"
+            ]
+        }
+    ]
+}
