@@ -7,7 +7,7 @@
         },
         {
             "condition": "apoli:power",
-            "power": "thermoo-patches:heat_lover"
+            "power": "thermoo-patches:ignores_heat_effects"
         }
     ],
     "fabric:load_conditions": [
