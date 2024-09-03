@@ -34,7 +34,6 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
-    maven { url "https://maven.teamresourceful.com/repository/maven-public/" }
 }
 
 loom {
@@ -75,7 +74,6 @@ dependencies {
     modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
     modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
     modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}"
-    modCompileOnly ("earth.terrarium.adastra:adastra-fabric-1.20.4:${project.ad_astra_version}")
 }
 
 processResources {

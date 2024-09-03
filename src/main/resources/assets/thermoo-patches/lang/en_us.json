@@ -2,11 +2,11 @@
     "power.thermoo-patches.cold_immune.name": "Freezing Immunity",
     "power.thermoo-patches.cold_immune.description": "You are immune to cold temperatures.",
     
-    "power.thermoo-patches.cold_lover.name": "Cryophilia",
-    "power.thermoo-patches.cold_lover.description": "You are empowered by Cold, but melt when warm.",
-    
     "power.thermoo-patches.cold_vulnerability.name": "Cryophobia",
     "power.thermoo-patches.cold_vulnerability.description": "You freeze much faster than humans.",
+    
+    "power.thermoo-patches.extra_frost_resistance.name": "Frost Shield",
+    "power.thermoo-patches.extra_frost_resistance.description": "You are more resistant to cold temperatures.",
     
     "power.thermoo-patches.extra_heat_resistance.name": "Heat Shield",
     "power.thermoo-patches.extra_heat_resistance.description": "You are more resistant to high temperatures.",
@@ -14,11 +14,14 @@
     "power.thermoo-patches.heat_immune.name": "Heating Immunity",
     "power.thermoo-patches.heat_immune.description": "You are immune to warm temperatures.",
     
-    "power.thermoo-patches.heat_lover.name": "Thermophilia",
-    "power.thermoo-patches.heat_lover.description": "You are empowered by Heat, but freeze when cold.",
-    
     "power.thermoo-patches.heat_vulnerability.name": "Thermophobia",
     "power.thermoo-patches.heat_vulnerability.description": "You are warmed much faster than humans.",
+    
+    "power.thermoo-patches.ignores_cold_effects.name": "Frostborn",
+    "power.thermoo-patches.ignores_cold_effects.description": "Cold has no negative effects on you.",
+    
+    "power.thermoo-patches.ignores_heat_effects.name": "Fireborn",
+    "power.thermoo-patches.ignores_heat_effects.description": "Heat has no negative effects on you.",
     
     "text.autoconfig.thermoo-patches.title": "Thermoo Patches Config",
     
@@ -29,9 +32,5 @@
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig": "Immersive Weathering Config",
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.@Tooltip": "Requires Immersive Weathering",
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromIcicleFall": "Freezing from falling on icicle",
-    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Freezing from eating icicles and Ice Sickles",
-    
-    "text.autoconfig.thermoo-patches.option.adAstraConfig": "Ad Astra Config",
-    "text.autoconfig.thermoo-patches.option.adAstraConfig.@Tooltip": "Requires Ad Astra",
-    "text.autoconfig.thermoo-patches.option.adAstraConfig.spaceSuitsBlockPassiveTemperatureOnEarth": "Wearing a Space Suit blocks passive temperature on Earth and Glacio"
+    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Freezing from eating icicles and Ice Sickles"
 }

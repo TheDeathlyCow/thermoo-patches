@@ -2,7 +2,7 @@
     "type": "origins:attribute",
     "modifier": {
         "id": "thermoo-patches:bonus_heat_resistance",
-        "attribute": "thermoo:generic.heat_resistance",
+        "attribute": "thermoo:generic.frost_resistance",
         "amount": 5,
         "operation": "add_value"
     }

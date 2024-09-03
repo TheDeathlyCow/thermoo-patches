@@ -1,6 +1,5 @@
 package com.github.thedeathlycow.thermoo.patches;
 
-import com.github.thedeathlycow.thermoo.patches.compat.adastra.AdAstraIntegration;
 import com.github.thedeathlycow.thermoo.patches.compat.fabricseasons.FabricSeasonsProvider;
 import com.github.thedeathlycow.thermoo.patches.compat.sereneseasons.SereneSeasonsProvider;
 import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
@@ -33,12 +32,7 @@ public class ThermooPatches implements ModInitializer {
         checkMultiDependency(IntegratedMod.ARMOR_POINTS_PP, IntegratedMod.LIBHUD);
         FabricSeasonsProvider.registerSeasonProviderEvent();
         SereneSeasonsProvider.registerSeasonProviderEvent();
-        if (IntegratedMod.AD_ASTRA.isModLoaded()) {
-            AdAstraIntegration.init();
-        }
         logPatchedMods();
-
-
     }
 
     private static void checkMultiDependency(IntegratedMod... requiredMods) {

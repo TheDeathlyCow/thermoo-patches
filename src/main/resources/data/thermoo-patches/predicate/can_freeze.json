@@ -3,13 +3,13 @@
     "terms": [
         {
             "condition": "minecraft:reference",
-            "name": "scorchful:can_heat"
+            "name": "frostiful:can_freeze"
         },
         {
             "condition": "minecraft:inverted",
             "term": {
                 "condition": "apoli:power",
-                "power": "thermoo-patches:ignores_heat_effects"
+                "power": "thermoo-patches:ignores_cold_effects"
             }
         }
     ],
@@ -18,7 +18,7 @@
             "condition": "fabric:all_mods_loaded",
             "values": [
                 "origins",
-                "scorchful"
+                "frostiful"
             ]
         }
     ]

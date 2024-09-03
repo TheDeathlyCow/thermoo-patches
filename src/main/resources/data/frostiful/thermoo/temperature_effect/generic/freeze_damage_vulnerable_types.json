@@ -1,0 +1,37 @@
+{
+    "type": "thermoo:damage",
+    "entity": {
+        "condition": "minecraft:all_of",
+        "terms": [
+            {
+                "condition": "minecraft:reference",
+                "name": "frostiful:is_vulnerable_to_frost"
+            },
+            {
+                "condition": "minecraft:inverted",
+                "term": {
+                    "condition": "apoli:power",
+                    "power": "thermoo-patches:ignores_cold_effects"
+                }
+            }
+        ]
+    },
+    "temperature_scale_range": {
+        "max": -0.99
+    },
+    "config": {
+        "amount": 5,
+        "damage_interval": 20,
+        "damage_type": "minecraft:freeze"
+    },
+    "loading_priority": 1,
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "origins",
+                "frostiful"
+            ]
+        }
+    ]
+}

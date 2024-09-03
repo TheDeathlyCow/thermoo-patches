@@ -17,8 +17,4 @@ public class ThermooPatchesConfig extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Gui.Tooltip
     public ImmersiveWeatheringConfig immersiveWeatheringConfig = new ImmersiveWeatheringConfig();
 
-    @ConfigEntry.Gui.CollapsibleObject
-    @ConfigEntry.Gui.Tooltip
-    public AdAstraConfig adAstraConfig = new AdAstraConfig();
-
 }
