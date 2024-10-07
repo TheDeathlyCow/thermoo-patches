@@ -54,7 +54,6 @@
         "armorpointspp": "*",
         "overflowingbars": "*",
         "immersive_weathering": "*",
-        "seasons": "*",
         "origins": ">1.13.0-alpha.8"
     },
     "custom": {
