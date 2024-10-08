@@ -2,7 +2,9 @@ package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.overflowing
 
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import com.github.thedeathlycow.thermoo.patches.HeartOverlayRecorder;
-import fuzs.overflowingbars.client.handler.HealthBarRenderer;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import fuzs.overflowingbars.client.gui.HealthBarRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
@@ -21,6 +23,26 @@ import java.util.Arrays;
         remap = false
 )
 public class HealthBarRendererMixin {
+
+    @WrapOperation(
+            method = "renderHearts",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lfuzs/overflowingbars/client/gui/HealthBarRenderer$ModHeartType;renderHeart(Lnet/minecraft/client/gui/DrawContext;IIZZZ)V",
+                    ordinal = 0)
+    )
+    private void captureHeartPosition(
+            HealthBarRenderer.ModHeartType instance,
+            DrawContext drawContext,
+            int guiGraphics,
+            int posX, boolean posY,
+            boolean blinking,
+            boolean halfHeart,
+            Operation<Void> original
+    ) {
+
+    }
+
 
     @Inject(
             method = "renderHearts",
