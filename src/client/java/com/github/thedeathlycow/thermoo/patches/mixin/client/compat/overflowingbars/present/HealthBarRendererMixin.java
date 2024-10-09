@@ -10,7 +10,9 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Coerce;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
@@ -24,6 +26,9 @@ import java.util.Arrays;
 )
 public class HealthBarRendererMixin {
 
+    @Unique
+    private final ThreadLocal<Integer> thermoo_patches$currentHeart = ThreadLocal.withInitial(() -> 0);
+
     @WrapOperation(
             method = "renderHearts",
             at = @At(
@@ -32,63 +37,29 @@ public class HealthBarRendererMixin {
                     ordinal = 0)
     )
     private void captureHeartPosition(
-            HealthBarRenderer.ModHeartType instance,
-            DrawContext drawContext,
-            int guiGraphics,
-            int posX, boolean posY,
+            @Coerce Object instance,
+            DrawContext guiGraphics,
+            int posX, int posY,
             boolean blinking,
             boolean halfHeart,
+            boolean hardcore,
             Operation<Void> original
     ) {
+        int index = thermoo_patches$currentHeart.get();
+        HeartOverlayRecorder.INSTANCE.setHeartPosition(index, posX, posY);
+        thermoo_patches$currentHeart.set(index + 1);
 
-    }
-
-
-    @Inject(
-            method = "renderHearts",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lfuzs/overflowingbars/client/handler/HealthBarRenderer;renderHeart(Lnet/minecraft/client/gui/DrawContext;Lfuzs/overflowingbars/client/handler/HealthBarRenderer$HeartType;IIZZZ)V",
-                    ordinal = 0,
-                    shift = At.Shift.AFTER,
-                    remap = true
-            ),
-            locals = LocalCapture.CAPTURE_FAILEXCEPTION
-    )
-    private void captureHeartPosition(
-            DrawContext guiGraphics,
-            PlayerEntity player,
-            int posX,
-            int posY,
-            int heartOffsetByRegen,
-            float maxHealth,
-            int currentHealth,
-            int displayHealth,
-            int currentAbsorptionHealth,
-            boolean blink,
-            CallbackInfo ci,
-            boolean hardcore,
-            int normalHearts,
-            int maxAbsorptionHearts,
-            int absorptionHearts,
-            int currentHeart,
-            int currentPosX,
-            int currentPosY
-    ) {
-        HeartOverlayRecorder.INSTANCE.setHeartPosition(currentHeart, currentPosX, currentPosY);
+        original.call(instance, guiGraphics, posX, posY, blinking, halfHeart, hardcore);
     }
 
     @Inject(
             method = "renderHearts",
-            at = @At(
-                    value = "TAIL"
-            )
+            at = @At("TAIL")
     )
-    private void renderColdHeartOverlayBar(
+    private void renderOverlayBar(
             DrawContext guiGraphics,
             PlayerEntity player,
-            int posX,
-            int posY,
+            int posX, int posY,
             int heartOffsetByRegen,
             float maxHealth,
             int currentHealth,
@@ -106,6 +77,7 @@ public class HealthBarRendererMixin {
                         20
                 );
         Arrays.fill(HeartOverlayRecorder.INSTANCE.getHeartPositions(), null);
+        thermoo_patches$currentHeart.remove();
     }
 
 }
