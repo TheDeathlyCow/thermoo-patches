@@ -52,7 +52,6 @@
     },
     "breaks": {
         "armorpointspp": "*",
-        "overflowingbars": "*",
         "immersive_weathering": "*",
         "origins": ">1.13.0-alpha.8"
     },

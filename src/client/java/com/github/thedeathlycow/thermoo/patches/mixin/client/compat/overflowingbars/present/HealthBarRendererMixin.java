@@ -2,16 +2,18 @@ package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.overflowing
 
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import com.github.thedeathlycow.thermoo.patches.HeartOverlayRecorder;
-import fuzs.overflowingbars.client.handler.HealthBarRenderer;
+import com.llamalad7.mixinextras.sugar.Local;
+import fuzs.overflowingbars.client.gui.HealthBarRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.Arrays;
 
@@ -22,22 +24,23 @@ import java.util.Arrays;
 )
 public class HealthBarRendererMixin {
 
+    @Shadow
+    private int displayHealth;
+
     @Inject(
             method = "renderHearts",
             at = @At(
                     value = "INVOKE",
-                    target = "Lfuzs/overflowingbars/client/handler/HealthBarRenderer;renderHeart(Lnet/minecraft/client/gui/DrawContext;Lfuzs/overflowingbars/client/handler/HealthBarRenderer$HeartType;IIZZZ)V",
+                    target = "Lfuzs/overflowingbars/client/gui/HealthBarRenderer$ModHeartType;renderHeart(Lnet/minecraft/client/gui/DrawContext;IIZZZ)V",
                     ordinal = 0,
                     shift = At.Shift.AFTER,
                     remap = true
-            ),
-            locals = LocalCapture.CAPTURE_FAILEXCEPTION
+            )
     )
     private void captureHeartPosition(
             DrawContext guiGraphics,
             PlayerEntity player,
-            int posX,
-            int posY,
+            int posX, int posY,
             int heartOffsetByRegen,
             float maxHealth,
             int currentHealth,
@@ -45,45 +48,39 @@ public class HealthBarRendererMixin {
             int currentAbsorptionHealth,
             boolean blink,
             CallbackInfo ci,
-            boolean hardcore,
-            int normalHearts,
-            int maxAbsorptionHearts,
-            int absorptionHearts,
-            int currentHeart,
-            int currentPosX,
-            int currentPosY
+            @Local(name = "currentHeart") int currentHeart,
+            @Local(name = "currentPosX") int currentPosX,
+            @Local(name = "currentPosY") int currentPosY
     ) {
         HeartOverlayRecorder.INSTANCE.setHeartPosition(currentHeart, currentPosX, currentPosY);
     }
 
-    @Inject(
-            method = "renderHearts",
-            at = @At(
-                    value = "TAIL"
-            )
-    )
-    private void renderColdHeartOverlayBar(
-            DrawContext guiGraphics,
-            PlayerEntity player,
-            int posX,
-            int posY,
-            int heartOffsetByRegen,
-            float maxHealth,
-            int currentHealth,
-            int displayHealth,
-            int currentAbsorptionHealth,
-            boolean blink,
-            CallbackInfo ci
-    ) {
-        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker()
-                .render(
-                        guiGraphics,
-                        player,
-                        HeartOverlayRecorder.INSTANCE.getHeartPositions(),
-                        displayHealth,
-                        20
-                );
-        Arrays.fill(HeartOverlayRecorder.INSTANCE.getHeartPositions(), null);
-    }
-
+//    @Inject(
+//            method = "renderHearts",
+//            at = @At("TAIL")
+//    )
+//    private void renderOverlayBar(
+//            DrawContext guiGraphics,
+//            PlayerEntity player,
+//            int posX, int posY,
+//            int heartOffsetByRegen,
+//            float maxHealth,
+//            int currentHealth,
+//            int displayHealth,
+//            int currentAbsorptionHealth,
+//            boolean blink,
+//            CallbackInfo ci
+//    ) {
+//        int maxDisplayHealth = Math.min(MathHelper.ceil(player.getMaxHealth()), 20);
+//
+//        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker()
+//                .render(
+//                        guiGraphics,
+//                        player,
+//                        HeartOverlayRecorder.INSTANCE.getHeartPositions(),
+//                        this.displayHealth,
+//                        20
+//                );
+//        Arrays.fill(HeartOverlayRecorder.INSTANCE.getHeartPositions(), null);
+//    }
 }
