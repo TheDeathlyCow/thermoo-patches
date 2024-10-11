@@ -18,11 +18,11 @@ public class ModHeartTypeMixin {
             )
     )
     private static boolean checkThermooFrozen(PlayerEntity instance, Operation<Boolean> original) {
-        int minTemperature = instance.thermoo$getMinTemperature();
+        int minTemperature = instance.thermoo$getTemperature();
         if (minTemperature >= 0) {
             return original.call(instance);
         } else {
-            return instance.thermoo$getTemperature() <= minTemperature;
+            return instance.thermoo$getTemperatureScale() <= -0.99f;
         }
     }
 }
