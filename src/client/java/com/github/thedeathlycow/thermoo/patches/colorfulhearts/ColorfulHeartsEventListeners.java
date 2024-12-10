@@ -3,6 +3,7 @@ package com.github.thedeathlycow.thermoo.patches.colorfulhearts;
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import com.github.thedeathlycow.thermoo.patches.HeartOverlayRecorder;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import org.joml.Vector2i;
 import terrails.colorfulhearts.api.fabric.ColorfulHeartsApi;
 import terrails.colorfulhearts.api.fabric.event.FabHeartEvents;
@@ -19,6 +20,7 @@ public class ColorfulHeartsEventListeners implements ColorfulHeartsApi {
             int displayHealth = post.getDisplayHealth();
 
             Vector2i[] positions = HeartOverlayRecorder.INSTANCE.getHeartPositions();
+            int maxDisplayHealth = Math.min(MathHelper.ceil(player.getMaxHealth()), 20);
 
             StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR
                     .invoker()
@@ -27,7 +29,7 @@ public class ColorfulHeartsEventListeners implements ColorfulHeartsApi {
                             player,
                             positions,
                             displayHealth,
-                            20
+                            maxDisplayHealth
                     );
         });
     }
