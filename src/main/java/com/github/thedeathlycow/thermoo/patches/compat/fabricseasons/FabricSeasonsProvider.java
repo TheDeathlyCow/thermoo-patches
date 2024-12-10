@@ -5,6 +5,7 @@ import com.github.thedeathlycow.thermoo.api.season.ThermooSeason;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import io.github.lucaargolo.seasons.FabricSeasons;
 import io.github.lucaargolo.seasons.utils.Season;
+import net.minecraft.world.biome.Biome;
 
 import java.util.Optional;
 
@@ -23,6 +24,19 @@ public class FabricSeasonsProvider {
                             default -> null;
                         }
                 );
+            });
+
+            ThermooSeasonEvents.GET_CURRENT_TROPICAL_SEASON.register((world, pos) -> {
+                Biome biome = world.getBiome(pos).value();
+                ThermooSeason result = null;
+                if (biome.getTemperature() > 0.79f) {
+                    result = switch (FabricSeasons.getCurrentSeason(world)) {
+                        case SUMMER -> ThermooSeason.TROPICAL_DRY;
+                        case WINTER -> ThermooSeason.TROPICAL_WET;
+                        default -> null;
+                    };
+                }
+                return Optional.ofNullable(result);
             });
         }
     }
