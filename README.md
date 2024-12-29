@@ -28,10 +28,22 @@ The following patches are currently either implemented, or planned.
 | [Serene Seasons](https://modrinth.com/mod/serene-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                 | ✅ 1.20.4, 1.21         |
 | [Simple Seasons](https://modrinth.com/mod/simple-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer wet season).                                 | ✅ 1.21                 |
 | [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                          | ⚠️ 1.20.1 only         |
-| [Origins](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                 | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors. | ✅ 1.21                 |
+| [Origins\*](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                               | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors. | ✅ 1.21                 |
 
 - ✅ indicates the patch is available for the latest version of Thermoo Patches
 - ⚠️ indicates that the mod the patch is for has not (yet) been updated to the latest version of Minecraft
+
+> [!WARN]
+> \* Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
+> because newer versions may introduce breaking changes that could result in my additions not working, and so it is marked 
+> as incompatible with newer versions.
+> 
+> If you want to use a newer version of Origins and I have not updated the patch yet, please feel free to open an [issue on GitHub](https://github.com/TheDeathlyCow/thermoo-patches/issues)
+> and I'll try and update it as soon as I can.
+> 
+> Uou can use [Fabric Loader dependency overrides](https://wiki.fabricmc.net/tutorial:dependency_overrides)
+> to bypass my incompatibility marker. However, this may result in issues and it would probably be better to wait for a 
+> Thermoo Patches update.
 
 Note that other temperature mods, like EnvironmentZ and Tough as Nails are not currently planned. This is because these
 mods are largely redundant with Frostiful and Scorchful installed, so unfortunately I don't consider adding them to be a
