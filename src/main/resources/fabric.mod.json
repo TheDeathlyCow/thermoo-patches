@@ -40,11 +40,12 @@
         }
     ],
     "depends": {
-        "fabricloader": ">=0.15.11",
-        "minecraft": "~1.21",
+        "fabricloader": ">=0.16.9",
+        "minecraft": "1.21.1",
         "java": ">=21",
-        "fabric-api": ">=0.100.7",
-        "thermoo": ">=4.2"
+        "fabric-api": ">=0.110.0",
+        "thermoo": ">=4.2.4",
+        "cloth-config": ">=15.0.140"
     },
     "suggests": {
         "frostiful": "*",
