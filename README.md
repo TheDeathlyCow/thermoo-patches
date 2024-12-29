@@ -41,7 +41,7 @@ The following patches are currently either implemented, or planned.
 > If you want to use a newer version of Origins and I have not updated the patch yet, please feel free to open an [issue on GitHub](https://github.com/TheDeathlyCow/thermoo-patches/issues)
 > and I'll try and update it as soon as I can.
 > 
-> Uou can use [Fabric Loader dependency overrides](https://wiki.fabricmc.net/tutorial:dependency_overrides)
+> You can also use [Fabric Loader dependency overrides](https://wiki.fabricmc.net/tutorial:dependency_overrides)
 > to bypass my incompatibility marker. However, this may result in issues and it would probably be better to wait for a 
 > Thermoo Patches update.
 
