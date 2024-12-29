@@ -34,7 +34,7 @@ The following patches are currently either implemented, or planned.
 - ⚠️ indicates that the mod the patch is for has not (yet) been updated to the latest version of Minecraft
 
 > [!WARNING]
-> \* Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
+> \*Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
 > because newer versions may introduce breaking changes that could result in my additions not working, and so it is marked 
 > as incompatible with newer versions.
 > 
