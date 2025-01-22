@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.common.compat.friendsandfoes.present;
 
 import com.faboslav.friendsandfoes.common.util.TotemUtil;
+import com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes.FriendsAndFoesPatch;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.entity.LivingEntity;
@@ -17,6 +18,7 @@ public class TotemUtilMixin {
             )
     )
     private static void applyThermooTotemFreezing(LivingEntity instance, int value, Operation<Void> original) {
-
+        FriendsAndFoesPatch.freezeFromTotem(instance);
+        original.call(instance, 0);
     }
 }

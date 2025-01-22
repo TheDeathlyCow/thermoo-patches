@@ -6,5 +6,5 @@ import me.shedaniel.autoconfig.annotation.Config;
 
 @Config(name = ThermooPatches.MODID + ".friendsandfoes_config")
 public class FriendsAndFoesConfig implements ConfigData {
-    public float freezingTotemTemperatureChangeAsScale = 1.0f;
+    public float freezingTotemFreezingScaleChange = 1.0f;
 }
