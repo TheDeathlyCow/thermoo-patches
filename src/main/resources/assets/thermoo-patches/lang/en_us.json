@@ -35,5 +35,7 @@
     "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Freezing from eating icicles and Ice Sickles",
     
     "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig": "Friends & Foes Config",
-    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig.freezingTotemFreezingScaleChange": "Freezing totem freezing scale change"
+    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig.freezingTotemFreezingScaleChange": "Freezing totem freezing scale change",
+    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig.iceologerIceChunkFreezingScaleChange": "Iceologer Ice Chunk freezing scale change"
+    
 }
