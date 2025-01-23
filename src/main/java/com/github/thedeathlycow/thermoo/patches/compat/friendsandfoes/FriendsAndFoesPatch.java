@@ -15,11 +15,24 @@ public final class FriendsAndFoesPatch {
         if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
             Identifier phase = ThermooPatches.id("override");
             Event<ThermooAttributes.SetBaseAttributeValue> maxTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MAX_TEMPERATURE);
-            maxTemperature.addPhaseOrdering(phase, Event.DEFAULT_PHASE);
+            maxTemperature.addPhaseOrdering(Event.DEFAULT_PHASE, phase);
             maxTemperature.register(
                     phase,
                     (entity, baseValue) -> {
                         if (entity.getType() == FriendsAndFoesEntityTypes.ICEOLOGER.get()) {
+                            return 0;
+                        }
+                        return baseValue;
+                    }
+            );
+
+
+            Event<ThermooAttributes.SetBaseAttributeValue> minTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MIN_TEMPERATURE);
+            minTemperature.addPhaseOrdering(Event.DEFAULT_PHASE, phase);
+            minTemperature.register(
+                    phase,
+                    (entity, baseValue) -> {
+                        if (entity.getType() == FriendsAndFoesEntityTypes.WILDFIRE.get()) {
                             return 0;
                         }
                         return baseValue;
