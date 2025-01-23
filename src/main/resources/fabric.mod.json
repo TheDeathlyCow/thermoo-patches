@@ -54,7 +54,8 @@
     "breaks": {
         "armorpointspp": "*",
         "immersive_weathering": "*",
-        "origins": ">1.13.0-alpha.11"
+        "origins": ">1.13.0-alpha.11",
+        "friendsandfoes": "<3.0.7"
     },
     "custom": {
         "modmenu": {
