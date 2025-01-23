@@ -44,7 +44,7 @@
         "minecraft": "1.21.1",
         "java": ">=21",
         "fabric-api": ">=0.110.0",
-        "thermoo": ">=4.2.4",
+        "thermoo": ">=4.3",
         "cloth-config": ">=15.0.140"
     },
     "suggests": {
@@ -54,7 +54,8 @@
     "breaks": {
         "armorpointspp": "*",
         "immersive_weathering": "*",
-        "origins": ">1.13.0-alpha.11"
+        "origins": ">1.13.0-alpha.11",
+        "friendsandfoes": "<3.0.7"
     },
     "custom": {
         "modmenu": {

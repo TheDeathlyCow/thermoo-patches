@@ -12,7 +12,8 @@ public enum IntegratedMod {
     FABRIC_SEASONS("seasons", "https://modrinth.com/mod/fabric-seasons"),
     SERENE_SEASONS("sereneseasons", "https://modrinth.com/mod/serene-seasons"),
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
-    SIMPLE_SEASONS("simple-seasons", "https://modrinth.com/mod/simple-seasons");
+    SIMPLE_SEASONS("simple-seasons", "https://modrinth.com/mod/simple-seasons"),
+    FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes");
     
     private final String id;
 

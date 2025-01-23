@@ -1,10 +1,12 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import com.github.thedeathlycow.thermoo.patches.compat.fabricseasons.FabricSeasonsProvider;
+import com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes.FriendsAndFoesPatch;
 import com.github.thedeathlycow.thermoo.patches.compat.sereneseasons.SereneSeasonsProvider;
 import com.github.thedeathlycow.thermoo.patches.compat.simpleseasons.SimpleSeasonsProvider;
 import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
@@ -18,22 +20,25 @@ public class ThermooPatches implements ModInitializer {
     public static final String MODID = "thermoo-patches";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
+    private static ConfigHolder<ThermooPatchesConfig> configHolder = null;
+
     @Contract("_->new")
     public static Identifier id(String path) {
         return Identifier.of(MODID, path);
     }
 
     public static ThermooPatchesConfig getConfig() {
-        return AutoConfig.getConfigHolder(ThermooPatchesConfig.class).get();
+        return configHolder.get();
     }
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(ThermooPatchesConfig.class, GsonConfigSerializer::new);
+        configHolder = AutoConfig.register(ThermooPatchesConfig.class, GsonConfigSerializer::new); // NOSONAR
         checkMultiDependency(IntegratedMod.ARMOR_POINTS_PP, IntegratedMod.LIBHUD);
         FabricSeasonsProvider.registerSeasonProviderEvent();
         SereneSeasonsProvider.registerSeasonProviderEvent();
         SimpleSeasonsProvider.registerSeasonProviderEvent();
+        FriendsAndFoesPatch.registerAttributes();
         logPatchedMods();
     }
 
