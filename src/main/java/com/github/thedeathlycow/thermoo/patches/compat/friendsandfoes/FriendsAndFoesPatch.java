@@ -1,13 +1,31 @@
 package com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes;
 
+import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
 import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
+import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.config.FriendsAndFoesConfig;
+import net.fabricmc.fabric.api.event.Event;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.Identifier;
 
 public final class FriendsAndFoesPatch {
     public static void registerAttributes() {
-
+        if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
+            Identifier phase = ThermooPatches.id("override");
+            Event<ThermooAttributes.SetBaseAttributeValue> maxTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MAX_TEMPERATURE);
+            maxTemperature.addPhaseOrdering(phase, Event.DEFAULT_PHASE);
+            maxTemperature.register(
+                    phase,
+                    (entity, baseValue) -> {
+                        if (entity.getType() == FriendsAndFoesEntityTypes.ICEOLOGER.get()) {
+                            return 0;
+                        }
+                        return baseValue;
+                    }
+            );
+        }
     }
 
     public static void freezeFromTotem(LivingEntity victim) {

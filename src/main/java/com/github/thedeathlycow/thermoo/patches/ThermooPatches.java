@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import com.github.thedeathlycow.thermoo.patches.compat.fabricseasons.FabricSeasonsProvider;
+import com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes.FriendsAndFoesPatch;
 import com.github.thedeathlycow.thermoo.patches.compat.sereneseasons.SereneSeasonsProvider;
 import com.github.thedeathlycow.thermoo.patches.compat.simpleseasons.SimpleSeasonsProvider;
 import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
@@ -37,6 +38,7 @@ public class ThermooPatches implements ModInitializer {
         FabricSeasonsProvider.registerSeasonProviderEvent();
         SereneSeasonsProvider.registerSeasonProviderEvent();
         SimpleSeasonsProvider.registerSeasonProviderEvent();
+        FriendsAndFoesPatch.registerAttributes();
         logPatchedMods();
     }
 
