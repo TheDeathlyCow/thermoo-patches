@@ -1,8 +1,10 @@
 plugins {
     id 'fabric-loom' version '1.7-SNAPSHOT'
     id 'maven-publish'
+    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
+var mod_version = project.mod_version
 version = project.mod_version
 group = project.maven_group
 
@@ -103,6 +105,63 @@ java {
 jar {
     from("LICENSE") {
         rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}
+
+publishMods {
+    changelog = file("changelogs/${mod_version}.md").text
+    type = STABLE
+
+    file = remapJar.archiveFile
+    modLoaders.add("fabric")
+    modLoaders.add("quilt")
+
+    curseforge {
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        projectId = "1012677"
+        minecraftVersions.add("1.21.1")
+
+        javaVersions.add(JavaVersion.VERSION_21)
+
+        clientRequired = true
+        serverRequired = true
+
+        requires("fabric-api", "thermoo", "cloth-config")
+        optional(
+                "simple-seasons",
+                "serene-seasons",
+                "fabric-seasons",
+                "friends-and-foes",
+                "overflowing-bars",
+                "colorful-hearts",
+                "origins"
+        )
+        incompatible("immersive-weathering-fabric", "armorpoints")
+    }
+
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+        projectId = "TYRF9nUy"
+        minecraftVersions.add("1.21.1")
+
+        requires("fabric-api", "thermoo", "cloth-config")
+
+        optional(
+                "simple-seasons",
+                "serene-seasons",
+                "fabric-seasons",
+                "friends-and-foes",
+                "overflowing-bars",
+                "colorful-hearts"
+        )
+
+        // when origins is out of alpha, version-specific dependency will be removed
+        optional {
+            slug = "origins"
+            version = "wWB8cMrv"
+        }
+
+        incompatible("immersive-weathering", "armorpoints")
     }
 }
 
