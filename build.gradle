@@ -158,7 +158,7 @@ publishMods {
         // when origins is out of alpha, version-specific dependency will be removed
         optional {
             slug = "origins"
-            version = "wWB8cMrv"
+            version = "RzhrT8Th"
         }
 
         incompatible("immersive-weathering", "armorpoints")
