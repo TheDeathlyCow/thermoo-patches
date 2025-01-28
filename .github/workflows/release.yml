@@ -11,8 +11,12 @@ jobs:
       image: mcr.microsoft.com/openjdk/jdk:21-ubuntu
       options: --user root
     steps:
-      - uses: actions/checkout@v4
-      - run: ./gradlew build publishMods
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: publish
+        run: ./gradlew build publishMods
         env:
           CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
