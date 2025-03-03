@@ -1,0 +1,31 @@
+{
+    "power.thermoo-patches.cold_immune.name": "Inmunidad al Frío",
+    "power.thermoo-patches.cold_immune.description": "Eres inmune a las temperaturas frías.",
+    
+    "power.thermoo-patches.cold_vulnerability.name": "Criophobia",
+    "power.thermoo-patches.cold_vulnerability.description": "Te congelas mucho más rápido que los humanos.",
+    
+    "power.thermoo-patches.extra_heat_resistance.name": "Escudo de Calor",
+    "power.thermoo-patches.extra_heat_resistance.description": "Eres más resistente a las altas temperaturas.",
+    
+    "power.thermoo-patches.heat_immune.name": "Inmunidad al Calor",
+    "power.thermoo-patches.heat_immune.description": "Eres inmune a las temperaturas cálidas.",
+    
+    "power.thermoo-patches.heat_vulnerability.name": "Termofobia",
+    "power.thermoo-patches.heat_vulnerability.description": "Te calientas mucho más rápido que los humanos.",
+    
+    "text.autoconfig.thermoo-patches.title": "Configuración de Thermoo Patches",
+    
+    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig": "Configuración de Armor Points++",
+    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig.@Tooltip": "Requiere AMBOS Armor Points++ y libhud",
+    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig.overheatingTextColor": "Color del texto de sobrecalentamiento",
+    
+    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig": "Configuración de Immersive Weathering",
+    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.@Tooltip": "Requiere Immersive Weathering",
+    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromIcicleFall": "Congelación por caída de carámbano",
+    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Congelación por comer carámbanos y carámbanos de hielo",
+    
+    "text.autoconfig.thermoo-patches.option.adAstraConfig": "Configuración de Ad Astra",
+    "text.autoconfig.thermoo-patches.option.adAstraConfig.@Tooltip": "Requiere Ad Astra",
+    "text.autoconfig.thermoo-patches.option.adAstraConfig.spaceSuitsBlockPassiveTemperatureOnEarth": "Usar un traje espacial bloquea la temperatura pasiva en la Tierra y Glacio"
+}
