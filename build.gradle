@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.10-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -74,6 +74,7 @@ dependencies {
     modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
     modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
     modCompileOnly ("earth.terrarium.adastra:ad_astra-fabric-${project.minecraft_version}:${project.ad_astra_version}")
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}"
 }
 
 processResources {
