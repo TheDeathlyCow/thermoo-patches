@@ -65,7 +65,6 @@ allprojects {
         modCompileOnly "maven.modrinth:overflowing-bars:${project.overflowingbars_version}"
         modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
         modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}"
-        modCompileOnly "maven.modrinth:simple-seasons:${project.simple_seasons_version}"
         modCompileOnly "maven.modrinth:friends-and-foes:${project.friends_and_foes_version}"
     }
 
@@ -95,9 +94,11 @@ allprojects {
 dependencies {
     api project(path: ":thermoo-patches-base", configuration: "namedElements")
     api project(path: ":thermoo-patches-fabric-seasons-patch", configuration: "namedElements")
+    api project(path: ":thermoo-patches-simple-seasons-patch", configuration: "namedElements")
 
     include(project(path: ":thermoo-patches-base"))
     include(project(path: ":thermoo-patches-fabric-seasons-patch"))
+    include(project(path: ":thermoo-patches-simple-seasons-patch"))
 }
 
 loom {

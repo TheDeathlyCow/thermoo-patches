@@ -1,18 +1,19 @@
-package com.github.thedeathlycow.thermoo.patches.compat.simpleseasons;
+package com.github.thedeathlycow.thermoo.patches.simpleseasons;
 
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeason;
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasonEvents;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import io.github.steveplays28.simpleseasons.api.SimpleSeasonsApi;
 import io.github.steveplays28.simpleseasons.state.world.SeasonTracker;
+import net.fabricmc.api.ModInitializer;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
 
 import java.util.Optional;
 
-public final class SimpleSeasonsProvider {
-
-    public static void registerSeasonProviderEvent() {
+public final class SimpleSeasonsProvider implements ModInitializer {
+    @Override
+    public void onInitialize() {
         if (IntegratedMod.SIMPLE_SEASONS.isModLoaded()) {
             ThermooSeasonEvents.GET_CURRENT_SEASON.register(world -> {
                 if (!SimpleSeasonsApi.worldHasSeasons(world)) {

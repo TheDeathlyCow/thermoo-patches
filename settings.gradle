@@ -11,3 +11,4 @@ pluginManagement {
 
 include 'thermoo-patches-base'
 include 'thermoo-patches-fabric-seasons-patch'
+include 'thermoo-patches-simple-seasons-patch'
