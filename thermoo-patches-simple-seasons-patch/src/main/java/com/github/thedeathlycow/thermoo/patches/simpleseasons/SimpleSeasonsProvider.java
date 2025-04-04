@@ -50,8 +50,4 @@ public final class SimpleSeasonsProvider implements ModInitializer {
             });
         }
     }
-
-    private SimpleSeasonsProvider() {
-
-    }
 }

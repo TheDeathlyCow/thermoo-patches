@@ -1,0 +1,13 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-serene-seasons-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+    include(project(path: ':thermoo-patches-base'))
+
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}"
+}
