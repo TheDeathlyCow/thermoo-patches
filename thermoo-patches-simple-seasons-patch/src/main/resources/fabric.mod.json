@@ -30,7 +30,7 @@
         "cloth-config": ">=15.0.140"
     },
     "suggests": {
-        "fabric-seasons": "*"
+        "simple-seasons": "*"
     },
     "custom": {
         "modmenu": {

@@ -55,7 +55,7 @@ public class ThermooPatches implements ModInitializer {
                 );
 
         if (builder.isEmpty()) {
-            LOGGER.warn("No Thermoo patches available for current mod set!");
+            LOGGER.warn("Thermoo Patches has no available patches for current mod set, are you sure you need this mod?");
         } else {
             LOGGER.info("Initialized Thermoo Patches for the following mods: {}", builder);
         }
