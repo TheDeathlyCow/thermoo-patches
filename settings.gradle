@@ -8,3 +8,6 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
+
+include 'thermoo-patches-base'
+include 'thermoo-patches-fabric-seasons-patch'

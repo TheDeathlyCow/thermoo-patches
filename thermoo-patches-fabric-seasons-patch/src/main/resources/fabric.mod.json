@@ -1,0 +1,46 @@
+{
+    "schemaVersion": 1,
+    "id": "thermoo-patches-base",
+    "version": "${version}",
+    "name": "Thermoo Patches Fabric Seasons Patch",
+    "description": "Fabric Seasons integration patch for Thermoo",
+    "authors": [
+        "TheDeathlyCow"
+    ],
+    "contact": {
+        "homepage": "https://github.com/TheDeathlyCow/",
+        "sources": "https://github.com/TheDeathlyCow/thermoo-patches",
+        "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
+    },
+    "license": "LGPL-3.0",
+    "icon": "assets/thermoo-patches/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.github.thedeathlycow.thermoo.patches.ThermooPatches"
+        ]
+    },
+    "mixins": [],
+    "depends": {
+        "fabricloader": ">=0.16.9",
+        "minecraft": "1.21.1",
+        "java": ">=21",
+        "fabric-api": ">=0.110.0",
+        "thermoo": ">=4.3",
+        "cloth-config": ">=15.0.140"
+    },
+    "suggests": {
+        "frostiful": "*",
+        "scorchful": "*"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.discord": "https://discord.gg/aqASuWebRU",
+                "modmenu.wiki": "https://github.com/thermoo-patches/frostiful/wiki",
+                "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
+                "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
+            }
+        }
+    }
+}
