@@ -70,9 +70,23 @@ allprojects {
 
     processResources {
         inputs.property "version", project.version
+        inputs.property "java_version", project.java_version
+        inputs.property "minecraft_versions", project.minecraft_versions
+        inputs.property "loader_version", project.loader_version
+        inputs.property "fabric_version", project.fabric_version
+        inputs.property "thermoo_version", project.thermoo_version
+        inputs.property "cloth_config_version", project.cloth_config_version
+        inputs.property "mod_menu_version", project.mod_menu_version
 
         filesMatching("fabric.mod.json") {
             expand "version": project.version
+            expand "java_version": project.java_version
+            expand "minecraft_versions": project.minecraft_versions
+            expand "loader_version": project.loader_version
+            expand "fabric_version": project.fabric_version
+            expand "thermoo_version": project.thermoo_version
+            expand "cloth_config_version": project.cloth_config_version
+            expand "mod_menu_version": project.mod_menu_version
         }
     }
 
