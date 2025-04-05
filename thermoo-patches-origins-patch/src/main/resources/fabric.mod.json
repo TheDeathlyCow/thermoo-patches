@@ -29,6 +29,9 @@
     "suggests": {
         "origins": "*"
     },
+    "breaks": {
+        "origins": ">1.13.0-alpha.12"
+    },
     "custom": {
         "modmenu": {
             "links": {

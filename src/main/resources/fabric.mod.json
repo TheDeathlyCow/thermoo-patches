@@ -29,12 +29,6 @@
         "frostiful": "*",
         "scorchful": "*"
     },
-    "breaks": {
-        "armorpointspp": "*",
-        "immersive_weathering": "*",
-        "origins": ">1.13.0-alpha.12",
-        "friendsandfoes": "<3.0.7"
-    },
     "custom": {
         "modmenu": {
             "links": {
