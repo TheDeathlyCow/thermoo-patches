@@ -7,7 +7,6 @@ base {
 
 dependencies {
     api project(path: ':thermoo-patches-base', configuration: 'namedElements')
-    include(project(path: ':thermoo-patches-base'))
 
     modCompileOnly "maven.modrinth:colorful-hearts:${project.colorfulhearts_version}"
 }

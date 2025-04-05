@@ -42,7 +42,9 @@
                 "modmenu.wiki": "https://github.com/thermoo-patches/frostiful/wiki",
                 "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
                 "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
-            }
+            },
+            "parent": "thermoo-patches",
+            "update_checker": false
         }
     }
 }
