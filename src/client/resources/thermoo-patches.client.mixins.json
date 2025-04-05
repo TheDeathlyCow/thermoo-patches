@@ -4,13 +4,9 @@
     "plugin": "com.github.thedeathlycow.thermoo.patches.mixin.client.compat.Plugin",
     "compatibilityLevel": "JAVA_17",
     "client": [
-        "compat.armorpointspp.present.HealthTextComponentMixin",
-        "compat.overflowingbars.present.HealthBarRendererMixin"
+        "compat.armorpointspp.present.HealthTextComponentMixin"
     ],
     "injectors": {
         "defaultRequire": 1
-    },
-    "mixins": [
-        "compat.overflowingbars.present.ModHeartTypeMixin"
-    ]
+    }
 }

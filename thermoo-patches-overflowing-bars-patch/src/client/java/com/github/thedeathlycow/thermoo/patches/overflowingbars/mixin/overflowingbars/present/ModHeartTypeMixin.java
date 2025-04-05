@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.overflowingbars.present;
+package com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin.overflowingbars.present;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
