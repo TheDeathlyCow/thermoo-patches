@@ -1,21 +1,17 @@
 package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.overflowingbars.present;
 
-import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
-import com.github.thedeathlycow.thermoo.patches.HeartOverlayRecorder;
+import com.github.thedeathlycow.thermoo.patches.client.HeartOverlayRecorder;
 import com.llamalad7.mixinextras.sugar.Local;
 import fuzs.overflowingbars.client.gui.HealthBarRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Arrays;
 
 @Environment(EnvType.CLIENT)
 @Mixin(

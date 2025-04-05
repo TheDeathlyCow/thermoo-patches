@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches;
+package com.github.thedeathlycow.thermoo.patches.client;
 
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import net.minecraft.client.MinecraftClient;

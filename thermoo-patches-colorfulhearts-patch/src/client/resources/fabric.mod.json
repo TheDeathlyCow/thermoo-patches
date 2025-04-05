@@ -1,9 +1,9 @@
 {
     "schemaVersion": 1,
-    "id": "thermoo-patches-base",
+    "id": "thermoo-patches-colorfulhearts-patch",
     "version": "${version}",
-    "name": "Thermoo Patches Base",
-    "description": "Config and other essentials for the Thermoo Patches mod",
+    "name": "Thermoo Patches Colorful Hearts Patch",
+    "description": "Colorful Hearts integration patch for Thermoo",
     "authors": [
         "TheDeathlyCow"
     ],
@@ -13,14 +13,11 @@
         "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
     },
     "license": "LGPL-3.0",
-    "icon": "assets/thermoo-patches-base/icon.png",
-    "environment": "*",
+    "icon": "assets/thermoo-patches-colorfulhearts-patch/icon.png",
+    "environment": "client",
     "entrypoints": {
-        "main": [
-            "com.github.thedeathlycow.thermoo.patches.ThermooPatches"
-        ],
-        "modmenu": [
-            "com.github.thedeathlycow.thermoo.patches.client.ThermooPatchesModMenu"
+        "colorfulhearts": [
+            "com.github.thedeathlycow.thermoo.patches.colorfulhearts.ColorfulHeartsEventListeners"
         ]
     },
     "mixins": [],
@@ -30,11 +27,11 @@
         "java": ">=${java_version}",
         "fabric-api": ">=${fabric_version}",
         "thermoo": ">=${thermoo_version}",
-        "cloth-config": ">=${cloth_config_version}"
+        "cloth-config": ">=${cloth_config_version}",
+        "thermoo-patches-base": ">=${version}"
     },
     "suggests": {
-        "frostiful": "*",
-        "scorchful": "*"
+        "colorfulhearts": "*"
     },
     "custom": {
         "modmenu": {

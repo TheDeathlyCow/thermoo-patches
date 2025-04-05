@@ -16,17 +16,8 @@
     "icon": "assets/thermoo-patches/icon.png",
     "environment": "*",
     "entrypoints": {
-        "client": [
-            "com.github.thedeathlycow.thermoo.patches.ThermooPatchesClient"
-        ],
         "libhud": [
             "com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudCompat"
-        ],
-        "modmenu": [
-            "com.github.thedeathlycow.thermoo.patches.ThermooPatchesModMenu"
-        ],
-        "colorfulhearts": [
-            "com.github.thedeathlycow.thermoo.patches.colorfulhearts.ColorfulHeartsEventListeners"
         ]
     },
     "mixins": [
