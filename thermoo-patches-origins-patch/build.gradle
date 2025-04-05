@@ -1,0 +1,11 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-origins-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+    include(project(path: ':thermoo-patches-base'))
+}

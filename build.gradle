@@ -106,6 +106,7 @@ dependencies {
     api project(path: ":thermoo-patches-colorfulhearts-patch", configuration: "namedElements")
     api project(path: ":thermoo-patches-overflowing-bars-patch", configuration: "namedElements")
     api project(path: ":thermoo-patches-armorpointspp-patch", configuration: "namedElements")
+    api project(path: ":thermoo-patches-origins-patch", configuration: "namedElements")
 
     include(project(path: ":thermoo-patches-base"))
     include(project(path: ":thermoo-patches-fabric-seasons-patch"))
@@ -115,6 +116,7 @@ dependencies {
     include(project(path: ":thermoo-patches-colorfulhearts-patch"))
     include(project(path: ":thermoo-patches-overflowing-bars-patch"))
     include(project(path: ":thermoo-patches-armorpointspp-patch"))
+    include(project(path: ":thermoo-patches-origins-patch"))
 }
 
 jar {
