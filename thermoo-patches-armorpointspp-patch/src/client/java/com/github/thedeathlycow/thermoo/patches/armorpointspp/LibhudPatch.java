@@ -22,8 +22,7 @@ import org.joml.Vector2i;
 
 import java.util.Arrays;
 
-public class LibhudCompat implements LibhudApi {
-
+public class LibhudPatch implements LibhudApi {
     public static final int ORANGE = 0xFFA500;
 
     private static final int MAX_DISPLAY_HEALTH = 20;
@@ -32,12 +31,12 @@ public class LibhudCompat implements LibhudApi {
 
     public static final Component.NamedComponent PLAYER_TEMPERATURE_OVERLAY = Component.named(
             ThermooPatches.id("player_temperature_overlay"),
-            LibhudCompat::playerTemperatureOverlay
+            LibhudPatch::playerTemperatureOverlay
     );
 
     public static final Component.NamedComponent MOUNT_TEMPERATURE_OVERLAY = Component.named(
             ThermooPatches.id("mount_temperature_overlay"),
-            LibhudCompat::mountTemperatureOverlay
+            LibhudPatch::mountTemperatureOverlay
     );
 
     @Override

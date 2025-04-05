@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.mixin.client.compat;
+package com.github.thedeathlycow.thermoo.patches.armorpointspp.mixin;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;

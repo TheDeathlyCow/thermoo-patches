@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.mixin.client.compat.armorpointspp.present;
+package com.github.thedeathlycow.thermoo.patches.armorpointspp.mixin.armorpointspp.present;
 
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import dev.cheos.armorpointspp.core.RenderContext;

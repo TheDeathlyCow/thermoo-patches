@@ -1,0 +1,14 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-armorpointspp-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+    include(project(path: ':thermoo-patches-base'))
+
+    modCompileOnly "maven.modrinth:libhud:${project.libhud_version}"
+    modCompileOnly "maven.modrinth:armorpoints:${project.armorpointspp_version}"
+}
