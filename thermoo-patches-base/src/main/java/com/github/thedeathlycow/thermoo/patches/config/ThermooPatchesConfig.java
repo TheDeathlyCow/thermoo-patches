@@ -2,7 +2,6 @@ package com.github.thedeathlycow.thermoo.patches.config;
 
 
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
-import com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes.FriendsAndFoesPatch;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;

@@ -16,12 +16,7 @@
     "icon": "assets/thermoo-patches/icon.png",
     "environment": "*",
     "entrypoints": {},
-    "mixins": [
-        {
-            "config": "thermoo-patches.client.mixins.json",
-            "environment": "client"
-        }
-    ],
+    "mixins": [],
     "depends": {
         "fabricloader": ">=0.16.9",
         "minecraft": "1.21.1",
