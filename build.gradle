@@ -155,7 +155,6 @@ publishMods {
                 "colorful-hearts",
                 "origins"
         )
-        incompatible("immersive-weathering-fabric", "armorpoints")
     }
 
     modrinth {
@@ -179,8 +178,6 @@ publishMods {
             slug = "origins"
             version = "RzhrT8Th"
         }
-
-        incompatible("immersive-weathering", "armorpoints")
     }
 }
 
