@@ -13,7 +13,8 @@ public enum IntegratedMod {
     SERENE_SEASONS("sereneseasons", "https://modrinth.com/mod/serene-seasons"),
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
     SIMPLE_SEASONS("simple-seasons", "https://modrinth.com/mod/simple-seasons"),
-    FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes");
+    FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes"),
+    STELLARIS("stellaris", "https://modrinth.com/mod/stellaris");
     
     private final String id;
 

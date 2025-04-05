@@ -26,7 +26,7 @@ If you want to create a new patch for Thermoo Patches, here is how to do it:
 - Add the mod as an optional dependency in the publishing section of [`build.gradle`](./build.gradle).
 - Write your patch!
 
-> [!INFO]
+> [!NOTE]
 > Thermoo Patches requires that all patched mods be OPTIONAL installations. This means that any resources should only load when the patched mod is present (often this means using `fabric:load_conditions`), and checking and Java-level calls with `isModLoaded()`.  
 
 ### Tips
