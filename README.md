@@ -98,3 +98,7 @@ there.
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). | 
 | `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat (use instead of `scorchful:can_heat`).   | 
+
+# Additional Credits
+
+* [Stellaris Icon](https://github.com/st0x0ef/stellaris/blob/f7fd8393196106091d208d83cb93d26b9c29aa83/fabric/src/main/resources/logo.png), used under CC BY-NC-SA 4.0.
