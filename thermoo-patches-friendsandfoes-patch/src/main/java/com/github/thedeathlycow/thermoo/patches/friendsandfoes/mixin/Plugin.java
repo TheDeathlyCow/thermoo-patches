@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.mixin.common.compat;
+package com.github.thedeathlycow.thermoo.patches.friendsandfoes.mixin;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
@@ -63,4 +63,3 @@ public class Plugin implements IMixinConfigPlugin {
     public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
     }
 }
-

@@ -12,13 +12,10 @@
         "sources": "https://github.com/TheDeathlyCow/thermoo-patches",
         "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
     },
-    "license": "LGPL-3",
+    "license": "LGPL-3.0",
     "icon": "assets/thermoo-patches/icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
-            "com.github.thedeathlycow.thermoo.patches.ThermooPatches"
-        ],
         "client": [
             "com.github.thedeathlycow.thermoo.patches.ThermooPatchesClient"
         ],
@@ -33,7 +30,6 @@
         ]
     },
     "mixins": [
-        "thermoo-patches.mixins.json",
         {
             "config": "thermoo-patches.client.mixins.json",
             "environment": "client"
@@ -61,7 +57,6 @@
         "modmenu": {
             "links": {
                 "modmenu.discord": "https://discord.gg/aqASuWebRU",
-                "modmenu.wiki": "https://github.com/thermoo-patches/frostiful/wiki",
                 "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
                 "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
             }

@@ -1,0 +1,13 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-friendsandfoes-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+    include(project(path: ':thermoo-patches-base'))
+
+    modCompileOnly "maven.modrinth:friends-and-foes:${project.friends_and_foes_version}"
+}

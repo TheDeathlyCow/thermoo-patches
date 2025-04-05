@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes;
+package com.github.thedeathlycow.thermoo.patches.friendsandfoes;
 
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
@@ -6,12 +6,14 @@ import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.config.FriendsAndFoesConfig;
+import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.Event;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Identifier;
 
-public final class FriendsAndFoesPatch {
-    public static void registerAttributes() {
+public class FriendsAndFoesPatch implements ModInitializer {
+    @Override
+    public void onInitialize() {
         if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
             Identifier phase = ThermooPatches.id("override");
             Event<ThermooAttributes.SetBaseAttributeValue> maxTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MAX_TEMPERATURE);
@@ -55,9 +57,5 @@ public final class FriendsAndFoesPatch {
         int temperatureChange = (int) (config.iceologerIceChunkFreezingScaleChange * victim.thermoo$getMinTemperature());
 
         victim.thermoo$addTemperature(temperatureChange, HeatingModes.ACTIVE);
-    }
-
-    private FriendsAndFoesPatch() {
-
     }
 }

@@ -63,7 +63,6 @@ allprojects {
         modCompileOnly "maven.modrinth:armorpoints:${project.armorpointspp_version}"
         modCompileOnly "maven.modrinth:colorful-hearts:${project.colorfulhearts_version}"
         modCompileOnly "maven.modrinth:overflowing-bars:${project.overflowingbars_version}"
-        modCompileOnly "maven.modrinth:friends-and-foes:${project.friends_and_foes_version}"
     }
 
     processResources {
@@ -108,11 +107,13 @@ dependencies {
     api project(path: ":thermoo-patches-fabric-seasons-patch", configuration: "namedElements")
     api project(path: ":thermoo-patches-simple-seasons-patch", configuration: "namedElements")
     api project(path: ":thermoo-patches-serene-seasons-patch", configuration: "namedElements")
+    api project(path: ":thermoo-patches-friendsandfoes-patch", configuration: "namedElements")
 
     include(project(path: ":thermoo-patches-base"))
     include(project(path: ":thermoo-patches-fabric-seasons-patch"))
     include(project(path: ":thermoo-patches-simple-seasons-patch"))
     include(project(path: ":thermoo-patches-serene-seasons-patch"))
+    include(project(path: ":thermoo-patches-friendsandfoes-patch"))
 }
 
 loom {

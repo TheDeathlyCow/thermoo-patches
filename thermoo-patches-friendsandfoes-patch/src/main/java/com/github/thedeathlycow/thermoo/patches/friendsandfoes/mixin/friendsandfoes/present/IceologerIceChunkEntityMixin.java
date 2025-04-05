@@ -1,7 +1,7 @@
-package com.github.thedeathlycow.thermoo.patches.mixin.common.compat.friendsandfoes.present;
+package com.github.thedeathlycow.thermoo.patches.friendsandfoes.mixin.friendsandfoes.present;
 
 import com.faboslav.friendsandfoes.common.entity.IceologerIceChunkEntity;
-import com.github.thedeathlycow.thermoo.patches.compat.friendsandfoes.FriendsAndFoesPatch;
+import com.github.thedeathlycow.thermoo.patches.friendsandfoes.FriendsAndFoesPatch;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.entity.LivingEntity;
