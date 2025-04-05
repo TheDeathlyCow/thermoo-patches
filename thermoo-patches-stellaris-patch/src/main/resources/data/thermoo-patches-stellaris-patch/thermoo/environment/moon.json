@@ -3,26 +3,39 @@
     "exclude_biomes": "#thermoo-patches-stellaris-patch:ignore_environment",
     "priority": 500,
     "provider": {
-        "type": "thermoo:light_threshold",
-        "light_type": "sky",
-        "threshold": 1,
-        "above": {
+        "type": "thermoo-patches-stellaris-patch:in_artificial_environment",
+        "inside": {
             "type": "thermoo:constant",
             "components": {
-                "thermoo:relative_humidity": 0,
+                "thermoo:relative_humidity": 0.5,
                 "thermoo:temperature": {
-                    "value": 400,
-                    "unit": "kelvin"
+                    "value": 20,
+                    "unit": "celsius"
                 }
             }
         },
-        "below": {
-            "type": "thermoo:constant",
-            "components": {
-                "thermoo:relative_humidity": 0,
-                "thermoo:temperature": {
-                    "value": 30,
-                    "unit": "kelvin"
+        "outside": {
+            "type": "thermoo:light_threshold",
+            "light_type": "sky",
+            "threshold": 1,
+            "above": {
+                "type": "thermoo:constant",
+                "components": {
+                    "thermoo:relative_humidity": 0,
+                    "thermoo:temperature": {
+                        "value": 400,
+                        "unit": "kelvin"
+                    }
+                }
+            },
+            "below": {
+                "type": "thermoo:constant",
+                "components": {
+                    "thermoo:relative_humidity": 0,
+                    "thermoo:temperature": {
+                        "value": 30,
+                        "unit": "kelvin"
+                    }
                 }
             }
         }
