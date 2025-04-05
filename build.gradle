@@ -63,7 +63,6 @@ allprojects {
         modCompileOnly "maven.modrinth:armorpoints:${project.armorpointspp_version}"
         modCompileOnly "maven.modrinth:colorful-hearts:${project.colorfulhearts_version}"
         modCompileOnly "maven.modrinth:overflowing-bars:${project.overflowingbars_version}"
-        modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
         modCompileOnly "maven.modrinth:friends-and-foes:${project.friends_and_foes_version}"
     }
 

@@ -5,12 +5,9 @@
     "compatibilityLevel": "JAVA_17",
     "mixins": [
         "compat.friendsandfoes.present.IceologerIceChunkEntityMixin",
-        "compat.friendsandfoes.present.TotemUtilMixin",
-        "compat.immersive_weathering.present.IceSickleItemMixin",
-        "compat.immersive_weathering.present.IcicleBlockMixin",
-        "compat.immersive_weathering.present.IcicleItemMixin"
+        "compat.friendsandfoes.present.TotemUtilMixin"
     ],
     "injectors": {
         "defaultRequire": 1
-	}
+    }
 }

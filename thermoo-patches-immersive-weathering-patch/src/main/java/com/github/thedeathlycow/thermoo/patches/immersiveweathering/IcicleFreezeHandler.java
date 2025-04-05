@@ -1,17 +1,11 @@
-package com.github.thedeathlycow.thermoo.patches.compat.immersiveweathering;
+package com.github.thedeathlycow.thermoo.patches.immersiveweathering;
 
 import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
 import com.github.thedeathlycow.thermoo.api.temperature.TemperatureAware;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
-import com.ordana.immersive_weathering.blocks.IcicleBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.enums.Thickness;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
 
 public class IcicleFreezeHandler {
 

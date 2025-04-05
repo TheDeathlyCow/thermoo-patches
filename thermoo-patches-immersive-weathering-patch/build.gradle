@@ -1,0 +1,13 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-immersive-weathering-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+    include(project(path: ':thermoo-patches-base'))
+
+    modCompileOnly "maven.modrinth:immersive-weathering:${project.immersive_weathering_version}"
+}
