@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin",
+    "plugin": "com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin.Plugin",
+    "compatibilityLevel": "JAVA_21",
+    "client": [
+        "overflowingbars.present.HealthBarRendererMixin",
+        "overflowingbars.present.ModHeartTypeMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

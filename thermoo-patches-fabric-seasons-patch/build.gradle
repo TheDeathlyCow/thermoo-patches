@@ -1,0 +1,12 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-fabric-seasons-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+
+    modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
+}

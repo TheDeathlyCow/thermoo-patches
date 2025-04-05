@@ -1,0 +1,12 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-overflowing-bars-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+
+    modCompileOnly "maven.modrinth:overflowing-bars:${project.overflowingbars_version}"
+}

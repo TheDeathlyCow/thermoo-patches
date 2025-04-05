@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "package": "com.github.thedeathlycow.thermoo.patches.immersiveweathering.mixin",
+    "plugin": "com.github.thedeathlycow.thermoo.patches.immersiveweathering.mixin.Plugin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "immersive_weathering.present.IceSickleItemMixin",
+        "immersive_weathering.present.IcicleBlockMixin",
+        "immersive_weathering.present.IcicleItemMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

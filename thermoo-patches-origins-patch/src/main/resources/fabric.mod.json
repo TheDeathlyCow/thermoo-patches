@@ -1,0 +1,47 @@
+{
+    "schemaVersion": 1,
+    "id": "thermoo-patches-origins-patch",
+    "version": "${version}",
+    "name": "Thermoo Patches Origins Patch",
+    "description": "Origins integration patch for Thermoo",
+    "authors": [
+        "TheDeathlyCow"
+    ],
+    "contact": {
+        "homepage": "https://github.com/TheDeathlyCow/",
+        "sources": "https://github.com/TheDeathlyCow/thermoo-patches",
+        "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
+    },
+    "license": "LGPL-3.0",
+    "icon": "assets/thermoo-patches-origins-patch/icon.png",
+    "environment": "*",
+    "entrypoints": {},
+    "mixins": [],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "minecraft": "${minecraft_versions}",
+        "java": ">=${java_version}",
+        "fabric-api": ">=${fabric_version}",
+        "thermoo": ">=${thermoo_version}",
+        "cloth-config": ">=${cloth_config_version}",
+        "thermoo-patches-base": ">=${version}"
+    },
+    "suggests": {
+        "origins": "*"
+    },
+    "breaks": {
+        "origins": ">1.13.0-alpha.12"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.discord": "https://discord.gg/aqASuWebRU",
+                "modmenu.wiki": "https://github.com/thermoo-patches/frostiful/wiki",
+                "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
+                "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
+            },
+            "parent": "thermoo-patches",
+            "update_checker": false
+        }
+    }
+}

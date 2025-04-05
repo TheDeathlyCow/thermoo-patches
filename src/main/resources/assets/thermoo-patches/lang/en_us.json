@@ -21,22 +21,5 @@
     "power.thermoo-patches.ignores_cold_effects.description": "Cold has no negative effects on you.",
     
     "power.thermoo-patches.ignores_heat_effects.name": "Fireborn",
-    "power.thermoo-patches.ignores_heat_effects.description": "Heat has no negative effects on you.",
-    
-    "text.autoconfig.thermoo-patches.title": "Thermoo Patches Config",
-    
-    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig": "Armor Points++ Config",
-    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig.@Tooltip": "Requires BOTH Armor Points++ and libhud",
-    "text.autoconfig.thermoo-patches.option.armorPointsPPConfig.overheatingTextColor": "Overheating text color",
-    
-    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig": "Immersive Weathering Config",
-    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.@Tooltip": "Requires Immersive Weathering",
-    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromIcicleFall": "Freezing from falling on icicle",
-    "text.autoconfig.thermoo-patches.option.immersiveWeatheringConfig.freezingFromEatingIcicle": "Freezing from eating icicles and Ice Sickles",
-    
-    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig": "Friends & Foes Config",
-    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig.@Tooltip": "Requires Friends & Foes",
-    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig.freezingTotemFreezingScaleChange": "Freezing totem freezing scale change",
-    "text.autoconfig.thermoo-patches.option.friendsAndFoesConfig.iceologerIceChunkFreezingScaleChange": "Iceologer Ice Chunk freezing scale change"
-    
+    "power.thermoo-patches.ignores_heat_effects.description": "Heat has no negative effects on you."
 }

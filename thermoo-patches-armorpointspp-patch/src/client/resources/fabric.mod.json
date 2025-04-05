@@ -1,0 +1,56 @@
+{
+    "schemaVersion": 1,
+    "id": "thermoo-patches-armorpointspp-patch",
+    "version": "${version}",
+    "name": "Thermoo Patches Armor Points++ Patch",
+    "description": "Armor Points++ integration patch for Thermoo",
+    "authors": [
+        "TheDeathlyCow"
+    ],
+    "contact": {
+        "homepage": "https://github.com/TheDeathlyCow/",
+        "sources": "https://github.com/TheDeathlyCow/thermoo-patches",
+        "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
+    },
+    "license": "LGPL-3.0",
+    "icon": "assets/thermoo-patches-armorpointspp-patch/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "libhud": [
+            "com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudPatch"
+        ]
+    },
+    "mixins": [
+        "thermoo-patches.armorpointspp.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "minecraft": "1.20.1",
+        "java": ">=${java_version}",
+        "fabric-api": ">=${fabric_version}",
+        "thermoo": ">=${thermoo_version}",
+        "cloth-config": ">=${cloth_config_version}",
+        "thermoo-patches-base": ">=${version}"
+    },
+    "suggests": {
+        "armorpointspp": "*",
+        "libhud": "*"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.discord": "https://discord.gg/aqASuWebRU",
+                "modmenu.wiki": "https://github.com/thermoo-patches/frostiful/wiki",
+                "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
+                "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
+            },
+            "parent": "thermoo-patches",
+            "update_checker": false
+        }
+    },
+    "custom": {
+        "modmenu": {
+
+        }
+    }
+}
