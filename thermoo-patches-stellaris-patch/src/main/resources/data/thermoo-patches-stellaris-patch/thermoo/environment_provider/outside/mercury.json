@@ -7,7 +7,7 @@
         "components": {
             "thermoo:relative_humidity": 0,
             "thermoo:temperature": {
-                "value": 120,
+                "value": 700,
                 "unit": "kelvin"
             }
         }
@@ -17,7 +17,7 @@
         "components": {
             "thermoo:relative_humidity": 0,
             "thermoo:temperature": {
-                "value": 120,
+                "value": 140,
                 "unit": "kelvin"
             }
         }
