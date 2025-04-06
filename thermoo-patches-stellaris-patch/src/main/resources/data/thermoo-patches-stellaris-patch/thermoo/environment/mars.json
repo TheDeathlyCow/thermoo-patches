@@ -1,0 +1,18 @@
+{
+    "biomes": "#thermoo-patches-stellaris-patch:is_climate/mars",
+    "exclude_biomes": "#thermoo-patches-stellaris-patch:is_not_climate/mars",
+    "priority": 500,
+    "provider": {
+        "type": "thermoo-patches-stellaris-patch:has_oxygen",
+        "inside": "thermoo-patches-stellaris-patch:inside",
+        "outside": "thermoo-patches-stellaris-patch:outside/mars"
+    },
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "stellaris"
+            ]
+        }
+    ]
+}

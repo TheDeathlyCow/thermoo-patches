@@ -5,19 +5,16 @@
     "above": {
         "type": "thermoo:constant",
         "components": {
-            "thermoo:relative_humidity": 0,
-            "thermoo:temperature": {
-                "value": 400,
-                "unit": "kelvin"
-            }
+            "thermoo:relative_humidity": 0.001,
+            "thermoo:temperature": 20
         }
     },
     "below": {
         "type": "thermoo:constant",
         "components": {
-            "thermoo:relative_humidity": 0,
+            "thermoo:relative_humidity": 1.0,
             "thermoo:temperature": {
-                "value": 140,
+                "value": 120,
                 "unit": "kelvin"
             }
         }

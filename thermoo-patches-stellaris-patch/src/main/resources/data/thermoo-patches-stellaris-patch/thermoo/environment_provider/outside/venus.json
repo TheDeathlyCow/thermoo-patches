@@ -1,0 +1,10 @@
+{
+    "type": "thermoo:constant",
+    "components": {
+        "thermoo:relative_humidity": 0.001,
+        "thermoo:temperature": {
+            "value": 737,
+            "unit": "kelvin"
+        }
+    }
+}
