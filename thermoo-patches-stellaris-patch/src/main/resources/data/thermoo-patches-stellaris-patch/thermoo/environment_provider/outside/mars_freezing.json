@@ -5,8 +5,11 @@
     "above": {
         "type": "thermoo:constant",
         "components": {
-            "thermoo:relative_humidity": 0.001,
-            "thermoo:temperature": 20
+            "thermoo:relative_humidity": 0.5,
+            "thermoo:temperature": {
+                "value": 210,
+                "unit": "kelvin"
+            }
         }
     },
     "below": {
@@ -14,7 +17,7 @@
         "components": {
             "thermoo:relative_humidity": 1.0,
             "thermoo:temperature": {
-                "value": 210,
+                "value": 120,
                 "unit": "kelvin"
             }
         }
