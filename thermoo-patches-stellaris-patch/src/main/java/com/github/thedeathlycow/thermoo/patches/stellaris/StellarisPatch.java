@@ -14,6 +14,7 @@ public class StellarisPatch implements ModInitializer {
     public void onInitialize() {
         if (IntegratedMod.STELLARIS.isModLoaded()) {
             TPEnvironmentProviderTypes.initialize();
+            TemperatureResistanceModifiers.initialize();
         }
     }
 
