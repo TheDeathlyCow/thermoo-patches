@@ -1,0 +1,25 @@
+{
+    "type": "thermoo:light_threshold",
+    "light_type": "sky",
+    "threshold": 10,
+    "above": {
+        "type": "thermoo:constant",
+        "components": {
+            "thermoo:relative_humidity": 0,
+            "thermoo:temperature": {
+                "value": 400,
+                "unit": "kelvin"
+            }
+        }
+    },
+    "below": {
+        "type": "thermoo:constant",
+        "components": {
+            "thermoo:relative_humidity": 0,
+            "thermoo:temperature": {
+                "value": 30,
+                "unit": "kelvin"
+            }
+        }
+    }
+}

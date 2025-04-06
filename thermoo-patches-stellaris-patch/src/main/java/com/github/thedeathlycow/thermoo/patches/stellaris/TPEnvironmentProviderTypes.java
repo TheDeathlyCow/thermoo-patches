@@ -7,9 +7,9 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.registry.Registry;
 
 public final class TPEnvironmentProviderTypes {
-    public static final EnvironmentProviderType<InArtificialEnvironmentProvider> IN_ARTIFICIAL_ENVIRONMENT = register(
-            "in_artificial_environment",
-            InArtificialEnvironmentProvider.CODEC
+    public static final EnvironmentProviderType<HasOxygenEnvironmentProvider> HAS_OXYGEN = register(
+            "has_oxygen",
+            HasOxygenEnvironmentProvider.CODEC
     );
 
     public static void initialize() {
