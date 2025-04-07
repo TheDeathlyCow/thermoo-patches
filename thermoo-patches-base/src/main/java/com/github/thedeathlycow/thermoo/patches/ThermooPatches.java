@@ -5,6 +5,8 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
@@ -48,9 +50,16 @@ public class ThermooPatches implements ModInitializer {
                 .filter(IntegratedMod::isModLoaded)
                 .forEach(
                         mod -> {
-                            builder.append('\n');
-                            builder.append(" - ");
-                            builder.append(mod.getId());
+                            builder.append('\n')
+                                    .append(" - ")
+                                    .append(mod.getId());
+
+                            FabricLoader.getInstance()
+                                    .getModContainer(mod.getId())
+                                    .ifPresent(container -> {
+                                        builder.append(": ")
+                                                .append(container.getMetadata().getName());
+                                    });
                         }
                 );
 
