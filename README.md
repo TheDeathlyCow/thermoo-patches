@@ -30,8 +30,9 @@ The following patches are currently either implemented, or planned.
 | [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                                                                                                                     | ⚠️ 1.20.1 only             |
 | [Origins](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                 | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors.                                                                                            | ✅ 1.21.1                   |
 | [Friends & Foes](https://modrinth.com/mod/friends-and-foes)                                        | The Iceologer's Ice Chunk attack and the Totem of Freezing freeze victims through Thermoo's system; Iceologer is cold immune and Wildfire is tagged as benefiting from heat; Iceologer has max temp of 0; Wildfire has min temp of 0 | ✅ 1.21.1                   |
+| [Stellaris](https://modrinth.com/mod/stellaris)                                                    | Set the temperature of each planet to be close to how they should be in real life, and gives Space Suits proper environmental resistances.                                                                                           | ✅ 1.21.1                   |
 
-\* Seasons integration for 1.20.1 does not support Tropical Seasons
+\* Seasons integration for 1.20.1 does not support Tropical Seasons.
 
 - ✅ indicates the patch is available for the latest version of Thermoo Patches
 - ⚠️ indicates that the mod the patch is for has not (yet) been updated to the latest version of Minecraft
