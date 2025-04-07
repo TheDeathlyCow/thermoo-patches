@@ -102,4 +102,11 @@ there.
 
 # Additional Credits
 
-* [Stellaris Icon](https://github.com/st0x0ef/stellaris/blob/f7fd8393196106091d208d83cb93d26b9c29aa83/fabric/src/main/resources/logo.png), used under CC BY-NC-SA 4.0.
+* [Stellaris Icon](https://github.com/st0x0ef/stellaris/blob/f7fd8393196106091d208d83cb93d26b9c29aa83/fabric/src/main/resources/logo.png), by st0x0ef used under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
+* [Simple Seasons Icon](https://github.com/steves-underwater-paradise/simple-seasons/blob/ccdb19626986d771f4ef980cf913f5d1972cb1d9/src/main/resources/assets/simple_seasons/icon.png), by Steveplays28, used under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+* [Fabric Seasons Icon](https://github.com/lucaargolo/fabric-seasons/blob/e0b2dd285e5a7f0b2850871ea7a0eb5289d0937c/src/main/resources/assets/seasons/icon.png), by lucaargolo, used under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+* [Colorful Hearts Icon](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/common/src/main/resources/icon.png), by Terrails, used under the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
+* [Friends & Foes Icon](https://github.com/Faboslav/friends-and-foes/blob/a82fbdb25f377df3c9a4c3a962c5376ff96a5e5c/common/src/main/resources/icon.png), by faboslav, used under [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) (no changes made).
+* [Origins Icon](https://github.com/apace100/origins-fabric/blob/80bf80530e6ecb1dbd317d7d5f44cec9d3b79b7e/src/main/resources/assets/origins/icon.png), by Apace, used under the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
+* [Immersive Weathering Icon](https://github.com/AstralOrdana/Immersive-Weathering/blob/1bcc03b6754d6840f3b3ab328744af16e06bdb9a/fabric/src/main/resources/icon.png), by Ordana, used under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+* [Armor Points++ Icon](https://github.com/Cheos137/ArmorpointsPlusplus/blob/cdf7dbed9bd078af687a893ce0264a24c552a997/core/src/main/resources/icon.png), by Cheos, used under the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
