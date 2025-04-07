@@ -16,6 +16,9 @@
     "icon": "assets/thermoo-patches-armorpointspp-patch/icon.png",
     "environment": "client",
     "entrypoints": {
+        "client": [
+            "com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudDependencyCheck"
+        ],
         "libhud": [
             "com.github.thedeathlycow.thermoo.patches.armorpointspp.LibhudPatch"
         ]

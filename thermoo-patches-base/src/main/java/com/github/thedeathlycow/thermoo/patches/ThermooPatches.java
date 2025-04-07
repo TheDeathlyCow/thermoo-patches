@@ -33,7 +33,7 @@ public class ThermooPatches implements ModInitializer {
         logPatchedMods();
     }
 
-    private static void checkMultiDependency(IntegratedMod... requiredMods) {
+    public static void checkMultiDependency(IntegratedMod... requiredMods) {
         boolean isNotMet = Arrays.stream(requiredMods)
                 .map(IntegratedMod::isModLoaded)
                 .reduce(false, (acc, isLoaded) -> acc ^ isLoaded);
