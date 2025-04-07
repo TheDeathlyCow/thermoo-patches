@@ -1,0 +1,37 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "required": false,
+            "id": "stellaris:jet_suit_helmet"
+        },
+        {
+            "required": false,
+            "id": "stellaris:jet_suit_chestplate"
+        },
+        {
+            "required": false,
+            "id": "stellaris:jet_suit_leggings"
+        },
+        {
+            "required": false,
+            "id": "stellaris:jet_suit_boots"
+        },
+        {
+            "required": false,
+            "id": "stellaris:space_suit_helmet"
+        },
+        {
+            "required": false,
+            "id": "stellaris:space_suit_chestplate"
+        },
+        {
+            "required": false,
+            "id": "stellaris:space_suit_leggings"
+        },
+        {
+            "required": false,
+            "id": "stellaris:space_suit_boots"
+        }
+    ]
+}

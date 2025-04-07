@@ -13,6 +13,7 @@ Thermoo Patches is a multimodule project, essentially a "mod of mods". Each inte
 
 If you want to create a new patch for Thermoo Patches, here is how to do it: 
 
+Set up tasks:
 - First create a folder named something like `thermoo-patches-{patched mod ID}-patch`
 - Include a basic `build.gradle` and import the mod from Maven using either the mod's official maven or Modrinth Maven as a `modCompileOnly` dependency.  
 - If needed, also depend on the `thermoo-patches-base` module in the new module.
@@ -20,13 +21,15 @@ If you want to create a new patch for Thermoo Patches, here is how to do it:
     - For most mods, you can simply copy from [the base custom mappings file](./mappings/yarn-custom.tiny) and leave it empty. This is only needed if importing a mod that uses Official Mappings and has some method name that conflicts with yarn, such as [Armor Points++](./thermoo-patches-armorpointspp-patch/mappings/yarn-custom.tiny).
 - Include the module in [`settings.gradle`](./settings.gradle)
 - Add and include the module to the base dependencies in [`build.gradle`](./build.gradle)
+
+Documentation tasks:
 - Create the `fabric.mod.json` file, set the proper mod ID for the module, and make it suggest the patched not, DO NOT MAKE IT REQUIRED!
-- Include the [mod icon](./src/main/resources/assets/thermoo-patches/icon.png) in the module's assets folder.
+- Include the [mod icon](./src/main/resources/assets/thermoo-patches/icon.png) in the module's assets folder (prefer to use the patched mod's icon if said mod's license allows it).
 - Add the mod to the [`IntegratedMod` enum](./thermoo-patches-base/src/main/java/com/github/thedeathlycow/thermoo/patches/IntegratedMod.java) in the base module. 
 - Add the mod as an optional dependency in the publishing section of [`build.gradle`](./build.gradle).
-- Write your patch!
+- Add patch to the [README list of patches](./README.md#list-of-patches).
 
-> [!INFO]
+> [!NOTE]
 > Thermoo Patches requires that all patched mods be OPTIONAL installations. This means that any resources should only load when the patched mod is present (often this means using `fabric:load_conditions`), and checking and Java-level calls with `isModLoaded()`.  
 
 ### Tips

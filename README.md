@@ -30,8 +30,9 @@ The following patches are currently either implemented, or planned.
 | [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                                                                                                                     | ⚠️ 1.20.1 only             |
 | [Origins](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                 | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors.                                                                                            | ✅ 1.21.1                   |
 | [Friends & Foes](https://modrinth.com/mod/friends-and-foes)                                        | The Iceologer's Ice Chunk attack and the Totem of Freezing freeze victims through Thermoo's system; Iceologer is cold immune and Wildfire is tagged as benefiting from heat; Iceologer has max temp of 0; Wildfire has min temp of 0 | ✅ 1.21.1                   |
+| [Stellaris](https://modrinth.com/mod/stellaris)                                                    | Set the temperature of each planet to be close to how they should be in real life, and gives Space Suits proper environmental resistances.                                                                                           | ✅ 1.21.1                   |
 
-\* Seasons integration for 1.20.1 does not support Tropical Seasons
+\* Seasons integration for 1.20.1 does not support Tropical Seasons.
 
 - ✅ indicates the patch is available for the latest version of Thermoo Patches
 - ⚠️ indicates that the mod the patch is for has not (yet) been updated to the latest version of Minecraft
@@ -98,3 +99,7 @@ there.
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). | 
 | `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat (use instead of `scorchful:can_heat`).   | 
+
+# Additional Credits
+
+* [Stellaris Icon](https://github.com/st0x0ef/stellaris/blob/f7fd8393196106091d208d83cb93d26b9c29aa83/fabric/src/main/resources/logo.png), used under CC BY-NC-SA 4.0.

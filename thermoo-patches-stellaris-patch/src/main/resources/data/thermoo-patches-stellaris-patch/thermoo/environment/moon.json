@@ -1,0 +1,18 @@
+{
+    "biomes": "#stellaris:moon_biomes",
+    "exclude_biomes": "#thermoo-patches-stellaris-patch:ignore_environment",
+    "priority": 500,
+    "provider": {
+        "type": "thermoo-patches-stellaris-patch:has_oxygen",
+        "inside": "thermoo-patches-stellaris-patch:inside",
+        "outside": "thermoo-patches-stellaris-patch:outside/moon"
+    },
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "stellaris"
+            ]
+        }
+    ]
+}

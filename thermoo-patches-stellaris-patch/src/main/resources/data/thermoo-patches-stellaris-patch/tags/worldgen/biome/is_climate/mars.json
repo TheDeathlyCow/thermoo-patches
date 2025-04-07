@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "#stellaris:mars_biomes",
+            "required": false
+        }
+    ]
+}

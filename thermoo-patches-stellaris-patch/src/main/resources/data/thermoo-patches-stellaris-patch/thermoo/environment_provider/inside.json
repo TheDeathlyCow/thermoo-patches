@@ -1,0 +1,10 @@
+{
+    "type": "thermoo:constant",
+    "components": {
+        "thermoo:relative_humidity": 0.5,
+        "thermoo:temperature": {
+            "value": 20,
+            "unit": "celsius"
+        }
+    }
+}
