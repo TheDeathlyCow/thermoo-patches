@@ -28,17 +28,17 @@ The following patches are currently either implemented, or planned.
 | [Serene Seasons](https://modrinth.com/mod/serene-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | ✅ 1.20.1\*, 1.20.4, 1.21.1 |
 | [Simple Seasons](https://modrinth.com/mod/simple-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer wet season).                                                                                                                            | ✅ 1.21.1                   |
 | [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                                                                                                                     | ⚠️ 1.20.1 only             |
-| [Origins](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                 | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors.                                                                                            | ✅ 1.21.1                   |
+| [Origins^](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors.                                                                                            | ✅ 1.21.1                   |
 | [Friends & Foes](https://modrinth.com/mod/friends-and-foes)                                        | The Iceologer's Ice Chunk attack and the Totem of Freezing freeze victims through Thermoo's system; Iceologer is cold immune and Wildfire is tagged as benefiting from heat; Iceologer has max temp of 0; Wildfire has min temp of 0 | ✅ 1.21.1                   |
 | [Stellaris](https://modrinth.com/mod/stellaris)                                                    | Set the temperature of each planet to be close to how they should be in real life, and gives Space Suits proper environmental resistances.                                                                                           | ✅ 1.21.1                   |
-
-\* Seasons integration for 1.20.1 does not support Tropical Seasons.
 
 - ✅ indicates the patch is available for the latest version of Thermoo Patches
 - ⚠️ indicates that the mod the patch is for has not (yet) been updated to the latest version of Minecraft
 
+\* Seasons integration for 1.20.1 does not support Tropical Seasons.
+
 > [!WARNING]
-> \*Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
+> ^Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
 > because newer versions may introduce breaking changes that could result in my additions not working, and so it is
 > marked
 > as incompatible with newer versions.
