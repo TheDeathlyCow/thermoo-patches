@@ -2,6 +2,7 @@ package com.github.thedeathlycow.thermoo.patches.stellaris;
 
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,7 @@ public class StellarisPatch implements ModInitializer {
         if (IntegratedMod.STELLARIS.isModLoaded()) {
             TPEnvironmentProviderTypes.initialize();
             TemperatureResistanceModifiers.initialize();
+            ServerTickEvents.END_WORLD_TICK.register(new OutdoorTemperatureModifier());
         }
     }
 

@@ -2,6 +2,7 @@ package com.github.thedeathlycow.thermoo.patches.stellaris;
 
 import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
 import com.st0x0ef.stellaris.common.registry.ArmorMaterialsRegistry;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.component.ComponentMap;
 import net.minecraft.component.DataComponentTypes;
