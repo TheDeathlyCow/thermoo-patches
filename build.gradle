@@ -28,6 +28,7 @@ allprojects {
         }
         maven { url "https://maven.shedaniel.me/" }
         maven { url "https://maven.terraformersmc.com/" }
+        maven { url "https://maven.resourcefulbees.com/repository/maven-public/" }
         exclusiveContent {
             forRepository {
                 maven {
@@ -132,6 +133,7 @@ jar {
 publishMods {
     changelog = file("changelogs/${mod_version}.md").text
     type = STABLE
+    displayName = "Thermoo Patches ${mod_version}"
 
     file = remapJar.archiveFile
     modLoaders.add("fabric")

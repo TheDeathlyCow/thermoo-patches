@@ -8,5 +8,6 @@ base {
 dependencies {
     api project(path: ':thermoo-patches-base', configuration: 'namedElements')
 
+    modCompileOnly "maven.modrinth:resourceful-lib:${project.resourceful_lib_version}"
     modCompileOnly "maven.modrinth:friends-and-foes:${project.friends_and_foes_version}"
 }
