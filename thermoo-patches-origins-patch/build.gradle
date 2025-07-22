@@ -7,5 +7,6 @@ base {
 
 dependencies {
     api project(path: ':thermoo-patches-base', configuration: 'namedElements')
-    modCompileOnly "io.github.apace100:origins-fabric:${project.origins_version}"
+
+    modImplementation "io.github.apace100:origins-fabric:${project.origins_version}"
 }
