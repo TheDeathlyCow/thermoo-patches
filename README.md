@@ -63,13 +63,18 @@ Thermoo.
 
 # Origins Powers and Integration
 
-Thermoo Patches provides a few powers and datapack facilities for mod pack authors to use in Origins. Some of these powers are integrated onto some origins (see the specific patch descriptions above), but this is also meant to be used as something of an API for working with Thermoo+Origins in your mod packs. 
+Thermoo Patches provides a few powers and datapack facilities for mod pack authors to use in Origins. Some of these
+powers are integrated onto some origins (see the specific patch descriptions above), but this is also meant to be used
+as something of an API for working with Thermoo+Origins in your mod packs.
 
-**Important:** The way that these powers are patched onto origins is different, depending on your game version. In 1.20.x, these are patched by simply overriding the datapack entry (just like you would do) with a `loading_priority` of `1000`. However, as of 1.21.1, this is now done dynamically in Java code, and will *only apply if the origin JSON file is being supplied by the Origins mod itself*. Any origin files you specify will *not* be touched by Thermoo Patches, including those meant to override the base origins.     
+**Important:** The way that these powers are patched onto origins is different, depending on your game version. In
+1.20.x, these are patched by simply overriding the datapack entry (just like you would do) with a `loading_priority`
+of `1000`. However, as of 1.21.1, this is now done dynamically in Java code, and will *only apply if the origin JSON
+file is being supplied by the Origins mod itself*. Any origin files you specify will *not* be touched by Thermoo
+Patches, including those meant to override the base origins.
 
-It may be useful to have a read through the [Thermoo Wiki](https://github.com/TheDeathlyCow/thermoo/wiki) to better
-understand what these powers do, as things such as temperature changes and Frost/Heat Resistance are better defined
-there.
+It may be useful to have a read through the [Thermoo Wiki](https://thermoo.thedeathlycow.com) to better understand what
+these powers do, as things such as temperature changes and Frost/Heat Resistance are better defined there.
 
 | Power ID                                 | Description                                                                                                                       | 
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
