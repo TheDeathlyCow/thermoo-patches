@@ -15,7 +15,8 @@ public enum IntegratedMod {
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
     SIMPLE_SEASONS("simple-seasons", "https://modrinth.com/mod/simple-seasons"),
     FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes"),
-    STELLARIS("stellaris", "https://modrinth.com/mod/stellaris");
+    STELLARIS("stellaris", "https://modrinth.com/mod/stellaris"),
+    EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins");
     
     private final String id;
 
