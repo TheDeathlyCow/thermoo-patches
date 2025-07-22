@@ -22,7 +22,7 @@ public final class OriginPatchManager {
         OriginPatcher patcher = PATCHERS.get(originID);
 
         if (patcher != null) {
-            ThermooPatches.LOGGER.info("Patching origin {} from pack {}", originID, packName);
+            ThermooPatches.LOGGER.info("Patching origin {} from pack {} to work with Thermoo", originID, packName);
             return patcher.patchOrigin(origin);
         }
 

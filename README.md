@@ -28,7 +28,7 @@ The following patches are currently either implemented, or planned.
 | [Serene Seasons](https://modrinth.com/mod/serene-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | ✅ 1.20.1\*, 1.20.4, 1.21.1 |
 | [Simple Seasons](https://modrinth.com/mod/simple-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer wet season).                                                                                                                            | ✅ 1.21.1                   |
 | [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                                                                                                                     | ⚠️ 1.20.1 only             |
-| [Origins^](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors.                                                                                            | ✅ 1.21.1                   |
+| [Origins^](https://modrinth.com/mod/origins)                                                       | Provides powers for integrating Thermoo temperatures with Origins. Blazeborn Origin ignores the effects of heat, but is extremely vulnerable to cold.                                                                                | ✅ 1.21.1                   |
 | [Friends & Foes](https://modrinth.com/mod/friends-and-foes)                                        | The Iceologer's Ice Chunk attack and the Totem of Freezing freeze victims through Thermoo's system; Iceologer is cold immune and Wildfire is tagged as benefiting from heat; Iceologer has max temp of 0; Wildfire has min temp of 0 | ✅ 1.21.1                   |
 | [Stellaris](https://modrinth.com/mod/stellaris)                                                    | Set the temperature of each planet to be close to how they should be in real life, and gives Space Suits proper environmental resistances.                                                                                           | ✅ 1.21.1                   |
 
@@ -38,17 +38,16 @@ The following patches are currently either implemented, or planned.
 \* Seasons integration for 1.20.1 does not support Tropical Seasons.
 
 > [!WARNING]
-> ^Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
+> ^Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.12+mc.1.21.1`. This is
 > because newer versions may introduce breaking changes that could result in my additions not working, and so it is
-> marked
-> as incompatible with newer versions.
+> marked as incompatible with newer versions.
 >
 > If you want to use a newer version of Origins and I have not updated the patch yet, please feel free to open
 > an [issue on GitHub](https://github.com/TheDeathlyCow/thermoo-patches/issues)
 > and I'll try and update it as soon as I can.
 >
 > You can also use [Fabric Loader dependency overrides](https://wiki.fabricmc.net/tutorial:dependency_overrides)
-> to bypass my incompatibility marker. However, this may result in issues and it would probably be better to wait for a
+> to bypass my incompatibility marker. However, this may result in issues, and it would probably be better to wait for a
 > Thermoo Patches update.
 
 Note that other temperature mods, like EnvironmentZ and Tough as Nails are not currently planned. This is because these
@@ -62,7 +61,6 @@ These patches were previously part of Thermoo Patches, but were either substanti
 | Mod name                                                                       | Patch Description                                                                                                          | Implemented versions | Removal reason                                                                                     | 
 |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------|----------------------------------------------------------------------------------------------------|
 | [Ad Astra](https://modrinth.com/mod/ad-astra)                                  | Adds more extreme temperatures on various planets, and disables the normal temperature effects.                            | 1.20.1, 1.20.4       | Mod was discontinued for Fabric 1.21+                                                              | 
-| [Origins](https://modrinth.com/mod/origins) (Thermoo Patches 3.1-)             | Blazeborn is empowered by heat, but freezes when even a little cold.                                                       | 1.20.1, 1.20.4, 1.21 | Only origin powers are provided, integration with specific origins is now left to modpack authors. |
 | [Mob Origins](https://modrinth.com/mod/moborigins) (Thermoo Patches 3.1-)      | Snow Golem is empowered by cold, but melts when warm. Snow Golem temperature system also removed (redundant with Thermoo). | 1.20.1, 1.20.4       | Only origin powers are provided, integration with specific origins is now left to modpack authors. |
 | [Extra Origins](https://modrinth.com/mod/extra-origins) (Thermoo Patches 3.1-) | Piglin origin has extra heat resistance                                                                                    | 1.20.1, 1.20.4       | Only origin powers are provided, integration with specific origins is now left to modpack authors. |
 

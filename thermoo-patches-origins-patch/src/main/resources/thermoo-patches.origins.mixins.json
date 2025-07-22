@@ -4,6 +4,7 @@
     "plugin": "com.github.thedeathlycow.thermoo.patches.origins.mixin.Plugin",
     "compatibilityLevel": "JAVA_21",
     "mixins": [
+        "origins.present.OriginAccessor",
         "origins.present.OriginManagerMixin"
     ],
     "injectors": {
