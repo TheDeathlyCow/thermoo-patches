@@ -8,7 +8,6 @@ import io.github.apace100.origins.origin.Origin;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
 import java.util.Set;
 
 public class OriginsPatch implements ModInitializer {

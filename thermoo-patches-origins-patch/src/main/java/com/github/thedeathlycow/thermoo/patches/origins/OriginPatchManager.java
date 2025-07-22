@@ -11,7 +11,7 @@ import java.util.Set;
 public final class OriginPatchManager {
     // take care to not mess with custom datapacks, if possible
     // plan to expand later with origins addons, hence using a set with 1 item
-    private static final Set<String> BUILTIN_PACK_NAMES = Set.of("origins");
+    private static final Set<String> BUILTIN_PACK_NAMES = Set.of("origins", "extraorigins");
     private static final Map<Identifier, OriginPatcher> PATCHERS = new HashMap<>();
 
     public static Origin patchOrigin(Origin origin, Identifier originID, String packName) {
