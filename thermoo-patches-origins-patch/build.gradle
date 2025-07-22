@@ -4,3 +4,8 @@ version = rootProject.mod_version
 base {
     archivesName = "thermoo-patches-origins-patch"
 }
+
+dependencies {
+    api project(path: ':thermoo-patches-base', configuration: 'namedElements')
+    modCompileOnly "io.github.apace100:origins-fabric:${project.origins_version}"
+}

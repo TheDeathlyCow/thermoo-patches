@@ -16,7 +16,9 @@
     "icon": "assets/thermoo-patches-origins-patch/icon.png",
     "environment": "*",
     "entrypoints": {},
-    "mixins": [],
+    "mixins": [
+        "thermoo-patches.origins.mixins.json"
+    ],
     "depends": {
         "fabricloader": ">=${loader_version}",
         "minecraft": "${minecraft_versions}",
@@ -30,7 +32,7 @@
         "origins": "*"
     },
     "breaks": {
-        "origins": ">1.13.0-alpha.12"
+        "origins": ">1.13.0-alpha.12 <1.13.0-alpha.12"
     },
     "custom": {
         "modmenu": {
