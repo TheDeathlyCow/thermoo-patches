@@ -10,16 +10,15 @@ import java.util.Set;
 
 public final class OriginPatchManager {
     // take care to not mess with custom datapacks, if possible
-    // plan to expand later with origins addons, hence using a set with 1 item
     private static final Set<String> BUILTIN_PACK_NAMES = Set.of("origins", "extraorigins");
-    private static final Map<Identifier, OriginPatcher> PATCHERS = new HashMap<>();
+    private static final Map<Identifier, Patcher> PATCHERS = new HashMap<>();
 
     public static Origin patchOrigin(Origin origin, Identifier originID, String packName) {
         if (!BUILTIN_PACK_NAMES.contains(packName)) {
             return origin;
         }
 
-        OriginPatcher patcher = PATCHERS.get(originID);
+        Patcher patcher = PATCHERS.get(originID);
 
         if (patcher != null) {
             ThermooPatches.LOGGER.info("Patching origin {} from pack {} to work with Thermoo", originID, packName);
@@ -29,10 +28,15 @@ public final class OriginPatchManager {
         return origin;
     }
 
-    public static void registerPatcher(Identifier originID, OriginPatcher patcher) {
+    public static void registerPatcher(Identifier originID, Patcher patcher) {
         if (PATCHERS.put(originID, patcher) != null) {
             ThermooPatches.LOGGER.warn("Overridding existing origin patcher for origin {}", originID);
         }
+    }
+
+    @FunctionalInterface
+    public interface Patcher {
+        Origin patchOrigin(Origin base);
     }
 
     private OriginPatchManager() {

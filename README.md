@@ -70,8 +70,8 @@ as something of an API for working with Thermoo+Origins in your mod packs.
 **Important:** The way that these powers are patched onto origins is different, depending on your game version. In
 1.20.x, these are patched by simply overriding the datapack entry (just like you would do) with a `loading_priority`
 of `1000`. However, as of 1.21.1, this is now done dynamically in Java code, and will *only apply if the origin JSON
-file is being supplied by the Origins mod itself*. Any origin files you specify will *not* be touched by Thermoo
-Patches, including those meant to override the base origins.
+file is being supplied by the Origins mod itself*. Origins added by any addon or datapack will not have these powers
+applied unless you add them.
 
 It may be useful to have a read through the [Thermoo Wiki](https://thermoo.thedeathlycow.com) to better understand what
 these powers do, as things such as temperature changes and Frost/Heat Resistance are better defined there.
