@@ -11,6 +11,8 @@ import net.minecraft.util.Identifier;
 import java.util.Set;
 
 public class OriginsPatch implements ModInitializer {
+    public static final String MOD_ID = ThermooPatches.MODID + "-origins-patch";
+
     @Override
     public void onInitialize() {
         if (IntegratedMod.ORIGINS.isModLoaded()) {
@@ -29,7 +31,8 @@ public class OriginsPatch implements ModInitializer {
                     addPowerReferences(
                             base,
                             ThermooPatches.id("ignores_heat_effects"),
-                            ThermooPatches.id("cold_vulnerability")
+                            ThermooPatches.id("cold_vulnerability"),
+                            internalID("reduce_min_temperature")
                     );
 
                     return base;
@@ -58,5 +61,9 @@ public class OriginsPatch implements ModInitializer {
         for (Identifier id : extraPowerReferences) {
             powerReferences.add(PowerReference.of(id));
         }
+    }
+
+    private static Identifier internalID(String path) {
+        return Identifier.of(MOD_ID, path);
     }
 }
