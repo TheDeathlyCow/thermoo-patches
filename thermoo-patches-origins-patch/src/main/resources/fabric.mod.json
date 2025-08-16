@@ -15,8 +15,14 @@
     "license": "LGPL-3.0",
     "icon": "assets/thermoo-patches-origins-patch/icon.png",
     "environment": "*",
-    "entrypoints": {},
-    "mixins": [],
+    "entrypoints": {
+        "main": [
+            "com.github.thedeathlycow.thermoo.patches.origins.OriginsPatch"
+        ]
+    },
+    "mixins": [
+        "thermoo-patches.origins.mixins.json"
+    ],
     "depends": {
         "fabricloader": ">=${loader_version}",
         "minecraft": "${minecraft_versions}",
@@ -30,7 +36,7 @@
         "origins": "*"
     },
     "breaks": {
-        "origins": ">1.13.0-alpha.12"
+        "origins": ">1.13.0-alpha.12 <1.13.0-alpha.12"
     },
     "custom": {
         "modmenu": {

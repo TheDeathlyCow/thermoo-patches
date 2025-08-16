@@ -23,12 +23,31 @@ allprojects {
         // for more information about repositories.
         maven { url "https://jitpack.io/" }
         maven {
-            name = "Ladysnake Mods"
+            name = "Ladysnake Mod Releases"
             url = 'https://maven.ladysnake.org/releases'
+        }
+        maven {
+            name = "Ladysnake Mod Snapshots"
+            url = 'https://maven.ladysnake.org/snapshots'
         }
         maven { url "https://maven.shedaniel.me/" }
         maven { url "https://maven.terraformersmc.com/" }
         maven { url "https://maven.resourcefulbees.com/repository/maven-public/" }
+        maven {
+            url = 'https://maven.cafeteria.dev'
+            content {
+                includeGroup 'net.adriantodt.fabricmc'
+            }
+        }
+        maven {
+            url "https://maven.jamieswhiteshirt.com/libs-release"
+            content {
+                includeGroup "com.jamieswhiteshirt"
+            }
+        }
+        maven {
+            url "https://masa.dy.fi/maven"
+        }
         exclusiveContent {
             forRepository {
                 maven {

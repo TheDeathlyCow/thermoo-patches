@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
 
 public enum IntegratedMod {
 
@@ -14,7 +15,8 @@ public enum IntegratedMod {
     ORIGINS("origins", "https://modrinth.com/mod/origins"),
     SIMPLE_SEASONS("simple-seasons", "https://modrinth.com/mod/simple-seasons"),
     FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes"),
-    STELLARIS("stellaris", "https://modrinth.com/mod/stellaris");
+    STELLARIS("stellaris", "https://modrinth.com/mod/stellaris"),
+    EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins");
     
     private final String id;
 
@@ -40,5 +42,9 @@ public enum IntegratedMod {
     @Override
     public String toString() {
         return String.format("%s: %s", this.id, this.modpage);
+    }
+
+    public Identifier createID(String path) {
+        return Identifier.of(this.id, path);
     }
 }

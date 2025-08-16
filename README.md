@@ -21,50 +21,38 @@ The following patches are currently either implemented, or planned.
 
 | Mod name                                                                                           | Patch Description                                                                                                                                                                                                                    | Implemented versions       |
 |----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| [Armor Points++](https://modrinth.com/mod/armorpoints) & [libhud](https://modrinth.com/mod/libhud) | Temperature now properly displays on HUD, temperature percent also shown next to health text. Requires libhud to work!                                                                                                               | ⚠️ 1.20.1 only             |
-| [Colorful Hearts](https://modrinth.com/mod/colorful-hearts)                                        | Temperature now properly displays on HUD.                                                                                                                                                                                            | ✅ 1.20.1, 1.20.4, 1.21.1   |
-| [Overflowing Bars](https://modrinth.com/mod/overflowing-bars)                                      | Temperature now properly displays on HUD                                                                                                                                                                                             | ✅ 1.20.1, 1.21.1           |
-| [Fabric Seasons](https://modrinth.com/mod/fabric-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | ✅ 1.20.1\*, 1.21.1         |
-| [Serene Seasons](https://modrinth.com/mod/serene-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | ✅ 1.20.1\*, 1.20.4, 1.21.1 |
-| [Simple Seasons](https://modrinth.com/mod/simple-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer wet season).                                                                                                                            | ✅ 1.21.1                   |
-| [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                                                                                                                     | ⚠️ 1.20.1 only             |
-| [Origins^](https://modrinth.com/mod/origins) (Thermoo Patches 3.2+)                                | Provides powers for integrating Thermoo temperatures with Origins. However, integration with specific origins is left to modpack authors.                                                                                            | ✅ 1.21.1                   |
-| [Friends & Foes](https://modrinth.com/mod/friends-and-foes)                                        | The Iceologer's Ice Chunk attack and the Totem of Freezing freeze victims through Thermoo's system; Iceologer is cold immune and Wildfire is tagged as benefiting from heat; Iceologer has max temp of 0; Wildfire has min temp of 0 | ✅ 1.21.1                   |
-| [Stellaris](https://modrinth.com/mod/stellaris)                                                    | Set the temperature of each planet to be close to how they should be in real life, and gives Space Suits proper environmental resistances.                                                                                           | ✅ 1.21.1                   |
+| [Armor Points++](https://modrinth.com/mod/armorpoints) & [libhud](https://modrinth.com/mod/libhud) | Temperature now properly displays on HUD, temperature percent also shown next to health text. Requires libhud to work!                                                                                                               | 1.20.1 only                |
+| [Colorful Hearts](https://modrinth.com/mod/colorful-hearts)                                        | Temperature now properly displays on HUD.                                                                                                                                                                                            | 1.20.1, 1.20.4, 1.21.1     |
+| [Overflowing Bars](https://modrinth.com/mod/overflowing-bars)                                      | Temperature now properly displays on HUD                                                                                                                                                                                             | 1.20.1, 1.21.1             |
+| [Fabric Seasons](https://modrinth.com/mod/fabric-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | 1.20.1[^1], 1.21.1         |
+| [Serene Seasons](https://modrinth.com/mod/serene-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | 1.20.1[^1], 1.20.4, 1.21.1 |
+| [Simple Seasons](https://modrinth.com/mod/simple-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer wet season).                                                                                                                            | 1.21.1                     |
+| [Immersive Weathering](https://modrinth.com/mod/immersive-weathering)                              | Eating Icicles and Ice Sickles cools the player.                                                                                                                                                                                     | 1.20.1 only                |
+| [Origins](https://modrinth.com/mod/origins)[^2]                                                    | Provides powers for integrating Thermoo temperatures with Origins. Blazeborn Origin ignores the effects of heat, but is extremely vulnerable to cold.                                                                                | 1.21.1                     |
+| [Mob Origins](https://modrinth.com/mod/moborigins)                                                 | Snow Golem is empowered by cold, but melts when warm. Snow Golem temperature system also removed (redundant with Thermoo).                                                                                                           | 1.20.1, 1.20.4             | 
+| [Extra Origins](https://modrinth.com/mod/extra-origins)                                            | Piglin origin has extra heat resistance                                                                                                                                                                                              | 1.20.1, 1.20.4, 1.21.1     |
+| [Friends & Foes](https://modrinth.com/mod/friends-and-foes)                                        | The Iceologer's Ice Chunk attack and the Totem of Freezing freeze victims through Thermoo's system; Iceologer is cold immune and Wildfire is tagged as benefiting from heat; Iceologer has max temp of 0; Wildfire has min temp of 0 | 1.21.1                     |
+| [Stellaris](https://modrinth.com/mod/stellaris)                                                    | Set the temperature of each planet to be close to how they should be in real life, and gives Space Suits proper environmental resistances.                                                                                           | 1.21.1                     |
+| [Ad Astra](https://modrinth.com/mod/ad-astra)                                                      | Adds more extreme temperatures on various planets, and disables the normal temperature effects.                                                                                                                                      | 1.20.1, 1.20.4             |
 
-- ✅ indicates the patch is available for the latest version of Thermoo Patches
-- ⚠️ indicates that the mod the patch is for has not (yet) been updated to the latest version of Minecraft
-
-\* Seasons integration for 1.20.1 does not support Tropical Seasons.
-
-> [!WARNING]
-> ^Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.11+mc.1.21.1`. This is
-> because newer versions may introduce breaking changes that could result in my additions not working, and so it is
-> marked
-> as incompatible with newer versions.
->
-> If you want to use a newer version of Origins and I have not updated the patch yet, please feel free to open
-> an [issue on GitHub](https://github.com/TheDeathlyCow/thermoo-patches/issues)
-> and I'll try and update it as soon as I can.
->
-> You can also use [Fabric Loader dependency overrides](https://wiki.fabricmc.net/tutorial:dependency_overrides)
-> to bypass my incompatibility marker. However, this may result in issues and it would probably be better to wait for a
-> Thermoo Patches update.
+---
 
 Note that other temperature mods, like EnvironmentZ and Tough as Nails are not currently planned. This is because these
 mods are largely redundant with Frostiful and Scorchful installed, so unfortunately I don't consider adding them to be a
 very worthwhile use of my time. Feel free to PR these (or make your own separate patch mod) if you want them.
 
-### Removed Patches
+---
 
-These patches were previously part of Thermoo Patches, but were either substantially changed or removed.
+[^1]: Seasons integration for 1.20.1 does not support Tropical Seasons.
 
-| Mod name                                                                       | Patch Description                                                                                                          | Implemented versions | Removal reason                                                                                     | 
-|--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------|----------------------------------------------------------------------------------------------------|
-| [Ad Astra](https://modrinth.com/mod/ad-astra)                                  | Adds more extreme temperatures on various planets, and disables the normal temperature effects.                            | 1.20.1, 1.20.4       | Mod was discontinued for Fabric 1.21+                                                              | 
-| [Origins](https://modrinth.com/mod/origins) (Thermoo Patches 3.1-)             | Blazeborn is empowered by heat, but freezes when even a little cold.                                                       | 1.20.1, 1.20.4, 1.21 | Only origin powers are provided, integration with specific origins is now left to modpack authors. |
-| [Mob Origins](https://modrinth.com/mod/moborigins) (Thermoo Patches 3.1-)      | Snow Golem is empowered by cold, but melts when warm. Snow Golem temperature system also removed (redundant with Thermoo). | 1.20.1, 1.20.4       | Only origin powers are provided, integration with specific origins is now left to modpack authors. |
-| [Extra Origins](https://modrinth.com/mod/extra-origins) (Thermoo Patches 3.1-) | Piglin origin has extra heat resistance                                                                                    | 1.20.1, 1.20.4       | Only origin powers are provided, integration with specific origins is now left to modpack authors. |
+[^2]: Since Origins 1.21.1 is still in alpha, the patch here currently only works for `1.13.0-alpha.12+mc.1.21.1`. This
+is because newer versions may introduce breaking changes that could result in my additions not working, and so it is
+marked as incompatible with newer versions. If you want to use a newer version of Origins and I have not updated the
+patch yet, please feel free to open an [issue on GitHub,](https://github.com/TheDeathlyCow/thermoo-patches/issues) and
+I'll try and update it as soon as I can. You can also
+use [Fabric Loader dependency overrides](https://wiki.fabricmc.net/tutorial:dependency_overrides) to bypass my
+incompatibility marker. However, this may result in issues, and it would probably be better to wait for a Thermoo
+Patches update.
 
 # Contributing
 
@@ -73,16 +61,20 @@ thing for any patch is that they MUST be optional. If the mod they are patching 
 crash or break. The only mods that are required by Thermoo Patches are Fabric API, Cloth Config, and, of course,
 Thermoo.
 
-# Origins Powers
+# Origins Powers and Integration
 
-Thermoo Patches provides a few powers and datapack facilities for Modpack authors to use in Origins. However,
-integrating these powers into
-specific origins (like Blazeborn or Snow Golem) is left to you, as I have no idea what other mods you may want to
-integrate with Origins.
+Thermoo Patches provides a few powers and datapack facilities for mod pack authors to use in Origins. Some of these
+powers are integrated onto some origins (see the specific patch descriptions above), but this is also meant to be used
+as something of an API for working with Thermoo+Origins in your mod packs.
 
-It may be useful to have a read through the [Thermoo Wiki](https://github.com/TheDeathlyCow/thermoo/wiki) to better
-understand what these powers do, as things such as temperature changes and Frost/Heat Resistance are better defined
-there.
+**Important:** The way that these powers are patched onto origins is different, depending on your game version. In
+1.20.x, these are patched by simply overriding the datapack entry (just like you would do) with a `loading_priority`
+of `1000`. However, as of 1.21.1, this is now done dynamically in Java code, and will *only apply if the origin JSON
+file is being supplied by the Origins mod itself*. Origins added by any addon or datapack will not have these powers
+applied unless you add them.
+
+It may be useful to have a read through the [Thermoo Wiki](https://thermoo.thedeathlycow.com) to better understand what
+these powers do, as things such as temperature changes and Frost/Heat Resistance are better defined there.
 
 | Power ID                                 | Description                                                                                                                       | 
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -95,6 +87,10 @@ there.
 | `thermoo-patches:heat_vulnerability`     | Doubles the amount of heating that affected entities receive from warm temperature changes.                                       |
 | `thermoo-patches:extra_heat_resistance`  | Gives affected entities 50% resistance to warm temperature changes                                                                |
 
+Some powers are provided under the name space `thermoo-patches-origins-patch`. These powers should be considered 
+internal to Thermoo Patches and are not a stable API. However, you may copy them into your own datapacks under the terms
+of the GNU LGPL.
+
 | Predicate ID                 | Description                                                                                                       |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). | 
@@ -102,11 +98,23 @@ there.
 
 # Additional Credits
 
-* [Stellaris Icon](https://github.com/st0x0ef/stellaris/blob/f7fd8393196106091d208d83cb93d26b9c29aa83/fabric/src/main/resources/logo.png), by st0x0ef used under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
-* [Simple Seasons Icon](https://github.com/steves-underwater-paradise/simple-seasons/blob/ccdb19626986d771f4ef980cf913f5d1972cb1d9/src/main/resources/assets/simple_seasons/icon.png), by Steveplays28, used under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
-* [Fabric Seasons Icon](https://github.com/lucaargolo/fabric-seasons/blob/e0b2dd285e5a7f0b2850871ea7a0eb5289d0937c/src/main/resources/assets/seasons/icon.png), by lucaargolo, used under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
-* [Colorful Hearts Icon](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/common/src/main/resources/icon.png), by Terrails, used under the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
-* [Friends & Foes Icon](https://github.com/Faboslav/friends-and-foes/blob/a82fbdb25f377df3c9a4c3a962c5376ff96a5e5c/common/src/main/resources/icon.png), by faboslav, used under [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) (no changes made).
-* [Origins Icon](https://github.com/apace100/origins-fabric/blob/80bf80530e6ecb1dbd317d7d5f44cec9d3b79b7e/src/main/resources/assets/origins/icon.png), by Apace, used under the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
-* [Immersive Weathering Icon](https://github.com/AstralOrdana/Immersive-Weathering/blob/1bcc03b6754d6840f3b3ab328744af16e06bdb9a/fabric/src/main/resources/icon.png), by Ordana, used under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
-* [Armor Points++ Icon](https://github.com/Cheos137/ArmorpointsPlusplus/blob/cdf7dbed9bd078af687a893ce0264a24c552a997/core/src/main/resources/icon.png), by Cheos, used under the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
+* [Stellaris Icon](https://github.com/st0x0ef/stellaris/blob/f7fd8393196106091d208d83cb93d26b9c29aa83/fabric/src/main/resources/logo.png),
+  by st0x0ef used under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
+* [Simple Seasons Icon](https://github.com/steves-underwater-paradise/simple-seasons/blob/ccdb19626986d771f4ef980cf913f5d1972cb1d9/src/main/resources/assets/simple_seasons/icon.png),
+  by Steveplays28, used under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+* [Fabric Seasons Icon](https://github.com/lucaargolo/fabric-seasons/blob/e0b2dd285e5a7f0b2850871ea7a0eb5289d0937c/src/main/resources/assets/seasons/icon.png),
+  by lucaargolo, used under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+* [Colorful Hearts Icon](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/common/src/main/resources/icon.png),
+  by Terrails, used under
+  the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
+* [Friends & Foes Icon](https://github.com/Faboslav/friends-and-foes/blob/a82fbdb25f377df3c9a4c3a962c5376ff96a5e5c/common/src/main/resources/icon.png),
+  by faboslav, used under [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) (no changes
+  made).
+* [Origins Icon](https://github.com/apace100/origins-fabric/blob/80bf80530e6ecb1dbd317d7d5f44cec9d3b79b7e/src/main/resources/assets/origins/icon.png),
+  by Apace, used under
+  the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
+* [Immersive Weathering Icon](https://github.com/AstralOrdana/Immersive-Weathering/blob/1bcc03b6754d6840f3b3ab328744af16e06bdb9a/fabric/src/main/resources/icon.png),
+  by Ordana, used under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+* [Armor Points++ Icon](https://github.com/Cheos137/ArmorpointsPlusplus/blob/cdf7dbed9bd078af687a893ce0264a24c552a997/core/src/main/resources/icon.png),
+  by Cheos, used under
+  the [MIT license](https://github.com/Terrails/colorful-hearts/blob/5c0a4a4ba913b2c0d6efc1cb6a32f52b3c82881f/LICENSE).
