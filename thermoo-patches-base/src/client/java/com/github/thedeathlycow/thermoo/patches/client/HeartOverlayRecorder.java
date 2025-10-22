@@ -10,6 +10,7 @@ import org.joml.Vector2i;
 
 import java.util.Arrays;
 
+@Deprecated
 public class HeartOverlayRecorder {
 
     public static final HeartOverlayRecorder INSTANCE = new HeartOverlayRecorder();
@@ -43,14 +44,14 @@ public class HeartOverlayRecorder {
             return;
         }
         int maxDisplayHealth = Math.min(MathHelper.ceil(player.getMaxHealth()), 20);
-        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker()
-                .render(
-                        drawContext,
-                        player,
-                        HeartOverlayRecorder.INSTANCE.getHeartPositions(),
-                        MathHelper.ceil(player.getHealth()),
-                        maxDisplayHealth
-                );
+//        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker()
+//                .render(
+//                        drawContext,
+//                        player,
+//                        HeartOverlayRecorder.INSTANCE.getHeartPositions(),
+//                        MathHelper.ceil(player.getHealth()),
+//                        maxDisplayHealth
+//                );
         Arrays.fill(HeartOverlayRecorder.INSTANCE.getHeartPositions(), null);
     }
 
