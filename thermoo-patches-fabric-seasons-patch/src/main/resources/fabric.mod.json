@@ -22,13 +22,13 @@
     },
     "mixins": [],
     "depends": {
-        "fabricloader": ">=${loader_version}",
-        "minecraft": "${minecraft_versions}",
-        "java": ">=${java_version}",
-        "fabric-api": ">=${fabric_version}",
-        "thermoo": ">=${thermoo_version}",
-        "cloth-config": ">=${cloth_config_version}",
-        "thermoo-patches-base": ">=${version}"
+        "fabricloader": "*",
+        "minecraft": "*",
+        "java": "*",
+        "fabric-api": "*",
+        "thermoo": "*",
+        "cloth-config": "*",
+        "thermoo-patches-base": "*"
     },
     "suggests": {
         "fabric-seasons": "*"

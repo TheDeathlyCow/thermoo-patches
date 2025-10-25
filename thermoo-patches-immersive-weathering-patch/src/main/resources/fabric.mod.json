@@ -20,13 +20,13 @@
         "thermoo-patches.immersive-weathering.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=${loader_version}",
-        "minecraft": "1.20.1",
-        "java": ">=${java_version}",
-        "fabric-api": ">=${fabric_version}",
-        "thermoo": ">=${thermoo_version}",
-        "cloth-config": ">=${cloth_config_version}",
-        "thermoo-patches-base": ">=${version}"
+        "fabricloader": "*",
+        "minecraft": "*",
+        "java": "*",
+        "fabric-api": "*",
+        "thermoo": "*",
+        "cloth-config": "*",
+        "thermoo-patches-base": "*"
     },
     "suggests": {
         "immersive-weathering": "*"
