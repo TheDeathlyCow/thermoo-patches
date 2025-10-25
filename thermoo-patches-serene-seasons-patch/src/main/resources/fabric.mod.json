@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "thermoo-patches-fabric-seasons-patch",
+    "id": "thermoo-patches-serene-seasons-patch",
     "version": "${version}",
     "name": "Thermoo Patches Serene Seasons Patch",
     "description": "Serene Seasons integration patch for Thermoo",
