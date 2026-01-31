@@ -1,43 +1,41 @@
 package com.github.thedeathlycow.thermoo.patches.sereneseasons;
 
-import com.github.thedeathlycow.thermoo.api.season.ThermooSeason;
-import com.github.thedeathlycow.thermoo.api.season.ThermooSeasonEvents;
+import com.github.thedeathlycow.thermoo.api.season.*;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
-import sereneseasons.api.season.Season;
+import sereneseasons.api.season.ISeasonState;
 import sereneseasons.api.season.SeasonHelper;
 
 import java.util.Optional;
 
 public class SereneSeasonsProvider implements ModInitializer {
+
     @Override
     public void onInitialize() {
         if (IntegratedMod.SERENE_SEASONS.isModLoaded()) {
-            ThermooSeasonEvents.GET_CURRENT_SEASON.register(world -> {
-                Season sereneSeason = SeasonHelper.getSeasonState(world)
-                        .getSeason();
+            ThermooSeasonEvents.GET_CURRENT_SEASON.register((level, pos) -> {
+                ISeasonState sereneSeasonState = SeasonHelper.getSeasonState(level);
 
-                return Optional.ofNullable(switch (sereneSeason) {
-                    case SPRING -> ThermooSeason.SPRING;
-                    case SUMMER -> ThermooSeason.SUMMER;
-                    case AUTUMN -> ThermooSeason.AUTUMN;
-                    case WINTER -> ThermooSeason.WINTER;
+                return Optional.ofNullable(switch (sereneSeasonState.getSeason()) {
+                    case SPRING -> ThermooSeasonState.of(TemperateSeason.SPRING);
+                    case SUMMER -> ThermooSeasonState.of(TemperateSeason.SUMMER);
+                    case AUTUMN -> ThermooSeasonState.of(TemperateSeason.AUTUMN);
+                    case WINTER -> ThermooSeasonState.of(TemperateSeason.WINTER);
                     default -> null;
                 });
             });
 
-            ThermooSeasonEvents.GET_CURRENT_TROPICAL_SEASON.register((world, pos) -> {
-                RegistryEntry<Biome> biome = world.getBiome(pos);
+            ThermooSeasonEvents.GET_CURRENT_TROPICAL_SEASON.register((level, pos) -> {
+                RegistryEntry<Biome> biome = level.getBiomeAccess().getBiomeForNoiseGen(pos);
                 if (SeasonHelper.usesTropicalSeasons(biome)) {
-                    Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(world)
-                            .getTropicalSeason();
+                    ISeasonState sereneSeasonState = SeasonHelper.getSeasonState(level);
 
-                    return Optional.ofNullable(switch (tropicalSeason) {
-                        case EARLY_DRY, MID_DRY, LATE_DRY -> ThermooSeason.TROPICAL_DRY;
-                        case EARLY_WET, MID_WET, LATE_WET -> ThermooSeason.TROPICAL_WET;
-                        default -> null;
+                    return Optional.of(switch (sereneSeasonState.getTropicalSeason()) {
+                        case MID_DRY -> ThermooSeasonState.of(TropicalSeason.DRY);
+                        case MID_WET -> ThermooSeasonState.of(TropicalSeason.WET);
+                        default ->  ThermooSeasonState.of(TropicalSeason.MILD);
                     });
                 }
 
