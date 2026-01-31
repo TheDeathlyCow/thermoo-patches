@@ -27,7 +27,7 @@
         "java": ">=${java_version}",
         "fabric-api": ">=${fabric_version}",
         "thermoo": ">=${thermoo_version}",
-        "cloth-config": ">={cloth_config_version}"
+        "cloth-config": ">=${cloth_config_version}"
     },
     "suggests": {
         "frostiful": "*",
