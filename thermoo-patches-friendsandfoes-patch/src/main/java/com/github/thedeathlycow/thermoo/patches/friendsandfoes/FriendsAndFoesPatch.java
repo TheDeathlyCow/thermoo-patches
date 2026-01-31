@@ -58,4 +58,12 @@ public class FriendsAndFoesPatch implements ModInitializer {
 
         victim.thermoo$addTemperature(temperatureChange, HeatingModes.ACTIVE);
     }
+
+    public static void freezeFromSlowTargetSpell(LivingEntity victim) {
+        FriendsAndFoesConfig config = ThermooPatches.getConfig().friendsAndFoesConfig;
+
+        int temperatureChange = (int) (config.iceologerSlowTargetFreezingScaleChange * victim.thermoo$getMinTemperature());
+
+        victim.thermoo$addTemperature(temperatureChange, HeatingModes.ACTIVE);
+    }
 }

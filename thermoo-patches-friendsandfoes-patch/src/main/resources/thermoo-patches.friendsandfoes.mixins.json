@@ -5,6 +5,7 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [
         "friendsandfoes.present.IceologerIceChunkEntityMixin",
+        "friendsandfoes.present.SlowTargetGoalMixin",
         "friendsandfoes.present.TotemUtilMixin"
     ],
     "injectors": {
