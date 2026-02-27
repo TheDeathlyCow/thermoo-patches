@@ -3,8 +3,8 @@ package com.github.thedeathlycow.thermoo.patches.sereneseasons;
 import com.github.thedeathlycow.thermoo.api.season.*;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.core.Holder;
+import net.minecraft.world.level.biome.Biome;
 import sereneseasons.api.season.ISeasonState;
 import sereneseasons.api.season.SeasonHelper;
 
@@ -28,7 +28,7 @@ public class SereneSeasonsProvider implements ModInitializer {
             });
 
             ThermooSeasonEvents.GET_CURRENT_TROPICAL_SEASON.register((level, pos) -> {
-                RegistryEntry<Biome> biome = level.getBiomeAccess().getBiomeForNoiseGen(pos);
+                Holder<Biome> biome = level.getBiomeManager().getNoiseBiomeAtPosition(pos);
                 if (SeasonHelper.usesTropicalSeasons(biome)) {
                     ISeasonState sereneSeasonState = SeasonHelper.getSeasonState(level);
 
