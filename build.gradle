@@ -65,8 +65,8 @@ allprojects {
         // To change the versions see the gradle.properties file
         minecraft "com.mojang:minecraft:${project.minecraft_version}"
         mappings loom.layered {
-            mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-            mappings file("mappings/yarn-custom.tiny")
+            officialMojangMappings()
+            parchment("org.parchmentmc.data:parchment-1.21.11:2025.12.20@zip")
         }
         modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
