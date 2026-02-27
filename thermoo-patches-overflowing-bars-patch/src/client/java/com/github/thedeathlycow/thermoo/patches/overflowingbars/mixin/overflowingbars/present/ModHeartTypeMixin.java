@@ -2,7 +2,7 @@ package com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin.overflowi
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -14,10 +14,10 @@ public class ModHeartTypeMixin {
             method = "forPlayer",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/player/PlayerEntity;isFrozen()Z"
+                    target = "Lnet/minecraft/world/entity/player/Player;isFullyFrozen()Z"
             )
     )
-    private static boolean checkThermooFrozen(PlayerEntity instance, Operation<Boolean> original) {
+    private static boolean checkThermooFrozen(Player instance, Operation<Boolean> original) {
         int minTemperature = instance.thermoo$getTemperature();
         if (minTemperature >= 0) {
             return original.call(instance);

@@ -8,9 +8,9 @@ import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import fuzs.overflowingbars.client.gui.HealthBarRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.player.Player;
 import org.joml.Vector2i;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -31,15 +31,15 @@ public class HealthBarRendererMixin {
             method = "renderHearts",
             at = @At(
                     value = "INVOKE",
-                    target = "Lfuzs/overflowingbars/client/gui/HealthBarRenderer$ModHeartType;renderHeart(Lnet/minecraft/client/gui/DrawContext;IIZZZ)V",
+                    target = "Lfuzs/overflowingbars/client/gui/HealthBarRenderer$ModHeartType;renderHeart(Lnet/minecraft/client/gui/GuiGraphics;IIZZZ)V",
                     ordinal = 0,
                     shift = At.Shift.AFTER,
                     remap = true
             )
     )
     private void captureHeartPosition(
-            DrawContext drawContext,
-            PlayerEntity player,
+            GuiGraphics drawContext,
+            Player player,
             int posX, int posY,
             int heartOffsetByRegen,
             float maxHealth,
@@ -63,8 +63,8 @@ public class HealthBarRendererMixin {
             at = @At("TAIL")
     )
     private void renderOverlayBar(
-            DrawContext drawContext,
-            PlayerEntity player,
+            GuiGraphics drawContext,
+            Player player,
             int posX, int posY,
             int heartOffsetByRegen,
             float maxHealth,
@@ -83,7 +83,7 @@ public class HealthBarRendererMixin {
         var heartBarContext = new HeartBarContextImpl(
                 Collections.unmodifiableSequencedCollection(heartPositions),
                 displayHealth,
-                Math.min(20, MathHelper.ceil(maxHealth))
+                Math.min(20, Mth.ceil(maxHealth))
         );
 
         StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker().render(drawContext, player, heartBarContext);
