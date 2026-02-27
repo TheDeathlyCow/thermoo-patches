@@ -48,6 +48,10 @@ allprojects {
         maven {
             url "https://masa.dy.fi/maven"
         }
+        maven {
+            name = 'ParchmentMC'
+            url = 'https://maven.parchmentmc.org'
+        }
         exclusiveContent {
             forRepository {
                 maven {
