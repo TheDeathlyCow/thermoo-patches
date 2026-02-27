@@ -25,7 +25,7 @@ public class IceologerIceChunkEntityMixin {
             method = "damage(Lnet/minecraft/world/entity/LivingEntity;)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/entity/LivingEntity;setFrozenTicks(I)V"
+                    target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V"
             )
     )
     private void applyFreezing(LivingEntity instance, int value, Operation<Void> original) {

@@ -14,7 +14,7 @@ public class TotemUtilMixin {
             method = "lambda$freezeEntities$2",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/entity/LivingEntity;setFrozenTicks(I)V"
+                    target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V"
             )
     )
     private static void applyThermooTotemFreezing(LivingEntity instance, int value, Operation<Void> original) {

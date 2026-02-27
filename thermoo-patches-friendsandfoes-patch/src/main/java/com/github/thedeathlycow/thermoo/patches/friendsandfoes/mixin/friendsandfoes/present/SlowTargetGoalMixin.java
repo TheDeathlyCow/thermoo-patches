@@ -14,7 +14,8 @@ public class SlowTargetGoalMixin {
             method = "performSpellCasting",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/entity/LivingEntity;setFrozenTicks(I)V")
+                    target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V"
+            )
     )
     private void setTemperature(LivingEntity instance, int i, Operation<Void> original) {
         FriendsAndFoesPatch.freezeFromSlowTargetSpell(instance);
