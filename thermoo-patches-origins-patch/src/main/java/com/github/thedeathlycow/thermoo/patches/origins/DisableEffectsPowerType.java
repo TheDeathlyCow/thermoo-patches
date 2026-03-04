@@ -52,7 +52,7 @@ public class DisableEffectsPowerType extends PowerType {
         LivingEntity holder = this.getHolder();
 
         for (Identifier effect : this.effects) {
-            ConfiguredTemperatureEffect.setEffectEnabled(holder, effect, false);
+            ConfiguredTemperatureEffect.setEffectEnabled(holder, effect, value);
         }
     }
 }
