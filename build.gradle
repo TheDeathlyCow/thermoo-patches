@@ -195,14 +195,9 @@ publishMods {
                 "friends-and-foes",
                 "overflowing-bars",
                 "colorful-hearts",
+                "origins",
                 "stellaris"
         )
-
-        // when origins is out of alpha, version-specific dependency will be removed
-        optional {
-            slug = "origins"
-            version = "RzhrT8Th"
-        }
     }
 }
 
