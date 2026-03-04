@@ -1,3 +1,7 @@
 {
-    "type": "origins:dummy"
+    "type": "thermoo-patches:disable_temperature_effects",
+    "effects": [
+        "frostiful:generic/freeze_damage",
+        "frostiful:player/normal"
+    ]
 }

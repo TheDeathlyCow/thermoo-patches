@@ -1,3 +1,10 @@
 {
-    "type": "origins:dummy"
+    "type": "thermoo-patches:disable_temperature_effects",
+    "effects": [
+        "scorchful:damage",
+        "scorchful:player/effects_50",
+        "scorchful:player/effects_75",
+        "scorchful:player/effects_99",
+        "scorchful:player/heartbeat"
+    ]
 }

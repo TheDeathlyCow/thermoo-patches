@@ -3,9 +3,13 @@ package com.github.thedeathlycow.thermoo.patches.origins;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.origins.mixin.origins.present.OriginAccessor;
+import io.github.apace100.apoli.power.PowerConfiguration;
 import io.github.apace100.apoli.power.PowerReference;
+import io.github.apace100.apoli.power.type.PowerType;
+import io.github.apace100.apoli.registry.ApoliRegistries;
 import io.github.apace100.origins.origin.Origin;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 import java.util.Set;
@@ -16,6 +20,8 @@ public class OriginsPatch implements ModInitializer {
     @Override
     public void onInitialize() {
         if (IntegratedMod.ORIGINS.isModLoaded()) {
+            ThermooPowerTypes.initialize();
+
             this.registerOriginsPatches();
 
             if (IntegratedMod.EXTRA_ORIGINS.isModLoaded()) {
