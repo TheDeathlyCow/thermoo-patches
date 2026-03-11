@@ -8,8 +8,8 @@ import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.config.FriendsAndFoesConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.Event;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.LivingEntity;
 
 public class FriendsAndFoesPatch implements ModInitializer {
     @Override

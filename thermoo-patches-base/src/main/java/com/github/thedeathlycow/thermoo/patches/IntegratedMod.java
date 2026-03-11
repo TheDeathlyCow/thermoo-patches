@@ -1,7 +1,7 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.Identifier;
 
 public enum IntegratedMod {
 
@@ -45,6 +45,6 @@ public enum IntegratedMod {
     }
 
     public Identifier createID(String path) {
-        return Identifier.of(this.id, path);
+        return Identifier.fromNamespaceAndPath(this.id, path);
     }
 }

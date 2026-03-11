@@ -1,11 +1,11 @@
 package com.github.thedeathlycow.thermoo.patches.client;
 
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.util.Mth;
 import net.minecraft.util.Util;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.entity.player.Player;
 import org.joml.Vector2i;
 
 import java.util.Arrays;
@@ -38,12 +38,12 @@ public class HeartOverlayRecorder {
      *
      * @param drawContext draw context
      */
-    public void invokeAfterHealthBar(DrawContext drawContext) {
-        PlayerEntity player = MinecraftClient.getInstance().player;
+    public void invokeAfterHealthBar(GuiGraphics drawContext) {
+        Player player = Minecraft.getInstance().player;
         if (player == null) {
             return;
         }
-        int maxDisplayHealth = Math.min(MathHelper.ceil(player.getMaxHealth()), 20);
+        int maxDisplayHealth = Math.min(Mth.ceil(player.getMaxHealth()), 20);
 //        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker()
 //                .render(
 //                        drawContext,
