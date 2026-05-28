@@ -118,6 +118,7 @@ dependencies {
     api project(path: ":thermoo-patches-serene-seasons-patch")
     api project(path: ":thermoo-patches-friendsandfoes-patch")
     api project(path: ":thermoo-patches-overflowing-bars-patch")
+    api project(path: ":thermoo-patches-nycto-patch")
 //    api project(path: ":thermoo-patches-fabric-seasons-patch")
 //    api project(path: ":thermoo-patches-simple-seasons-patch")
 //    api project(path: ":thermoo-patches-immersive-weathering-patch")
@@ -130,6 +131,7 @@ dependencies {
     include(project(path: ":thermoo-patches-serene-seasons-patch"))
     include(project(path: ":thermoo-patches-friendsandfoes-patch"))
     include(project(path: ":thermoo-patches-overflowing-bars-patch"))
+    include(project(path: ":thermoo-patches-nycto-patch"))
 //    include(project(path: ":thermoo-patches-fabric-seasons-patch"))
 //    include(project(path: ":thermoo-patches-simple-seasons-patch"))
 //    include(project(path: ":thermoo-patches-immersive-weathering-patch"))
@@ -169,6 +171,7 @@ publishMods {
                 "serene-seasons",
                 "friends-and-foes",
                 "overflowing-bars",
+                "nycto"
         )
     }
 
@@ -183,6 +186,7 @@ publishMods {
                 "serene-seasons",
                 "friends-and-foes",
                 "overflowing-bars",
+                "nycto"
         )
     }
 }

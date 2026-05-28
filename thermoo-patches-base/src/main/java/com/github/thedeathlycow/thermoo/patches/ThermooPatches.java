@@ -31,6 +31,10 @@ public class ThermooPatches implements ModInitializer {
         }
     }
 
+    public static Identifier thermooId(String path) {
+        return Identifier.fromNamespaceAndPath("thermoo", path);
+    }
+
     @Contract("_->new")
     public static Identifier id(String path) {
         return Identifier.fromNamespaceAndPath(MODID, path);
