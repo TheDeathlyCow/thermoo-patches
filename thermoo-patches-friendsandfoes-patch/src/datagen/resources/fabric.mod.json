@@ -1,0 +1,12 @@
+{
+    "schemaVersion": 1,
+    "id": "thermoo-patches-friendsandfoes-patch-datagen",
+    "version": "1.0.0",
+    "name": "Thermoo Patches Friends & Foes Patch Datagen Mod",
+    "environment": "*",
+    "entrypoints": {
+        "fabric-datagen": [
+            "com.github.thedeathlycow.thermoo.patches.friendsandfoes.datagen.FriendsAndFoesDatagen"
+        ]
+    }
+}

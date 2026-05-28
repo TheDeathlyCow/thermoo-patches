@@ -27,7 +27,7 @@
         "java": "*",
         "fabric-api": "*",
         "thermoo": "*",
-        "cloth-config": "*",
+        "yet_another_config_lib_v3": "*",
         "thermoo-patches-base": "*"
     },
     "suggests": {

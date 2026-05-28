@@ -18,6 +18,9 @@
     "entrypoints": {
         "main": [
             "com.github.thedeathlycow.thermoo.patches.friendsandfoes.FriendsAndFoesPatch"
+        ],
+        "client": [
+            "com.github.thedeathlycow.thermoo.patches.friendsandfoes.client.FriendsAndFoesPatchClient"
         ]
     },
     "mixins": [
@@ -29,11 +32,8 @@
         "java": "*",
         "fabric-api": "*",
         "thermoo": "*",
-        "cloth-config": "*",
+        "yet_another_config_lib_v3": "*",
         "thermoo-patches-base": "*"
-    },
-    "suggests": {
-        "friendsandfoes": "*"
     },
     "custom": {
         "modmenu": {

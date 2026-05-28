@@ -1,37 +1,24 @@
 package com.github.thedeathlycow.thermoo.patches;
 
-import com.github.thedeathlycow.thermoo.patches.config.ThermooPatchesConfig;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.ConfigHolder;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import dev.yumi.commons.event.EventManager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Path;
 import java.util.Arrays;
 
 public class ThermooPatches implements ModInitializer {
     public static final String MODID = "thermoo-patches";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
-    private static ConfigHolder<ThermooPatchesConfig> configHolder = null;
-
-    @Contract("_->new")
-    public static Identifier id(String path) {
-        return Identifier.fromNamespaceAndPath(MODID, path);
-    }
-
-    public static ThermooPatchesConfig getConfig() {
-        return configHolder.get();
-    }
+    public static final EventManager<Identifier> EVENT_MANAGER = new EventManager<>(id("default"), Identifier::parse);
 
     @Override
     public void onInitialize() {
-        configHolder = AutoConfig.register(ThermooPatchesConfig.class, GsonConfigSerializer::new); // NOSONAR
         logPatchedMods();
     }
 
@@ -42,6 +29,15 @@ public class ThermooPatches implements ModInitializer {
         if (isNotMet) {
             throw new MultiDependencyException(requiredMods);
         }
+    }
+
+    @Contract("_->new")
+    public static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(MODID, path);
+    }
+
+    public static Path getConfigDir() {
+        return FabricLoader.getInstance().getConfigDir().resolve(MODID);
     }
 
     private static void logPatchedMods() {

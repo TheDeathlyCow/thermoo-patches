@@ -49,8 +49,7 @@ very worthwhile use of my time. Feel free to PR these (or make your own separate
 
 If you want a patch for Thermoo to be added, please either create an issue or submit a pull request! The most important
 thing for any patch is that they MUST be optional. If the mod they are patching for is not loaded, then nothing should
-crash or break. The only mods that are required by Thermoo Patches are Fabric API, Cloth Config, and, of course,
-Thermoo.
+crash or break. The only mods that are required by Thermoo Patches are Fabric API, YACL, and, of course, Thermoo.
 
 # Origins Powers and Integration
 

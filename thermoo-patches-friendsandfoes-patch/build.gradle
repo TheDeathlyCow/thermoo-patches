@@ -7,7 +7,16 @@ base {
 
 dependencies {
     api project(path: ':thermoo-patches-base')
+    clientImplementation findProject(':thermoo-patches-base').sourceSets.client.output
 
     compileOnly "maven.modrinth:resourceful-lib:${project.resourceful_lib_version}"
     compileOnly "maven.modrinth:friends-and-foes:${project.friends_and_foes_version}"
+}
+
+fabricApi {
+    configureDataGeneration() {
+        createSourceSet = true
+        client = true
+        modId = "thermoo-patches-friendsandfoes-patch-datagen"
+    }
 }

@@ -1,22 +1,35 @@
 package com.github.thedeathlycow.thermoo.patches.config;
 
-
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
-import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
+import dev.isxander.yacl3.api.ButtonOption;
+import dev.yumi.commons.event.Event;
+import net.minecraft.resources.Identifier;
 
-@Config(name = ThermooPatches.MODID)
-public class ThermooPatchesConfig extends PartitioningSerializer.GlobalData {
-    @ConfigEntry.Gui.CollapsibleObject
-    @ConfigEntry.Gui.Tooltip
-    public ArmorPointsPPConfig armorPointsPPConfig = new ArmorPointsPPConfig();
+import java.util.function.Consumer;
 
-    @ConfigEntry.Gui.CollapsibleObject
-    @ConfigEntry.Gui.Tooltip
-    public ImmersiveWeatheringConfig immersiveWeatheringConfig = new ImmersiveWeatheringConfig();
+public class ThermooPatchesConfig {
+    public static final Event<Identifier, ConfigProvider> BUILD_CLIENT = ThermooPatches.EVENT_MANAGER.create(
+            ConfigProvider.class,
+            listeners -> builder -> {
+                for (ConfigProvider listener : listeners) {
+                    listener.build(builder);
+                }
+            }
+    );
 
-    @ConfigEntry.Gui.CollapsibleObject
-    @ConfigEntry.Gui.Tooltip
-    public FriendsAndFoesConfig friendsAndFoesConfig = new FriendsAndFoesConfig();
+    public static final Event<Identifier, ConfigProvider> BUILD_COMMON = ThermooPatches.EVENT_MANAGER.create(
+            ConfigProvider.class,
+            listeners -> builder -> {
+                for (ConfigProvider listener : listeners) {
+                    listener.build(builder);
+                }
+            }
+    );
+
+    public static final String MAIN_CATEGORY_NAME = "general";
+
+    @FunctionalInterface
+    public interface ConfigProvider {
+        void build(Consumer<ButtonOption> builder);
+    }
 }

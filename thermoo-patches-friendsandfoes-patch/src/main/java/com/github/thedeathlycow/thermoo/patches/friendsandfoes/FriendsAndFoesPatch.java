@@ -4,13 +4,14 @@ import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.github.thedeathlycow.thermoo.api.entity.v1.ThermooAttributes;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
-import com.github.thedeathlycow.thermoo.patches.config.FriendsAndFoesConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.Event;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 
 public class FriendsAndFoesPatch implements ModInitializer {
+    public static final String MODID = ThermooPatches.MODID + "-friendsandfoes-patch";
+
     @Override
     public void onInitialize() {
         if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
@@ -42,26 +43,28 @@ public class FriendsAndFoesPatch implements ModInitializer {
         }
     }
 
-    public static void freezeFromTotem(LivingEntity victim) {
-        FriendsAndFoesConfig config = ThermooPatches.getConfig().friendsAndFoesConfig;
+    public static FriendsAndFoesSettings getConfigSettings() {
+        return FriendsAndFoesSettings.HANDLER.instance();
+    }
 
-        int temperatureChange = (int) (config.freezingTotemFreezingScaleChange * victim.thermoo$getMinTemperature());
+    public static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(MODID, path);
+    }
+
+    public static void freezeFromTotem(LivingEntity victim) {
+        int temperatureChange = (int) (getConfigSettings().freezingTotemTemperatureScaleChange() * victim.thermoo$getMinTemperature());
 
         victim.thermoo$addTemperature(temperatureChange, victim.level().thermoo$temperatureSources().active());
     }
 
     public static void freezeFromIceChunk(LivingEntity victim) {
-        FriendsAndFoesConfig config = ThermooPatches.getConfig().friendsAndFoesConfig;
-
-        int temperatureChange = (int) (config.iceologerIceChunkFreezingScaleChange * victim.thermoo$getMinTemperature());
+        int temperatureChange = (int) (getConfigSettings().iceologerIceChunkTemperatureScaleChange() * victim.thermoo$getMinTemperature());
 
         victim.thermoo$addTemperature(temperatureChange, victim.level().thermoo$temperatureSources().active());
     }
 
     public static void freezeFromSlowTargetSpell(LivingEntity victim) {
-        FriendsAndFoesConfig config = ThermooPatches.getConfig().friendsAndFoesConfig;
-
-        int temperatureChange = (int) (config.iceologerSlowTargetFreezingScaleChange * victim.thermoo$getMinTemperature());
+        int temperatureChange = (int) (getConfigSettings().iceologerSlowTargetTemperatureScaleChange() * victim.thermoo$getMinTemperature());
 
         victim.thermoo$addTemperature(temperatureChange, victim.level().thermoo$temperatureSources().active());
     }

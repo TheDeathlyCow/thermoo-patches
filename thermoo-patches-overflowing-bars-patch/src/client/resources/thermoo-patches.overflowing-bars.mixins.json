@@ -2,7 +2,7 @@
     "required": true,
     "package": "com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin",
     "plugin": "com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin.Plugin",
-    "compatibilityLevel": "JAVA_21",
+    "compatibilityLevel": "JAVA_25",
     "client": [
         "overflowingbars.present.HealthBarRendererMixin"
     ],

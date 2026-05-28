@@ -1,0 +1,10 @@
+{
+  "yacl3.config.thermoo-patches:client/display.category.general": "Friends & Foes",
+  "yacl3.config.thermoo-patches:client/display.desc": "Settings for the Friends & Foes patch",
+  "yacl3.config.thermoo-patches:client/display.freezingTotemTemperatureScaleChange": "Freezing Totem temperature scale change",
+  "yacl3.config.thermoo-patches:client/display.freezingTotemTemperatureScaleChange.desc": "What percentage of a targets minimum temperature to remove when struck by the freezing effect of the Freezing Totem.",
+  "yacl3.config.thermoo-patches:client/display.iceologerIceChunkTemperatureScaleChange": "Iceologer Ice Chunk temperature scale change",
+  "yacl3.config.thermoo-patches:client/display.iceologerIceChunkTemperatureScaleChange.desc": "What percentage of a targets minimum temperature to remove when struck by the Iceologer's Ice Chunk spell.",
+  "yacl3.config.thermoo-patches:client/display.iceologerSlowTargetTemperatureScaleChange": "Iceologer Slow Target temperature scale change",
+  "yacl3.config.thermoo-patches:client/display.iceologerSlowTargetTemperatureScaleChange.desc": "What percentage of a targets minimum temperature to remove when struck by the Iceologer's Slow Target spell."
+}

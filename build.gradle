@@ -26,10 +26,6 @@ allprojects {
             name = "Ladysnake Mod Releases"
             url = 'https://maven.ladysnake.org/releases'
         }
-        maven {
-            name = "Ladysnake Mod Snapshots"
-            url = 'https://maven.ladysnake.org/snapshots'
-        }
         maven { url "https://maven.shedaniel.me/" }
         maven { url "https://maven.terraformersmc.com/" }
         maven { url "https://maven.resourcefulbees.com/repository/maven-public/" }
@@ -47,6 +43,10 @@ allprojects {
         }
         maven {
             url "https://masa.dy.fi/maven"
+        }
+        maven {
+            name 'Xander Maven'
+            url 'https://maven.isxander.dev/releases'
         }
         exclusiveContent {
             forRepository {
@@ -70,9 +70,9 @@ allprojects {
         implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
         implementation "com.github.thedeathlycow:thermoo:v${project.thermoo_version}"
         implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
-        api("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-            exclude(group: "net.fabricmc.fabric-api")
-        }
+        implementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
+        implementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
+        implementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
     }
 
     loom {
@@ -86,7 +86,7 @@ allprojects {
         inputs.property "loader_version", project.findProperty('loader_version')
         inputs.property "fabric_version", project.findProperty('fabric_version')
         inputs.property "thermoo_version", project.findProperty('thermoo_version')
-        inputs.property "cloth_config_version", project.findProperty('cloth_config_version')
+        inputs.property "yacl_version", project.findProperty('yacl_version')
         inputs.property "mod_menu_version", project.findProperty('mod_menu_version')
 
         filesMatching("fabric.mod.json") {
@@ -97,7 +97,7 @@ allprojects {
                     "loader_version": project.findProperty('loader_version'),
                     "fabric_version": project.findProperty('fabric_version'),
                     "thermoo_version": project.findProperty('thermoo_version'),
-                    "cloth_config_version": project.findProperty('cloth_config_version'),
+                    "yacl_version": project.findProperty('yacl_version'),
                     "mod_menu_version": project.findProperty('mod_menu_version'),
             )
         }
@@ -164,7 +164,7 @@ publishMods {
         clientRequired = true
         serverRequired = true
 
-        requires("fabric-api", "thermoo", "cloth-config")
+        requires("fabric-api", "thermoo", "yacl")
         optional(
                 "serene-seasons",
                 "friends-and-foes",
@@ -177,7 +177,7 @@ publishMods {
         projectId = "TYRF9nUy"
         minecraftVersions.addAll("26.1", "26.1.1", "26.1.2")
 
-        requires("fabric-api", "thermoo", "cloth-config")
+        requires("fabric-api", "thermoo", "yacl")
 
         optional(
                 "serene-seasons",
