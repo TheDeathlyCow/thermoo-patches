@@ -173,7 +173,8 @@ publishMods {
                 "serene-seasons",
                 "friends-and-foes",
                 "overflowing-bars",
-                "nycto"
+                "nycto",
+                "homeostatic-seasons"
         )
     }
 
@@ -188,7 +189,8 @@ publishMods {
                 "serene-seasons",
                 "friends-and-foes",
                 "overflowing-bars",
-                "nycto"
+                "nycto",
+                "homeostatic-seasons"
         )
     }
 }
