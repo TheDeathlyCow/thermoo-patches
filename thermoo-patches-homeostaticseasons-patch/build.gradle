@@ -1,0 +1,12 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-homeostaticseasons-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base')
+
+    compileOnly "maven.modrinth:homeostatic-seasons:${project.homeostaticseasons_version}"
+}

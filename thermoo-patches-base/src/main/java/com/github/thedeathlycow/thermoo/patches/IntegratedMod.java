@@ -17,8 +17,9 @@ public enum IntegratedMod {
     FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes"),
     STELLARIS("stellaris", "https://modrinth.com/mod/stellaris"),
     EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins"),
-    NYCTO("nycto", "https://modrinth.com/mod/nycto");
-    
+    NYCTO("nycto", "https://modrinth.com/mod/nycto"),
+    HOMEOSTATIC_SEASONS("homeostaticseasons", "https://modrinth.com/mod/homeostatic-seasons");
+
     private final String id;
 
     private final String modpage;

@@ -1,0 +1,47 @@
+{
+    "schemaVersion": 1,
+    "id": "thermoo-patches-homeostaticseasons-patch",
+    "version": "${version}",
+    "name": "Thermoo Patches Homeostatic Seasons Patch",
+    "description": "Homeostatic Seasons integration patch for Thermoo",
+    "authors": [
+        "TheDeathlyCow"
+    ],
+    "contact": {
+        "homepage": "https://github.com/TheDeathlyCow/",
+        "sources": "https://github.com/TheDeathlyCow/thermoo-patches",
+        "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
+    },
+    "license": "LGPL-3.0",
+    "icon": "assets/thermoo-patches-homeostaticseasons-patch/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.github.thedeathlycow.thermoo.patches.homeostaticseasons.HomeostaticSeasonsProvider"
+        ]
+    },
+    "mixins": [],
+    "depends": {
+        "fabricloader": "*",
+        "minecraft": "*",
+        "java": "*",
+        "fabric-api": "*",
+        "thermoo": "*",
+        "yet_another_config_lib_v3": "*",
+        "thermoo-patches-base": "*"
+    },
+    "suggests": {
+        "homeostaticseasons": "*"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.discord": "https://discord.thedeathlycow.com",
+                "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
+                "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
+            },
+            "parent": "thermoo-patches",
+            "update_checker": false
+        }
+    }
+}
