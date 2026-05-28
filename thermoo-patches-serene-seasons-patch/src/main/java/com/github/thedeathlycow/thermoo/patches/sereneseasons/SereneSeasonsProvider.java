@@ -1,6 +1,9 @@
 package com.github.thedeathlycow.thermoo.patches.sereneseasons;
 
-import com.github.thedeathlycow.thermoo.api.season.*;
+import com.github.thedeathlycow.thermoo.api.season.v2.TemperateSeason;
+import com.github.thedeathlycow.thermoo.api.season.v2.ThermooSeasonEvents;
+import com.github.thedeathlycow.thermoo.api.season.v2.ThermooSeasonState;
+import com.github.thedeathlycow.thermoo.api.season.v2.TropicalSeason;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.Holder;

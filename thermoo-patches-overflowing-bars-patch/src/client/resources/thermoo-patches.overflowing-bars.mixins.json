@@ -4,8 +4,7 @@
     "plugin": "com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin.Plugin",
     "compatibilityLevel": "JAVA_21",
     "client": [
-        "overflowingbars.present.HealthBarRendererMixin",
-        "overflowingbars.present.ModHeartTypeMixin"
+        "overflowingbars.present.HealthBarRendererMixin"
     ],
     "injectors": {
         "defaultRequire": 1

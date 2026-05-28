@@ -1,14 +1,15 @@
 package com.github.thedeathlycow.thermoo.patches.overflowingbars.mixin.overflowingbars.present;
 
-import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
+import com.github.thedeathlycow.thermoo.api.client.v1.StatusBarOverlayRenderEvents;
 import com.github.thedeathlycow.thermoo.impl.client.HeartBarContextImpl;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
-import fuzs.overflowingbars.client.gui.HealthBarRenderer;
+import fuzs.overflowingbars.common.client.gui.HealthBarRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import org.joml.Vector2i;
@@ -31,14 +32,14 @@ public class HealthBarRendererMixin {
             method = "renderHearts",
             at = @At(
                     value = "INVOKE",
-                    target = "Lfuzs/overflowingbars/client/gui/HealthBarRenderer$ModHeartType;renderHeart(Lnet/minecraft/client/gui/GuiGraphics;IIZZZ)V",
+                    target = "Lfuzs/overflowingbars/common/client/gui/HealthBarRenderer;blitHeart(Lnet/minecraft/client/gui/Gui$HeartType;Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIZZZ)V",
                     ordinal = 0,
                     shift = At.Shift.AFTER,
                     remap = true
             )
     )
     private void captureHeartPosition(
-            GuiGraphics drawContext,
+            GuiGraphicsExtractor graphics,
             Player player,
             int posX, int posY,
             int heartOffsetByRegen,
@@ -63,7 +64,7 @@ public class HealthBarRendererMixin {
             at = @At("TAIL")
     )
     private void renderOverlayBar(
-            GuiGraphics drawContext,
+            GuiGraphicsExtractor graphics,
             Player player,
             int posX, int posY,
             int heartOffsetByRegen,
@@ -86,6 +87,6 @@ public class HealthBarRendererMixin {
                 Math.min(20, Mth.ceil(maxHealth))
         );
 
-        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker().render(drawContext, player, heartBarContext);
+        StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker().render(graphics, player, heartBarContext);
     }
 }

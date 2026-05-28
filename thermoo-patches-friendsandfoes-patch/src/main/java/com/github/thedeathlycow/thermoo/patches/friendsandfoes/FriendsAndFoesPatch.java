@@ -1,8 +1,7 @@
 package com.github.thedeathlycow.thermoo.patches.friendsandfoes;
 
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
-import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
-import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
+import com.github.thedeathlycow.thermoo.api.entity.v1.ThermooAttributes;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.config.FriendsAndFoesConfig;
@@ -16,7 +15,7 @@ public class FriendsAndFoesPatch implements ModInitializer {
     public void onInitialize() {
         if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
             Identifier phase = ThermooPatches.id("override");
-            Event<ThermooAttributes.SetBaseAttributeValue> maxTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MAX_TEMPERATURE);
+            var maxTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MAX_TEMPERATURE);
             maxTemperature.addPhaseOrdering(Event.DEFAULT_PHASE, phase);
             maxTemperature.register(
                     phase,
@@ -29,7 +28,7 @@ public class FriendsAndFoesPatch implements ModInitializer {
             );
 
 
-            Event<ThermooAttributes.SetBaseAttributeValue> minTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MIN_TEMPERATURE);
+            var minTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MIN_TEMPERATURE);
             minTemperature.addPhaseOrdering(Event.DEFAULT_PHASE, phase);
             minTemperature.register(
                     phase,
@@ -48,7 +47,7 @@ public class FriendsAndFoesPatch implements ModInitializer {
 
         int temperatureChange = (int) (config.freezingTotemFreezingScaleChange * victim.thermoo$getMinTemperature());
 
-        victim.thermoo$addTemperature(temperatureChange, HeatingModes.ACTIVE);
+        victim.thermoo$addTemperature(temperatureChange, victim.level().thermoo$temperatureSources().active());
     }
 
     public static void freezeFromIceChunk(LivingEntity victim) {
@@ -56,7 +55,7 @@ public class FriendsAndFoesPatch implements ModInitializer {
 
         int temperatureChange = (int) (config.iceologerIceChunkFreezingScaleChange * victim.thermoo$getMinTemperature());
 
-        victim.thermoo$addTemperature(temperatureChange, HeatingModes.ACTIVE);
+        victim.thermoo$addTemperature(temperatureChange, victim.level().thermoo$temperatureSources().active());
     }
 
     public static void freezeFromSlowTargetSpell(LivingEntity victim) {
@@ -64,6 +63,6 @@ public class FriendsAndFoesPatch implements ModInitializer {
 
         int temperatureChange = (int) (config.iceologerSlowTargetFreezingScaleChange * victim.thermoo$getMinTemperature());
 
-        victim.thermoo$addTemperature(temperatureChange, HeatingModes.ACTIVE);
+        victim.thermoo$addTemperature(temperatureChange, victim.level().thermoo$temperatureSources().active());
     }
 }

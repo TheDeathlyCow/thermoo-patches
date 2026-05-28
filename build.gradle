@@ -68,7 +68,7 @@ allprojects {
 
         // required dependencies
         implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-        implementation "maven.modrinth:thermoo:${project.thermoo_version}"
+        implementation "com.github.thedeathlycow:thermoo:v${project.thermoo_version}"
         implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
         api("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
             exclude(group: "net.fabricmc.fabric-api")
