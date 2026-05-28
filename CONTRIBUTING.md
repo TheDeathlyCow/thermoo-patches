@@ -17,8 +17,6 @@ Set up tasks:
 - First create a folder named something like `thermoo-patches-{patched mod ID}-patch`
 - Include a basic `build.gradle` and import the mod from Maven using either the mod's official maven or Modrinth Maven as a `modCompileOnly` dependency.  
 - If needed, also depend on the `thermoo-patches-base` module in the new module.
-- Create a custom mappings file in `{module}/mappings/yarn-custom.tiny`
-    - For most mods, you can simply copy from [the base custom mappings file](./mappings/yarn-custom.tiny) and leave it empty. This is only needed if importing a mod that uses Official Mappings and has some method name that conflicts with yarn, such as [Armor Points++](./thermoo-patches-armorpointspp-patch/mappings/yarn-custom.tiny).
 - Include the module in [`settings.gradle`](./settings.gradle)
 - Add and include the module to the base dependencies in [`build.gradle`](./build.gradle)
 

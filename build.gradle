@@ -1,7 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.15-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version '1.15-SNAPSHOT'
     id 'maven-publish'
-    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
+    id "me.modmuss50.mod-publish-plugin" version "2.0.0-beta.1"
 }
 
 var mod_version = project.mod_version
@@ -13,7 +13,7 @@ base {
 }
 
 allprojects {
-    apply plugin: 'fabric-loom'
+    apply plugin: 'net.fabricmc.fabric-loom'
 
     repositories {
         // Add repositories to retrieve artifacts from in here.
@@ -48,10 +48,6 @@ allprojects {
         maven {
             url "https://masa.dy.fi/maven"
         }
-        maven {
-            name = 'ParchmentMC'
-            url = 'https://maven.parchmentmc.org'
-        }
         exclusiveContent {
             forRepository {
                 maven {
@@ -68,17 +64,13 @@ allprojects {
     dependencies {
         // To change the versions see the gradle.properties file
         minecraft "com.mojang:minecraft:${project.minecraft_version}"
-        mappings loom.layered {
-            officialMojangMappings()
-            parchment("org.parchmentmc.data:parchment-1.21.11:2025.12.20@zip")
-        }
-        modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+        implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
         // required dependencies
-        modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-        modImplementation "maven.modrinth:thermoo:${project.thermoo_version}"
-        modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
-        modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+        implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+        implementation "maven.modrinth:thermoo:${project.thermoo_version}"
+        implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
+        api("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
             exclude(group: "net.fabricmc.fabric-api")
         }
     }
@@ -112,27 +104,27 @@ allprojects {
     }
 
     tasks.withType(JavaCompile).configureEach {
-        it.options.release = 21
+        it.options.release = 25
     }
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
     }
 }
 
 dependencies {
-    api project(path: ":thermoo-patches-base", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-fabric-seasons-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-simple-seasons-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-serene-seasons-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-immersive-weathering-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-friendsandfoes-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-colorfulhearts-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-overflowing-bars-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-armorpointspp-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-origins-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-stellaris-patch", configuration: "namedElements")
+    api project(path: ":thermoo-patches-base")
+//    api project(path: ":thermoo-patches-fabric-seasons-patch")
+//    api project(path: ":thermoo-patches-simple-seasons-patch")
+    api project(path: ":thermoo-patches-serene-seasons-patch")
+//    api project(path: ":thermoo-patches-immersive-weathering-patch")
+    api project(path: ":thermoo-patches-friendsandfoes-patch")
+//    api project(path: ":thermoo-patches-colorfulhearts-patch")
+    api project(path: ":thermoo-patches-overflowing-bars-patch")
+//    api project(path: ":thermoo-patches-armorpointspp-patch")
+//    api project(path: ":thermoo-patches-origins-patch")
+//    api project(path: ":thermoo-patches-stellaris-patch")
 
     include(project(path: ":thermoo-patches-base"))
 //    include(project(path: ":thermoo-patches-fabric-seasons-patch"))
@@ -158,16 +150,16 @@ publishMods {
     type = STABLE
     displayName = "Thermoo Patches ${mod_version}"
 
-    file = remapJar.archiveFile
+    file = jar.archiveFile
     modLoaders.add("fabric")
     modLoaders.add("quilt")
 
     curseforge {
         accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
         projectId = "1012677"
-        minecraftVersions.addAll("1.21.11")
+        minecraftVersions.addAll("26.1", "26.1.1", "26.1.2")
 
-        javaVersions.add(JavaVersion.VERSION_21)
+        javaVersions.add(JavaVersion.VERSION_25)
 
         clientRequired = true
         serverRequired = true
@@ -183,7 +175,7 @@ publishMods {
     modrinth {
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         projectId = "TYRF9nUy"
-        minecraftVersions.addAll("1.21.11")
+        minecraftVersions.addAll("26.1", "26.1.1", "26.1.2")
 
         requires("fabric-api", "thermoo", "cloth-config")
 
