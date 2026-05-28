@@ -1,0 +1,13 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-nycto-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base')
+    clientImplementation findProject(':thermoo-patches-base').sourceSets.client.output
+
+    compileOnly "maven.modrinth:nycto:${project.nycto_version}"
+}

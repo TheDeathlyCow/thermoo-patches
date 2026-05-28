@@ -15,7 +15,7 @@ If you want to create a new patch for Thermoo Patches, here is how to do it:
 
 Set up tasks:
 - First create a folder named something like `thermoo-patches-{patched mod ID}-patch`
-- Include a basic `build.gradle` and import the mod from Maven using either the mod's official maven or Modrinth Maven as a `modCompileOnly` dependency.  
+- Include a basic `build.gradle` and import the mod from Maven using either the mod's official maven or Modrinth Maven as a `compileOnly` dependency.  
 - If needed, also depend on the `thermoo-patches-base` module in the new module.
 - Include the module in [`settings.gradle`](./settings.gradle)
 - Add and include the module to the base dependencies in [`build.gradle`](./build.gradle)
