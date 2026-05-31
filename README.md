@@ -27,6 +27,7 @@ The following patches are currently either implemented, or planned.
 | [Homeostatic Seasons](https://modrinth.com/mod/homeostatic-seasons)                                | Makes Frostiful/Scorchful aware of current season (with tropical season support for wet seasons in temperate biomes).                                                                                                                | 26.1.x                                        |
 | [Nycto](https://modrinth.com/mod/nycto)                                                            | Makes Vampires immune to negative cold temperature statuses.                                                                                                                                                                         | 26.1.x                                        |
 | [Origins](https://modrinth.com/mod/origins)                                                        | Provides powers for integrating Thermoo temperatures with Origins. Blazeborn Origin ignores the effects of heat, but is extremely vulnerable to cold.                                                                                | 1.21.1                                        |
+| [Origins: Legacy](https://modrinth.com/mod/origins-legacy)                                         | Identical to Origins patch, but for Origins: Legacy.                                                                                                                                                                                 | 26.1.x                                        |
 | [Mob Origins](https://modrinth.com/mod/moborigins)                                                 | Snow Golem is empowered by cold, but melts when warm. Snow Golem temperature system also removed (redundant with Thermoo).                                                                                                           | 1.20.1, 1.20.4                                | 
 | [Extra Origins](https://modrinth.com/mod/extra-origins)                                            | Piglin origin has extra heat resistance                                                                                                                                                                                              | 1.20.1, 1.20.4, 1.21.1                        |
 | [Fabric Seasons](https://modrinth.com/mod/fabric-seasons)                                          | Makes Frostiful/Scorchful aware of current season (including tropical seasons, with a summer dry season).                                                                                                                            | 1.20.1[^1], 1.21.1                            |
@@ -71,22 +72,22 @@ these powers do, as things such as temperature changes and Frost/Heat Resistance
 | Power ID                                 | Description                                                                                                                       | 
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | `thermoo-patches:cold_immune`            | Adds a very large amount of Frost Resistance to affected entites, making them effectively immune to all cold temperature changes. |
-| `thermoo-patches:ignores_cold_effects`   | Makes the affected entity immune to Frostiful's *negative* temperature effects                                                    |
+| `thermoo-patches:ignores_cold_effects`   | Makes the affected entity immune to *harmful* cold-based temperature statuses/effects                                             |
 | `thermoo-patches:cold_vulnerability`     | Doubles the amount of freezing that affected entities receive from cold temperature changes.                                      |
 | `thermoo-patches:extra_frost_resistance` | Gives affected entities 50% resistance to cold temperature changes                                                                |
 | `thermoo-patches:heat_immune`            | Adds a very large amount of Heat Resistance to affected entites, making them effectively immune to all warm temperature changes.  |
-| `thermoo-patches:ignores_heat_effects`   | Makes the affected entity immune to Scorchful's *negative* temperature effects                                                    |
+| `thermoo-patches:ignores_heat_effects`   | Makes the affected entity immune to *harmful* heat-based temperature statuses/effects                                             |
 | `thermoo-patches:heat_vulnerability`     | Doubles the amount of heating that affected entities receive from warm temperature changes.                                       |
 | `thermoo-patches:extra_heat_resistance`  | Gives affected entities 50% resistance to warm temperature changes                                                                |
 
-Some powers are provided under the name space `thermoo-patches-origins-patch`. These powers should be considered
+Some powers are provided under the name space `thermoo-patches-origins(-legacy)-patch`. These powers should be considered
 internal to Thermoo Patches and are not a stable API. However, you may copy them into your own datapacks under the terms
 of the GNU LGPL.
 
-| Predicate ID                 | Description                                                                                                       |
-|------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). | 
-| `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat (use instead of `scorchful:can_heat`).   | 
+| Predicate ID                 | Description                                                                                                                                          |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). Only loads if Frostiful is loaded. | 
+| `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat (use instead of `scorchful:can_heat`). Only loads if Scorchful is loaded.   | 
 
 # Additional Credits
 
