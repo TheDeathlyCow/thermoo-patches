@@ -1,0 +1,13 @@
+
+version = rootProject.mod_version
+
+base {
+    archivesName = "thermoo-patches-origins-legacy-patch"
+}
+
+dependencies {
+    api project(path: ':thermoo-patches-base')
+    clientImplementation findProject(':thermoo-patches-base').sourceSets.client.output
+
+    compileOnly "com.github.bluspring:Origins-Legacy:${project.origins_legacy_version}"
+}

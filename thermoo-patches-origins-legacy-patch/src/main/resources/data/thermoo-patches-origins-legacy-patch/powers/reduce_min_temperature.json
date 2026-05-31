@@ -1,0 +1,9 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "thermoo-patches:blazeborn_min_temperature_penalty",
+        "attribute": "thermoo:min_temperature",
+        "value": -0.75,
+        "operation": "multiply_total"
+    }
+}
