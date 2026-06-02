@@ -1,203 +1,128 @@
 plugins {
-    id 'fabric-loom' version '1.13-SNAPSHOT'
+    id 'org.relativitymc.neo-loom-remap' version "${loom_version}"
     id 'maven-publish'
-    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
-var mod_version = project.mod_version
 version = project.mod_version
 group = project.maven_group
 
-base {
-    archivesName = project.archives_base_name
+repositories {
+    // Add repositories to retrieve artifacts from in here.
+    // You should only use this when depending on other mods because
+    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
+    // for more information about repositories.
+    mavenCentral()
+    maven {
+        name = 'ParchmentMC'
+        url = 'https://maven.parchmentmc.org'
+    }
+    maven {
+        url = "https://jitpack.io/"
+    }
+    maven {
+        url "https://maven.su5ed.dev/releases"
+    }
+    maven {
+        name 'Xander Maven'
+        url 'https://maven.isxander.dev/releases'
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
-allprojects {
-    apply plugin: 'fabric-loom'
+sourceSets {
+    sereneSeasons {
+        java {
+            srcDir 'src/sereneSeasons/java'
+        }
+        resources {
+            srcDir 'src/sereneSeasons/resources'
+        }
 
-    repositories {
-        // Add repositories to retrieve artifacts from in here.
-        // You should only use this when depending on other mods because
-        // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-        // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-        // for more information about repositories.
-        maven { url "https://jitpack.io/" }
-        maven {
-            name = "Ladysnake Mod Releases"
-            url = 'https://maven.ladysnake.org/releases'
-        }
-        maven {
-            name = "Ladysnake Mod Snapshots"
-            url = 'https://maven.ladysnake.org/snapshots'
-        }
-        maven { url "https://maven.shedaniel.me/" }
-        maven { url "https://maven.terraformersmc.com/" }
-        maven { url "https://maven.resourcefulbees.com/repository/maven-public/" }
-        maven {
-            url = 'https://maven.cafeteria.dev'
-            content {
-                includeGroup 'net.adriantodt.fabricmc'
-            }
-        }
-        maven {
-            url "https://maven.jamieswhiteshirt.com/libs-release"
-            content {
-                includeGroup "com.jamieswhiteshirt"
-            }
-        }
-        maven {
-            url "https://masa.dy.fi/maven"
-        }
-        exclusiveContent {
-            forRepository {
-                maven {
-                    name = "Modrinth"
-                    url = "https://api.modrinth.com/maven"
-                }
-            }
-            filter {
-                includeGroup "maven.modrinth"
-            }
-        }
+        compileClasspath += main.compileClasspath
+        runtimeClasspath += main.runtimeClasspath
+        compileClasspath += main.output
+        runtimeClasspath += main.output
     }
+}
 
-    dependencies {
-        // To change the versions see the gradle.properties file
-        minecraft "com.mojang:minecraft:${project.minecraft_version}"
-        mappings loom.layered {
-            mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-            mappings file("mappings/yarn-custom.tiny")
+loom {
+    mods {
+        "thermoo_patches_serene_seasons_patch" {
+            sourceSet sourceSets.sereneSeasons
         }
-        modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-        // required dependencies
-        modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-        modImplementation "maven.modrinth:thermoo:${project.thermoo_version}"
-        modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
-        modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-            exclude(group: "net.fabricmc.fabric-api")
+        "thermoo_patches" {
+            sourceSet sourceSets.main
         }
-    }
-
-    loom {
-        splitEnvironmentSourceSets()
-    }
-
-    tasks.withType(ProcessResources).configureEach {
-        inputs.property "version", project.findProperty('mod_version')
-        inputs.property "java_version", project.findProperty('java_version')
-        inputs.property "minecraft_versions", project.findProperty('minecraft_versions')
-        inputs.property "loader_version", project.findProperty('loader_version')
-        inputs.property "fabric_version", project.findProperty('fabric_version')
-        inputs.property "thermoo_version", project.findProperty('thermoo_version')
-        inputs.property "cloth_config_version", project.findProperty('cloth_config_version')
-        inputs.property "mod_menu_version", project.findProperty('mod_menu_version')
-
-        filesMatching("fabric.mod.json") {
-            expand(
-                    "version": project.findProperty('mod_version'),
-                    "java_version": project.findProperty('java_version'),
-                    "minecraft_versions": project.findProperty('minecraft_versions'),
-                    "loader_version": project.findProperty('loader_version'),
-                    "fabric_version": project.findProperty('fabric_version'),
-                    "thermoo_version": project.findProperty('thermoo_version'),
-                    "cloth_config_version": project.findProperty('cloth_config_version'),
-                    "mod_menu_version": project.findProperty('mod_menu_version'),
-            )
-        }
-    }
-
-    tasks.withType(JavaCompile).configureEach {
-        it.options.release = 21
-    }
-
-    java {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 
 dependencies {
-    api project(path: ":thermoo-patches-base", configuration: "namedElements")
-    api project(path: ":thermoo-patches-fabric-seasons-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-simple-seasons-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-serene-seasons-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-immersive-weathering-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-friendsandfoes-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-colorfulhearts-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-overflowing-bars-patch", configuration: "namedElements")
-//    api project(path: ":thermoo-patches-armorpointspp-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-origins-patch", configuration: "namedElements")
-    api project(path: ":thermoo-patches-stellaris-patch", configuration: "namedElements")
+    // To change the versions see the gradle.properties file
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip")
+    }
+    neoForge "net.neoforged:neoforge:${project.loader_version}"
 
-    include(project(path: ":thermoo-patches-base"))
-    include(project(path: ":thermoo-patches-fabric-seasons-patch"))
-    include(project(path: ":thermoo-patches-simple-seasons-patch"))
-    include(project(path: ":thermoo-patches-serene-seasons-patch"))
-//    include(project(path: ":thermoo-patches-immersive-weathering-patch"))
-    include(project(path: ":thermoo-patches-friendsandfoes-patch"))
-    include(project(path: ":thermoo-patches-colorfulhearts-patch"))
-    include(project(path: ":thermoo-patches-overflowing-bars-patch"))
-//    include(project(path: ":thermoo-patches-armorpointspp-patch"))
-    include(project(path: ":thermoo-patches-origins-patch"))
-    include(project(path: ":thermoo-patches-stellaris-patch"))
+    include(implementation("dev.yumi.mc.core:yumi-mc-foundation:${project.yumi_mc_version}") {
+        attributes {
+            attribute(Attribute.of("net.minecraft.mappings", String), "mojmap")
+        }
+    })
+
+    api "com.github.thedeathlycow:thermoo:v${project.thermoo_version}"
+    api "dev.isxander:yet-another-config-lib:${project.yacl_version}"
+
+    sereneSeasonsCompileOnly("maven.modrinth:serene-seasons:${project.serene_seasons_version}")
+}
+
+processResources {
+    var expandProps = [
+            "version": project.mod_version,
+            "loader_version": project.loader_version,
+            "thermoo_version": project.thermoo_version,
+            "yacl_version": project.yacl_version,
+    ]
+
+    inputs.properties(expandProps)
+
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand expandProps
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+    // if it is present.
+    // If you remove this line, sources will not be generated.
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
+    def projectName = project.name
+    inputs.property "projectName", projectName
+
     from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
-    }
-}
-
-publishMods {
-    changelog = file("changelogs/${mod_version}.md").text
-    type = STABLE
-    displayName = "Thermoo Patches ${mod_version}"
-
-    file = remapJar.archiveFile
-    modLoaders.add("fabric")
-    modLoaders.add("quilt")
-
-    curseforge {
-        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
-        projectId = "1012677"
-        minecraftVersions.add("1.21.1")
-
-        javaVersions.add(JavaVersion.VERSION_21)
-
-        clientRequired = true
-        serverRequired = true
-
-        requires("fabric-api", "thermoo", "cloth-config")
-        optional(
-                "simple-seasons",
-                "serene-seasons",
-                "fabric-seasons",
-                "friends-and-foes",
-                "overflowing-bars",
-                "colorful-hearts",
-                "origins",
-                "stellaris"
-        )
-    }
-
-    modrinth {
-        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-        projectId = "TYRF9nUy"
-        minecraftVersions.add("1.21.1")
-
-        requires("fabric-api", "thermoo", "cloth-config")
-
-        optional(
-                "simple-seasons",
-                "serene-seasons",
-                "fabric-seasons",
-                "friends-and-foes",
-                "overflowing-bars",
-                "colorful-hearts",
-                "origins",
-                "stellaris"
-        )
+        rename { "${it}_$projectName" }
     }
 }
 

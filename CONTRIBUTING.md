@@ -27,7 +27,7 @@ Documentation tasks:
 - Include the [mod icon](./src/main/resources/assets/thermoo-patches/icon.png) in the module's assets folder (prefer to use the patched mod's icon if said mod's license allows it).
 - Add the mod to the [`IntegratedMod` enum](./thermoo-patches-base/src/main/java/com/github/thedeathlycow/thermoo/patches/IntegratedMod.java) in the base module. 
 - Add the mod as an optional dependency in the publishing section of [`build.gradle`](./build.gradle).
-- Add patch to the [README list of patches](./README.md#list-of-patches).
+- Add patch to the [README list of patches](README.mdist-of-patches).
 
 > [!NOTE]
 > Thermoo Patches requires that all patched mods be OPTIONAL installations. This means that any resources should only load when the patched mod is present (often this means using `fabric:load_conditions`), and checking and Java-level calls with `isModLoaded()`.  

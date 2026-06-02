@@ -1,45 +1,38 @@
 {
-    "schemaVersion": 1,
-    "id": "thermoo-patches",
-    "version": "${version}",
-    "name": "Thermoo Patches",
-    "description": "Integrations and compatibility patches for Thermoo and other mods",
-    "authors": [
-        "TheDeathlyCow"
-    ],
-    "contact": {
-        "homepage": "https://github.com/TheDeathlyCow/",
-        "sources": "https://github.com/TheDeathlyCow/thermoo-patches",
-        "issues": "https://github.com/TheDeathlyCow/thermoo-patches/issues"
-    },
-    "license": "LGPL-3.0",
-    "icon": "assets/thermoo-patches/icon.png",
-    "environment": "*",
-    "entrypoints": {
-        "modmenu": [
-            "com.github.thedeathlycow.thermoo.patches.client.ThermooPatchesModMenu"
-        ]
-    },
-    "mixins": [],
-    "depends": {
-        "fabricloader": ">=${loader_version}",
-        "minecraft": "${minecraft_versions}",
-        "java": ">=${java_version}",
-        "fabric-api": ">=0.110.0",
-        "thermoo": ">=4.8.0",
-        "cloth-config": ">=15.0.140"
-    },
-    "suggests": {
-        "frostiful": "*",
-        "scorchful": "*"
-    },
-    "custom": {
-        "modmenu": {
-            "links": {
-                "modmenu.discord": "https://discord.gg/aqASuWebRU",
-                "modmenu.kofi": "https://ko-fi.com/thedeathlycow",
-                "modmenu.modrinth": "https://modrinth.com/mod/thermoo-patches"
-            }
-        }
-    }
+	"schemaVersion": 1,
+	"id": "thermoo_patches",
+	"version": "${version}",
+	"name": "Thermoo Patches",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/thermoo_patches/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+            "com.github.thedeathlycow.thermoo.patches.neoforge.ThermooPatches"
+		],
+		"client": [
+			"com.github.thedeathlycow.thermoo.patches.client.ThermooPatchesClient"
+		]
+	},
+	"mixins": [
+		"thermoo_patches.mixins.json",
+		{
+			"config": "thermoo_patches.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
 }
