@@ -1,10 +1,14 @@
 plugins {
-    id 'org.relativitymc.neo-loom-remap' version "${loom_version}"
+    id 'net.neoforged.moddev' version '2.0.134'
     id 'maven-publish'
 }
 
 version = project.mod_version
 group = project.maven_group
+
+base {
+    archivesName = mod_id
+}
 
 repositories {
     // Add repositories to retrieve artifacts from in here.
@@ -56,27 +60,71 @@ sourceSets {
     }
 }
 
-loom {
-    mods {
-        "thermoo_patches_serene_seasons_patch" {
-            sourceSet sourceSets.sereneSeasons
+neoForge {
+    version = project.loader_version
+
+    parchment {
+        mappingsVersion = "2024.11.17"
+        minecraftVersion = "1.21.1"
+    }
+
+    runs {
+        client {
+            client()
         }
-        "thermoo_patches" {
-            sourceSet sourceSets.main
+
+        server {
+            server()
+        }
+
+        data {
+            data()
+
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/main/generated/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        // applies to all the run configs above
+        configureEach {
+            // Recommended logging data for a userdev environment
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        // define mod <-> source bindings
+        // these are used to tell the game which sources are for which mod
+        // multi mod projects should define one per mod
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+
+        "${mod_id}_serene_seasons_patch" {
+            sourceSet(sourceSets.sereneSeasons)
         }
     }
 }
 
+sourceSets.main.resources { srcDir 'src/main/generated' }
+
+// Sets up a dependency configuration called 'localRuntime'.
+// This configuration should be used instead of 'runtimeOnly' to declare
+// a dependency that will be present for runtime testing but that is
+// "optional", meaning it will not be pulled by dependents of this mod.
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+
 dependencies {
     // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.layered {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip")
-    }
-    neoForge "net.neoforged:neoforge:${project.loader_version}"
-
-    include(implementation("dev.yumi.mc.core:yumi-mc-foundation:${project.yumi_mc_version}") {
+    jarJar(api("dev.yumi.mc.core:yumi-mc-foundation:${project.yumi_mc_version}") {
         attributes {
             attribute(Attribute.of("net.minecraft.mappings", String), "mojmap")
         }
@@ -88,18 +136,27 @@ dependencies {
     sereneSeasonsCompileOnly("maven.modrinth:serene-seasons:${project.serene_seasons_version}")
 }
 
-processResources {
-    var expandProps = [
-            "version": project.mod_version,
-            "loader_version": project.loader_version,
-            "thermoo_version": project.thermoo_version,
-            "yacl_version": project.yacl_version,
-    ]
+def createModMetadataTask(String sourceSetName) {
+    var taskName = "generate${sourceSetName.capitalize()}Metadata"
+    var generateMetadata = tasks.register(taskName, ProcessResources) {
+        var replaceProperties = [
+                "version"        : project.mod_version,
+                "loader_version" : project.loader_version,
+                "thermoo_version": project.thermoo_version,
+                "yacl_version"   : project.yacl_version,
+        ]
+        inputs.properties replaceProperties
+        expand replaceProperties
+        from "src/${sourceSetName}/templates"
+        into "build/generated/sources/${sourceSetName}"
+    }
+    sourceSets.named(sourceSetName).get().resources.srcDir generateMetadata
+    neoForge.ideSyncTask generateMetadata
+}
 
-    inputs.properties(expandProps)
-
-    filesMatching("META-INF/neoforge.mods.toml") {
-        expand expandProps
+sourceSets.configureEach { sourceSet ->
+    if (!(sourceSet.name in ['test', 'gametest', 'datagen'])) {
+        createModMetadataTask(sourceSet.name)
     }
 }
 
