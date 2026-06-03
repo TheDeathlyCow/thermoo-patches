@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "package": "com.github.thedeathlycow.thermoo.patches.neoforge.overflowing.bars.mixin",
+    "plugin": "com.github.thedeathlycow.thermoo.patches.neoforge.compat.Plugin",
+    "compatibilityLevel": "JAVA_21",
+    "client": [
+        "HealthBarRendererMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

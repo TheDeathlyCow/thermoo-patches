@@ -12,7 +12,7 @@ license="LGPL-3.0"
 issueTrackerURL="https://www.github.com/TheDeathlyCow/thermoo-patches/issues"
 
 [[mods]]
-modId="thermoo_patches"
+modId="${mod_id}"
 
 version="${version}"
 
@@ -28,7 +28,7 @@ authors="TheDeathlyCow"
 
 description='''A suite of integration and compatibility patches for Thermoo-based mods (including Frostiful and Scorchful) and other mods'''
 
-[modproperties.thermoo_patches."yumi:entrypoints"]
+[modproperties.${mod_id}."yumi:entrypoints"]
 "yumi:init" = "com.github.thedeathlycow.thermoo.patches.neoforge.ThermooPatches"
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
@@ -36,28 +36,28 @@ description='''A suite of integration and compatibility patches for Thermoo-base
 #[[accessTransformers]]
 #file="META-INF/accesstransformer.cfg"
 
-[[dependencies.thermoo_patches]]
+[[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"
 versionRange="[${loader_version},)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.thermoo_patches]]
+[[dependencies.${mod_id}]]
 modId="minecraft"
 type="required"
 versionRange="[1.21.1,1.21.2)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.thermoo_patches]]
+[[dependencies.${mod_id}]]
 modId="yet_another_config_lib_v3"
 type="required"
 versionRange="[${yacl_version},)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.thermoo_patches]]
+[[dependencies.${mod_id}]]
 modId="thermoo"
 type="required"
 versionRange="[${thermoo_version},)"

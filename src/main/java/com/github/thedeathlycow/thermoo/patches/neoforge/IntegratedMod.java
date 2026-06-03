@@ -4,7 +4,8 @@ import dev.yumi.mc.core.api.YumiMods;
 import net.minecraft.resources.ResourceLocation;
 
 public enum IntegratedMod {
-    SERENE_SEASONS("sereneseasons", "https://modrinth.com/mod/serene-seasons");
+    SERENE_SEASONS("sereneseasons", "https://modrinth.com/mod/serene-seasons"),
+    OVERFLOWING_BARS("overflowingbars", "https://modrinth.com/mod/overflowing-bars");
 
     private final String id;
 
