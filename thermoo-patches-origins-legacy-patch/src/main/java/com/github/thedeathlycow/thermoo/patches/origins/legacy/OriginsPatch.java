@@ -44,7 +44,7 @@ public class OriginsPatch implements ModInitializer {
                         }
 
                         for (var power : PowerHolderComponent.getPowers(entity, IgnoreHarmfulStatusesPower.class)) {
-                            if ( power.statuses().contains(statusReference)) {
+                            if (power.statuses().contains(statusReference)) {
                                 return TriState.FALSE;
                             }
                         }
