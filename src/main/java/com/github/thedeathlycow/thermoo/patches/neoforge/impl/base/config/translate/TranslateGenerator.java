@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.config.translate;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.config.translate;
 
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;

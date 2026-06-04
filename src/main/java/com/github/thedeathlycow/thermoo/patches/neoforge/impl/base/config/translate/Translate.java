@@ -1,6 +1,6 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.config.translate;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.config.translate;
 
-import com.github.thedeathlycow.thermoo.patches.neoforge.config.ThermooPatchesConfig;
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.config.ThermooPatchesConfig;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 
 import java.lang.annotation.ElementType;

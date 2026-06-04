@@ -1,6 +1,7 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base;
 
 
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.serene.seasons.SereneSeasonsPatch;
 import dev.yumi.commons.event.EventManager;
 import dev.yumi.mc.core.api.ModContainer;
 import dev.yumi.mc.core.api.YumiMods;
@@ -23,6 +24,10 @@ public class ThermooPatches implements ModInitializer {
     @Override
     public void onInitialize(ModContainer mod) {
         logPatchedMods();
+
+        if (IntegratedMod.SERENE_SEASONS.isModLoaded()) {
+            SereneSeasonsPatch.onInitialize(mod);
+        }
     }
 
     public static ResourceLocation id(String path) {

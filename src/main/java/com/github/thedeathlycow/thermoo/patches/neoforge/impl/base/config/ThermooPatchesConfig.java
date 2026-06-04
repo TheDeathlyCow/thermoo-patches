@@ -1,6 +1,6 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.config;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.config;
 
-import com.github.thedeathlycow.thermoo.patches.neoforge.ThermooPatches;
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.ThermooPatches;
 import dev.isxander.yacl3.api.ButtonOption;
 import dev.yumi.commons.event.Event;
 import net.minecraft.resources.ResourceLocation;

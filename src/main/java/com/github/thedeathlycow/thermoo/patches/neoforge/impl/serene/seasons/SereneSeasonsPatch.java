@@ -1,10 +1,9 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.serene.seasons;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.serene.seasons;
 
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeason;
 import com.github.thedeathlycow.thermoo.api.season.ThermooSeasonEvents;
-import com.github.thedeathlycow.thermoo.patches.neoforge.IntegratedMod;
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.IntegratedMod;
 import dev.yumi.mc.core.api.ModContainer;
-import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.biome.Biome;
 import sereneseasons.api.season.Season;
@@ -12,9 +11,8 @@ import sereneseasons.api.season.SeasonHelper;
 
 import java.util.Optional;
 
-public class SereneSeasonsPatch implements ModInitializer {
-    @Override
-    public void onInitialize(ModContainer mod) {
+public class SereneSeasonsPatch  {
+    public static void onInitialize(ModContainer mod) {
         if (IntegratedMod.SERENE_SEASONS.isModLoaded()) {
             ThermooSeasonEvents.GET_CURRENT_SEASON.register(world -> {
                 Season sereneSeason = SeasonHelper.getSeasonState(world)

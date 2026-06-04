@@ -1,6 +1,6 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base;
 
-import com.github.thedeathlycow.thermoo.patches.neoforge.config.ConfigScreen;
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.config.ConfigScreen;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;

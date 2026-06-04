@@ -29,12 +29,16 @@ authors="TheDeathlyCow"
 description='''A suite of integration and compatibility patches for Thermoo-based mods (including Frostiful and Scorchful) and other mods'''
 
 [modproperties.${mod_id}."yumi:entrypoints"]
-"yumi:init" = "com.github.thedeathlycow.thermoo.patches.neoforge.ThermooPatches"
+"yumi:init" = "com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.ThermooPatches"
+"yumi:client_init" = "com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.ThermooPatchesClient"
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
 #[[accessTransformers]]
 #file="META-INF/accesstransformer.cfg"
+
+[[mixins]]
+config="thermoo_patches.mixins.json"
 
 [[dependencies.${mod_id}]]
 modId="neoforge"

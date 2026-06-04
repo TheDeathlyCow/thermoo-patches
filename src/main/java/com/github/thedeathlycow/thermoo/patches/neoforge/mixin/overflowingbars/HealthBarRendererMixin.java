@@ -1,7 +1,7 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.overflowing.bars.mixin;
+package com.github.thedeathlycow.thermoo.patches.neoforge.mixin.overflowingbars;
 
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
-import com.github.thedeathlycow.thermoo.patches.neoforge.compat.RequiresMods;
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.compat.RequiresMods;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;

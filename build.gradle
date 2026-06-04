@@ -44,36 +44,6 @@ repositories {
     }
 }
 
-sourceSets {
-    sereneSeasons {
-        java {
-            srcDir 'src/sereneSeasons/java'
-        }
-        resources {
-            srcDir 'src/sereneSeasons/resources'
-        }
-
-        compileClasspath += main.compileClasspath
-        runtimeClasspath += main.runtimeClasspath
-        compileClasspath += main.output
-        runtimeClasspath += main.output
-    }
-
-    overflowingBars {
-        java {
-            srcDir 'src/overflowingBars/java'
-        }
-        resources {
-            srcDir 'src/overflowingBars/resources'
-        }
-
-        compileClasspath += main.compileClasspath
-        runtimeClasspath += main.runtimeClasspath
-        compileClasspath += main.output
-        runtimeClasspath += main.output
-    }
-}
-
 neoForge {
     version = project.loader_version
 
@@ -118,14 +88,6 @@ neoForge {
         "${mod_id}" {
             sourceSet(sourceSets.main)
         }
-
-        "${mod_id}_serene_seasons_patch" {
-            sourceSet(sourceSets.sereneSeasons)
-        }
-
-        "${mod_id}_overflowing_bars_patch" {
-            sourceSet(sourceSets.sereneSeasons)
-        }
     }
 }
 
@@ -139,7 +101,6 @@ configurations {
     runtimeClasspath.extendsFrom localRuntime
 }
 
-
 dependencies {
     // To change the versions see the gradle.properties file
     jarJar(api("dev.yumi.mc.core:yumi-mc-foundation:${project.yumi_mc_version}") {
@@ -151,35 +112,26 @@ dependencies {
     api "com.github.thedeathlycow:thermoo:v${project.thermoo_version}"
     api "dev.isxander:yet-another-config-lib:${project.yacl_version}"
 
-    sereneSeasonsCompileOnly("maven.modrinth:serene-seasons:${project.serene_seasons_version}")
-
-    overflowingBarsCompileOnly("maven.modrinth:overflowing-bars:${project.overflowingbars_version}")
+    compileOnly("maven.modrinth:serene-seasons:${project.serene_seasons_version}")
+    compileOnly("maven.modrinth:overflowing-bars:${project.overflowingbars_version}")
 }
 
-def createModMetadataTask(String sourceSetName) {
-    var taskName = "generate${sourceSetName.capitalize()}Metadata"
-    var generateMetadata = tasks.register(taskName, ProcessResources) {
-        var replaceProperties = [
-                "mod_id"         : project.mod_id,
-                "version"        : project.mod_version,
-                "loader_version" : project.loader_version,
-                "thermoo_version": project.thermoo_version,
-                "yacl_version"   : project.yacl_version,
-        ]
-        inputs.properties replaceProperties
-        expand replaceProperties
-        from "src/${sourceSetName}/templates"
-        into "build/generated/sources/${sourceSetName}"
-    }
-    sourceSets.named(sourceSetName).get().resources.srcDir generateMetadata
-    neoForge.ideSyncTask generateMetadata
+var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
+    var replaceProperties = [
+            "mod_id"         : project.mod_id,
+            "version"        : project.mod_version,
+            "loader_version" : project.loader_version,
+            "thermoo_version": project.thermoo_version,
+            "yacl_version"   : project.yacl_version,
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from "src/main/templates"
+    into "build/generated/sources/main"
 }
 
-sourceSets.configureEach { sourceSet ->
-    if (!(sourceSet.name in ['test', 'gametest', 'datagen'])) {
-        createModMetadataTask(sourceSet.name)
-    }
-}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
 
 tasks.withType(JavaCompile).configureEach {
     it.options.release = 21

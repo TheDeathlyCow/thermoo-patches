@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.config;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.config;
 
 import dev.isxander.yacl3.api.*;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;

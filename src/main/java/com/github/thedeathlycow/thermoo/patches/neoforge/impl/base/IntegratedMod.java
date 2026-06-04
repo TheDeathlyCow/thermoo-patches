@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base;
 
 import dev.yumi.mc.core.api.YumiMods;
 import net.minecraft.resources.ResourceLocation;

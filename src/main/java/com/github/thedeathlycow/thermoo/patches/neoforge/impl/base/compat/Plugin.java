@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.compat;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.compat;
 
 import dev.yumi.mc.core.api.YumiMods;
 import org.objectweb.asm.ClassReader;
@@ -28,15 +28,31 @@ public class Plugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        boolean apply = checkRequiredModsAnnotation(targetClassName, mixinClassName);
+
+        if (YumiMods.get().isDevelopmentEnvironment()) {
+            if (apply) {
+                LOGGER.info("Mixin was applied: {}->{}", mixinClassName, targetClassName);
+            } else {
+                LOGGER.info("Mixin was NOT applied as @RequiredMods check failed: {}->{}", mixinClassName, targetClassName);
+            }
+
+        }
+
+        return apply;
+    }
+
+    private static boolean checkRequiredModsAnnotation(String targetClassName, String mixinClassName) {
         try {
             var reader = new ClassReader(mixinClassName);
             var classNode = new ClassNode();
             reader.accept(classNode, 0);
-            final String requiresModsName = RequiresMods.class.getCanonicalName();
+            final String requiresModsName = RequiresMods.class.descriptorString();
 
-            for (AnnotationNode annotationNode : classNode.visibleAnnotations) {
+            for (AnnotationNode annotationNode : classNode.invisibleAnnotations) {
                 if (annotationNode.desc.equals(requiresModsName)) {
-                    String[] modIds = (String[]) annotationNode.values.getFirst();
+                    @SuppressWarnings("unchecked")
+                    List<String> modIds = (List<String>) annotationNode.values.get(1);
 
                     if (!allModsLoaded(modIds)) {
                         return false;
@@ -51,7 +67,7 @@ public class Plugin implements IMixinConfigPlugin {
         return true;
     }
 
-    private static boolean allModsLoaded(String[] modIds) {
+    private static boolean allModsLoaded(List<String> modIds) {
         for (String modId : modIds) {
             if (!YumiMods.get().isModLoaded(modId)) {
                 return false;

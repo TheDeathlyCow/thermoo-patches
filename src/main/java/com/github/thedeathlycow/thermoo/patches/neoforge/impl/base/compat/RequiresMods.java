@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.thermoo.patches.neoforge.compat;
+package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base.compat;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
