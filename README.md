@@ -8,12 +8,15 @@
 <img src="https://i.imgur.com/MjlOmH0.png" alt="Requires Thermoo badge" width="300"/>
 </a>
 
-Have trouble? Get help on Discord: https://discord.gg/aqASuWebRU
+Have trouble? Get help on Discord: https://discord.thedeathlycow.com
 
 Thermoo Patches provides compatibility patches and integrations for [Thermoo](https://github.com/TheDeathlyCow/thermoo/)
 based mods, including [Frostiful](https://github.com/TheDeathlyCow/frostiful/)
 and [Scorchful](https://github.com/TheDeathlyCow/scorchful/), and other non-Thermoo mods where it would make sense for
 them to have Thermoo integration.
+
+> ![WARN]
+> This branch is the 1.21.1 NeoForge port of Thermoo Patches. It is a bit more minimal at this time and does not contain as many patches as the Fabric branch for 1.21.1. If you want a specific mod added, please leave a comment on this issue: https://github.com/TheDeathlyCow/thermoo-patches/issues/38
 
 # List of Patches
 

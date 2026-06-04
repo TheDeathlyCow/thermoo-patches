@@ -1,12 +1,15 @@
 package com.github.thedeathlycow.thermoo.patches.neoforge.impl.base;
 
 
+import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
+import com.github.thedeathlycow.thermoo.patches.neoforge.impl.friendsandfoes.FriendsAndFoesPatch;
 import com.github.thedeathlycow.thermoo.patches.neoforge.impl.serene.seasons.SereneSeasonsPatch;
 import dev.yumi.commons.event.EventManager;
 import dev.yumi.mc.core.api.ModContainer;
 import dev.yumi.mc.core.api.YumiMods;
 import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +28,22 @@ public class ThermooPatches implements ModInitializer {
     public void onInitialize(ModContainer mod) {
         logPatchedMods();
 
+        if (YumiMods.get().isDevelopmentEnvironment()) {
+            ThermooAttributes.baseValueEvent(ThermooAttributes.MIN_TEMPERATURE).register((entity, baseValue) -> {
+                if (entity.getType() == EntityType.PLAYER) {
+                    return 45;
+                }
+
+                return baseValue;
+            });
+        }
+
         if (IntegratedMod.SERENE_SEASONS.isModLoaded()) {
-            SereneSeasonsPatch.onInitialize(mod);
+            SereneSeasonsPatch.onInitialize();
+        }
+
+        if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
+            FriendsAndFoesPatch.onInitialize();
         }
     }
 

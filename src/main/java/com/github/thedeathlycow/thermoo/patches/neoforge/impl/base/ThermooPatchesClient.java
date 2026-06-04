@@ -12,14 +12,6 @@ public class ThermooPatchesClient implements ClientModInitializer {
     public void onInitializeClient(ModContainer mod) {
         if (YumiMods.get().isDevelopmentEnvironment()) {
             StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.register(new DebugHeartOverlay());
-
-            ThermooAttributes.baseValueEvent(ThermooAttributes.MIN_TEMPERATURE).register((entity, baseValue) -> {
-                if (entity.getType() == EntityType.PLAYER) {
-                    return 45;
-                }
-
-                return baseValue;
-            });
         }
     }
 }

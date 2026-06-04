@@ -5,7 +5,8 @@ import net.minecraft.resources.ResourceLocation;
 
 public enum IntegratedMod {
     SERENE_SEASONS("sereneseasons", "https://modrinth.com/mod/serene-seasons"),
-    OVERFLOWING_BARS("overflowingbars", "https://modrinth.com/mod/overflowing-bars");
+    OVERFLOWING_BARS("overflowingbars", "https://modrinth.com/mod/overflowing-bars"),
+    FRIENDS_AND_FOES("friendsandfoes", "https://modrinth.com/mod/friends-and-foes-forge");
 
     private final String id;
 
