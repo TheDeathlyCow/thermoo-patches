@@ -1,6 +1,7 @@
 plugins {
     id 'net.neoforged.moddev' version '2.0.134'
     id 'maven-publish'
+    id "me.modmuss50.mod-publish-plugin" version "2.0.0-beta.1"
 }
 
 version = project.mod_version
@@ -154,6 +155,47 @@ jar {
 
     from("LICENSE") {
         rename { "${it}_$projectName" }
+    }
+}
+
+publishMods {
+    changelog = file("changelogs/${mod_version}.md").text
+    type = BETA
+    displayName = "Thermoo Patches NeoForge ${mod_version}"
+
+    file = jar.archiveFile
+    modLoaders.add("neoforge")
+
+    curseforge {
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        projectId = "1012677"
+        minecraftVersions.addAll("1.21.1")
+
+        javaVersions.add(JavaVersion.VERSION_21)
+
+        clientRequired = true
+        serverRequired = true
+
+        requires("thermoo", "yacl")
+        optional(
+                "serene-seasons",
+                "friends-and-foes-forge",
+                "overflowing-bars"
+        )
+    }
+
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        projectId = "TYRF9nUy"
+        minecraftVersions.addAll("1.21.1")
+
+        requires("thermoo", "yacl")
+
+        optional(
+                "serene-seasons",
+                "friends-and-foes-forge",
+                "overflowing-bars"
+        )
     }
 }
 
