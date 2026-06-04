@@ -1,0 +1,17 @@
+{
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "name": "thermoo-patches:heat_resistance_immunity",
+            "attribute": "thermoo:heat_resistance",
+            "value": 10000,
+            "operation": "addition"
+        },
+        {
+            "name": "thermoo-patches:environment_heat_resistance_immunity",
+            "attribute": "thermoo:environment_heat_resistance",
+            "value": 10000,
+            "operation": "addition"
+        }
+    ]
+}

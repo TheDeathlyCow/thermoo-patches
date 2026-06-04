@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "package": "com.github.thedeathlycow.thermoo.patches.origins.legacy.mixin",
+    "plugin": "com.github.thedeathlycow.thermoo.patches.origins.legacy.mixin.Plugin",
+    "compatibilityLevel": "JAVA_25",
+    "mixins": [
+        "origins.present.MultiJsonDataLoaderMixin",
+        "origins.present.OriginAccessor",
+        "origins.present.OriginManagerMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

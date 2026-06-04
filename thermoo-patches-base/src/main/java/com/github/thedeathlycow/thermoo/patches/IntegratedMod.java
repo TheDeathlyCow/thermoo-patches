@@ -18,7 +18,8 @@ public enum IntegratedMod {
     STELLARIS("stellaris", "https://modrinth.com/mod/stellaris"),
     EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins"),
     NYCTO("nycto", "https://modrinth.com/mod/nycto"),
-    HOMEOSTATIC_SEASONS("homeostaticseasons", "https://modrinth.com/mod/homeostatic-seasons");
+    HOMEOSTATIC_SEASONS("homeostaticseasons", "https://modrinth.com/mod/homeostatic-seasons"),
+    ORIGINS_LEGACY("origins-legacy", "https://modrinth.com/mod/homeostatic-seasons");
 
     private final String id;
 
