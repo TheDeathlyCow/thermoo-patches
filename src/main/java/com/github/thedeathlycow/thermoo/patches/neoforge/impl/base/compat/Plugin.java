@@ -36,7 +36,6 @@ public class Plugin implements IMixinConfigPlugin {
             } else {
                 LOGGER.info("Mixin was NOT applied as @RequiredMods check failed: {}->{}", mixinClassName, targetClassName);
             }
-
         }
 
         return apply;

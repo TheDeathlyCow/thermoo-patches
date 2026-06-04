@@ -78,6 +78,9 @@ public class HealthBarRendererMixin {
             return;
         }
 
+        graphics.pose().pushPose();
+        // overflowing bars renders stuff at a weird depth for some reason...
+        graphics.pose().translate(0.0F, 0.0F, 200f);
         StatusBarOverlayRenderEvents.AFTER_HEALTH_BAR.invoker().render(
                 graphics,
                 player,
@@ -85,5 +88,6 @@ public class HealthBarRendererMixin {
                 displayHealth,
                 Math.min(THERMOO_PATCHES_MAX_DISPLAY_HEARTS, Mth.ceil(maxHealth))
         );
+        graphics.pose().popPose();
     }
 }

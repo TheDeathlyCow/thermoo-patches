@@ -114,6 +114,8 @@ dependencies {
 
     compileOnly("maven.modrinth:serene-seasons:${project.serene_seasons_version}")
     compileOnly("maven.modrinth:overflowing-bars:${project.overflowingbars_version}")
+    localRuntime("maven.modrinth:puzzles-lib:PRF4qcdp")
+    localRuntime("maven.modrinth:overflowing-bars:${project.overflowingbars_version}")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
