@@ -60,7 +60,11 @@ public class Plugin implements IMixinConfigPlugin {
             }
 
         } catch (IOException e) {
-            LOGGER.error("Error checking mixin required mods", e);
+            if (YumiMods.get().isDevelopmentEnvironment()) {
+                LOGGER.error("Error checking mixin required mods", e);
+            } else {
+                LOGGER.debug("Error checking mixin required mods", e);
+            }
         }
 
         return true;
