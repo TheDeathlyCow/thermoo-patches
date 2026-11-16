@@ -173,7 +173,8 @@ publishMods {
                 "friends-and-foes",
                 "overflowing-bars",
                 "nycto",
-                "homeostatic-seasons"
+                "homeostatic-seasons",
+                "origins-legacy"
         )
     }
 
@@ -189,7 +190,8 @@ publishMods {
                 "friends-and-foes",
                 "overflowing-bars",
                 "nycto",
-                "homeostatic-seasons"
+                "homeostatic-seasons",
+                "origins-legacy"
         )
     }
 }
