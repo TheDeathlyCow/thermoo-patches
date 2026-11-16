@@ -1,6 +1,9 @@
 {
     "schemaVersion": 1,
     "id": "thermoo-patches",
+    "provides": [
+        "thermoo_patches"
+    ],
     "version": "${version}",
     "name": "Thermoo Patches",
     "description": "Integrations and compatibility patches for Thermoo and other mods",
