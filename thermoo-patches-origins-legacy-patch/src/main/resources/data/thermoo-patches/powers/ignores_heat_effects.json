@@ -1,0 +1,4 @@
+{
+    "type": "thermoo-patches:ignore_harmful_statuses",
+    "statuses": "#thermoo:warm"
+}

@@ -7,7 +7,7 @@ This is just a basic set of guidelines for contributing to Thermoo Patches. Than
 Thermoo Patches is a multimodule project, essentially a "mod of mods". Each integration patch is a separate mod contained within the larger Thermoo Patches mod, and not all of them have things that need to be translated. However, there are a couple, and their default translation files can be found in the following locations:
 
 * [Thermoo Patches Base](./thermoo-patches-base/src/main/resources/assets/thermoo-patches-base/lang/en_us.json) - The config file translations.
-* [Origins Patch](./thermoo-patches-origins-patch/src/main/resources/assets/thermoo-patches-origins-patch/lang/en_us.json) - Names of the Origins Powers.
+* [Origins: Legacy Patch](./thermoo-patches-origins-legacy-patch/src/main/resources/assets/thermoo-patches-origins-legacy-patch/lang/en_us.json) - Names of the Origins Powers.
 
 ## New Patches
 

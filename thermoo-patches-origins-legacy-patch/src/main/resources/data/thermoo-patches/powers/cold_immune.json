@@ -1,0 +1,17 @@
+{
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "name": "thermoo-patches:frost_resistance_immunity",
+            "attribute": "thermoo:frost_resistance",
+            "value": 10000,
+            "operation": "addition"
+        },
+        {
+            "name": "thermoo-patches:environment_frost_resistance_immunity",
+            "attribute": "thermoo:environment_frost_resistance",
+            "value": 10000,
+            "operation": "addition"
+        }
+    ]
+}
