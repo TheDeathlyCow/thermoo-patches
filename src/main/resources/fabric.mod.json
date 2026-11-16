@@ -29,7 +29,7 @@
         "minecraft": "${minecraft_versions}",
         "java": ">=${java_version}",
         "fabric-api": ">=${fabric_version}",
-        "thermoo": ">=${thermoo_version}",
+        "thermoo": "*",
         "yet_another_config_lib_v3": ">=${yacl_version}"
     },
     "suggests": {

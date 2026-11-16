@@ -91,14 +91,13 @@ these powers do, as things such as temperature changes and Frost/Heat Resistance
 | `thermoo-patches:extra_heat_resistance`  | Gives affected entities 50% resistance to warm temperature changes                                                                |
 
 Some powers are provided under the name space `thermoo-patches-origins(-legacy)-patch`. These powers should be
-considered
-internal to Thermoo Patches and are not a stable API. However, you may copy them into your own datapacks under the terms
-of the GNU LGPL.
+considered internal to Thermoo Patches and are not a stable API. However, you may copy them into your own datapacks 
+under the terms of the GNU LGPL. Note that these predicates are removed for 26.1+, as they are no longer necessary.
 
-| Predicate ID                 | Description                                                                                                                                          |
-|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold (use instead of `frostiful:can_freeze`). Only loads if Frostiful is loaded. | 
-| `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat (use instead of `scorchful:can_heat`). Only loads if Scorchful is loaded.   | 
+| Predicate ID                 | Description                                                               |
+|------------------------------|---------------------------------------------------------------------------|
+| `thermoo-patches:can_freeze` | Whether the target is affected by negative temperature effects from cold. | 
+| `thermoo-patches:can_heat`   | Whether the target is affected by negative temperature effects from heat. | 
 
 # Additional Credits
 
