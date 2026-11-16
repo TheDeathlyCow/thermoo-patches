@@ -75,10 +75,6 @@ allprojects {
         implementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
     }
 
-    loom {
-        splitEnvironmentSourceSets()
-    }
-
     tasks.withType(ProcessResources).configureEach {
         inputs.property "version", project.findProperty("mod_version")
         inputs.property "java_version", project.findProperty("java_version")

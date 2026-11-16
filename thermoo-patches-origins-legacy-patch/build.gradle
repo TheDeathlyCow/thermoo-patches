@@ -7,7 +7,6 @@ base {
 
 dependencies {
     api project(path: ':thermoo-patches-base')
-    clientImplementation findProject(':thermoo-patches-base').sourceSets.client.output
 
     compileOnly "com.github.bluspring:Origins-Legacy:${project.origins_legacy_version}"
 }
