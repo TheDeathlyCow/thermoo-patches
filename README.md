@@ -1,8 +1,9 @@
 # Thermoo Patches
 
-[![](https://raw.githubusercontent.com/TheDeathlyCow/scorchful/main/docs/try_frostiful.svg)](https://modrinth.com/mod/frostiful)
 
-[![](https://raw.githubusercontent.com/TheDeathlyCow/scorchful/main/docs/try_scorchful.svg)](https://modrinth.com/mod/scorchful)
+[![](https://media.githubusercontent.com/media/TheDeathlyCow/minecraft-mod-pages/main/frostiful/assets/try_frostiful.svg)](https://modrinth.com/mod/frostiful)
+
+[![](https://media.githubusercontent.com/media/TheDeathlyCow/minecraft-mod-pages/main/scorchful/assets/try_scorchful.svg)](https://modrinth.com/mod/scorchful)
 
 <a href="https://modrinth.com/mod/thermoo">
 <img src="https://i.imgur.com/MjlOmH0.png" alt="Requires Thermoo badge" width="300"/>
