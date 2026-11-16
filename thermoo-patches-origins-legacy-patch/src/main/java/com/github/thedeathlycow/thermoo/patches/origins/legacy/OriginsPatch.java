@@ -6,11 +6,12 @@ import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.origins.legacy.mixin.origins.present.OriginAccessor;
 import dev.yumi.commons.TriState;
+import dev.yumi.mc.core.api.ModContainer;
 import io.github.apace100.apoli.component.PowerHolderComponent;
 import io.github.apace100.apoli.power.PowerType;
 import io.github.apace100.apoli.power.PowerTypeReference;
 import io.github.apace100.origins.origin.Origin;
-import net.fabricmc.api.ModInitializer;
+import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.minecraft.resources.Identifier;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class OriginsPatch implements ModInitializer {
     public static final String PACK_NAME_KEY = MODID + ":pack_name";
 
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         if (IntegratedMod.ORIGINS.isModLoaded()) {
             ThermooPowerFactories.initialize();
 

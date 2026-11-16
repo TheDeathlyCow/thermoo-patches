@@ -4,7 +4,8 @@ import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.github.thedeathlycow.thermoo.api.entity.v1.ThermooAttributes;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
-import net.fabricmc.api.ModInitializer;
+import dev.yumi.mc.core.api.ModContainer;
+import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.fabricmc.fabric.api.event.Event;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,7 +14,7 @@ public class FriendsAndFoesPatch implements ModInitializer {
     public static final String MODID = ThermooPatches.MODID + "-friendsandfoes-patch";
 
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         if (IntegratedMod.FRIENDS_AND_FOES.isModLoaded()) {
             Identifier phase = ThermooPatches.id("override");
             var maxTemperature = ThermooAttributes.baseValueEvent(ThermooAttributes.MAX_TEMPERATURE);

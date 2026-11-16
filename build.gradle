@@ -68,6 +68,7 @@ allprojects {
 
         // required dependencies
         implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+        implementation("dev.yumi.mc.core:yumi-mc-foundation:${project.yumi_version}")
         compileOnly "com.github.TheDeathlyCow.thermoo:thermoo-common:v${project.thermoo_version}"
         implementation "com.github.TheDeathlyCow.thermoo:thermoo-fabric:v${project.thermoo_version}"
         implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"

@@ -16,7 +16,7 @@
     "icon": "assets/thermoo-patches-base/icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
+        "yumi:init": [
             "com.github.thedeathlycow.thermoo.patches.ThermooPatches"
         ]
     },

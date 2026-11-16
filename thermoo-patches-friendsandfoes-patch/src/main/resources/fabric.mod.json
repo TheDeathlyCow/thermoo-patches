@@ -16,10 +16,10 @@
     "icon": "assets/thermoo-patches-friendsandfoes-patch/icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
+        "yumi:init": [
             "com.github.thedeathlycow.thermoo.patches.friendsandfoes.FriendsAndFoesPatch"
         ],
-        "client": [
+        "yumi:client_init": [
             "com.github.thedeathlycow.thermoo.patches.friendsandfoes.client.FriendsAndFoesPatchClient"
         ]
     },

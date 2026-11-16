@@ -1,7 +1,8 @@
 package com.github.thedeathlycow.thermoo.patches;
 
 import dev.yumi.commons.event.EventManager;
-import net.fabricmc.api.ModInitializer;
+import dev.yumi.mc.core.api.ModContainer;
+import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.Contract;
@@ -18,7 +19,7 @@ public class ThermooPatches implements ModInitializer {
     public static final EventManager<Identifier> EVENT_MANAGER = new EventManager<>(id("default"), Identifier::parse);
 
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         logPatchedMods();
     }
 

@@ -6,9 +6,9 @@ import com.github.thedeathlycow.thermoo.api.season.v2.ThermooSeasonState;
 import com.github.thedeathlycow.thermoo.api.season.v2.TropicalSeason;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import dev.yumi.commons.TriState;
-import net.fabricmc.api.ModInitializer;
+import dev.yumi.mc.core.api.ModContainer;
+import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.minecraft.core.Holder;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import sereneseasons.api.season.ISeasonState;
 import sereneseasons.api.season.SeasonHelper;
@@ -17,9 +17,8 @@ import sereneseasons.season.SeasonHooks;
 import java.util.Optional;
 
 public class SereneSeasonsProvider implements ModInitializer {
-
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         if (IntegratedMod.SERENE_SEASONS.isModLoaded()) {
             ThermooSeasonEvents.GET_CURRENT_SEASON.register((level, pos) -> {
                 ISeasonState sereneSeasonState = SeasonHelper.getSeasonState(level);

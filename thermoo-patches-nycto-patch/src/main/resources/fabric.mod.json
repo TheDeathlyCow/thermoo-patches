@@ -16,7 +16,7 @@
     "icon": "assets/thermoo-patches-nycto-patch/icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
+        "yumi:init": [
             "com.github.thedeathlycow.thermoo.patches.nycto.NyctoPatch"
         ]
     },

@@ -5,15 +5,16 @@ import com.github.thedeathlycow.thermoo.api.temperature.status.v2.tag.Temperatur
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
 import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import dev.yumi.commons.TriState;
+import dev.yumi.mc.core.api.ModContainer;
 import moriyashiine.nycto.api.NyctoAPI;
-import net.fabricmc.api.ModInitializer;
+import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.minecraft.resources.Identifier;
 
 public class NyctoPatch implements ModInitializer {
     public static final String MODID = "thermoo-patches-nycto-patch";
 
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         if (IntegratedMod.NYCTO.isModLoaded()) {
             Identifier phase = id("default");
             TemperatureStatusEvents.ALLOW_TEMPERATURE_STATUS.addPhaseOrdering(

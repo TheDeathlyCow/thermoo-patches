@@ -5,11 +5,12 @@ import com.github.thedeathlycow.thermoo.api.season.v2.ThermooSeasonEvents;
 import com.github.thedeathlycow.thermoo.api.season.v2.ThermooSeasonState;
 import com.github.thedeathlycow.thermoo.api.season.v2.TropicalSeason;
 import com.github.thedeathlycow.thermoo.patches.IntegratedMod;
+import dev.yumi.mc.core.api.ModContainer;
 import homeostaticseasons.api.HomeostaticSeasonsAPI;
 import homeostaticseasons.api.Season;
 import homeostaticseasons.common.biome.BiomeColormap;
 import homeostaticseasons.common.biome.BiomeColormapManager;
-import net.fabricmc.api.ModInitializer;
+import dev.yumi.mc.core.api.entrypoint.ModInitializer;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.biome.Biome;
 
@@ -17,7 +18,7 @@ import java.util.Optional;
 
 public class HomeostaticSeasonsProvider implements ModInitializer {
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         if (IntegratedMod.HOMEOSTATIC_SEASONS.isModLoaded()) {
             ThermooSeasonEvents.GET_CURRENT_SEASON.register((level, _) -> {
                 Season homeostaticSeason = HomeostaticSeasonsAPI.getCurrentSeason(level);
