@@ -19,7 +19,6 @@ public class OriginsPatch implements ModInitializer {
     public static final String MODID = ThermooPatches.MODID + "-origins-legacy-patch";
     public static final String PACK_NAME_KEY = MODID + ":pack_name";
 
-
     @Override
     public void onInitialize() {
         if (IntegratedMod.ORIGINS.isModLoaded()) {

@@ -10,7 +10,7 @@ import java.util.Set;
 
 public final class OriginPatchManager {
     // take care to not mess with custom datapacks, if possible
-    private static final Set<String> BUILTIN_PACK_NAMES = Set.of("origins", "extraorigins");
+    private static final Set<String> BUILTIN_PACK_NAMES = Set.of("origins-legacy");
     private static final Map<Identifier, Patcher> PATCHERS = new HashMap<>();
 
     public static Origin patchOrigin(Origin origin, Identifier originID, String packName) {

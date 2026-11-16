@@ -1,22 +1,26 @@
 package com.github.thedeathlycow.thermoo.patches.origins.legacy.mixin.origins.present;
 
-import com.github.thedeathlycow.thermoo.patches.ThermooPatches;
 import com.github.thedeathlycow.thermoo.patches.origins.legacy.OriginsPatch;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import io.github.apace100.calio.data.MultiJsonDataLoader;
 import net.minecraft.server.packs.resources.Resource;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.io.Reader;
 
 @Mixin(MultiJsonDataLoader.class)
 public class MultiJsonDataLoaderMixin {
+    @Shadow
+    @Final
+    private String dataType;
+
     @WrapOperation(
             method = "lambda$prepare$1",
             at = @At(
@@ -33,7 +37,7 @@ public class MultiJsonDataLoaderMixin {
     ) {
         T loaded = original.call(jsonReader, result, e);
 
-        if (loaded instanceof JsonObject json) {
+        if (loaded instanceof JsonObject json && this.dataType.equals("origins")) {
             json.addProperty(OriginsPatch.PACK_NAME_KEY, resource.sourcePackId());
         }
 

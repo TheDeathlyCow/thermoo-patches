@@ -1,3 +1,4 @@
 {
-    "type": "thermoo-patches-origins-legacy-patch:ignore_harmful_heat_effects"
+    "type": "thermoo-patches:ignore_harmful_statuses",
+    "statuses": "#thermoo:warm"
 }
