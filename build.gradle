@@ -175,7 +175,8 @@ publishMods {
                 "overflowing-bars",
                 "nycto",
                 "homeostatic-seasons",
-                "origins-legacy"
+                "origins-legacy",
+                "colorful-hearts"
         )
     }
 
@@ -192,7 +193,8 @@ publishMods {
                 "overflowing-bars",
                 "nycto",
                 "homeostatic-seasons",
-                "origins-legacy"
+                "origins-legacy",
+                "colorful-hearts"
         )
     }
 }
