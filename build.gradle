@@ -68,7 +68,8 @@ allprojects {
 
         // required dependencies
         implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-        implementation "com.github.thedeathlycow:thermoo:v${project.thermoo_version}"
+        compileOnly "com.github.TheDeathlyCow.thermoo:thermoo-common:v${project.thermoo_version}"
+        implementation "com.github.TheDeathlyCow.thermoo:thermoo-fabric:v${project.thermoo_version}"
         implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
         implementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
         implementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
