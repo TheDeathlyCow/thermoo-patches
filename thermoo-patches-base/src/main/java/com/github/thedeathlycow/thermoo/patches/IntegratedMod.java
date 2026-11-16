@@ -19,7 +19,7 @@ public enum IntegratedMod {
     EXTRA_ORIGINS("extraorigins", "https://modrinth.com/mod/extra-origins"),
     NYCTO("nycto", "https://modrinth.com/mod/nycto"),
     HOMEOSTATIC_SEASONS("homeostaticseasons", "https://modrinth.com/mod/homeostatic-seasons"),
-    ORIGINS_LEGACY("origins-legacy", "https://modrinth.com/mod/homeostatic-seasons");
+    ORIGINS_LEGACY("origins-legacy", "https://modrinth.com/mod/origins-legacy");
 
     private final String id;
 
