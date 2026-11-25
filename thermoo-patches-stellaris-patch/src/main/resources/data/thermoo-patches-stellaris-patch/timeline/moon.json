@@ -1,0 +1,40 @@
+{
+    "clock": "stellaris:moon",
+    "period_ticks": 24000,
+    "tracks": {
+        "thermoo:gameplay/temperature": {
+            "ease": {
+                "cubic_bezier": [
+                    0.99,
+                    0.0,
+                    0.0,
+                    0.99
+                ]
+            },
+            "keyframes": [
+                {
+                    "ticks": 6000,
+                    "value": {
+                        "value": 390,
+                        "unit": "kelvin"
+                    }
+                },
+                {
+                    "ticks": 18000,
+                    "value": {
+                        "value": 140,
+                        "unit": "kelvin"
+                    }
+                }
+            ]
+        }
+    },
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "stellaris"
+            ]
+        }
+    ]
+}

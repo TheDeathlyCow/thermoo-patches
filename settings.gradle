@@ -1,25 +1,25 @@
 pluginManagement {
 	repositories {
 		maven {
-			name = 'Fabric'
-			url = 'https://maven.fabricmc.net/'
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
 		}
 		mavenCentral()
 		gradlePluginPortal()
 	}
 }
 
-include 'thermoo-patches-base'
-include 'thermoo-patches-serene-seasons-patch'
-include 'thermoo-patches-homeostaticseasons-patch'
-include 'thermoo-patches-friendsandfoes-patch'
-include 'thermoo-patches-overflowing-bars-patch'
-include 'thermoo-patches-nycto-patch'
-include 'thermoo-patches-origins-legacy-patch'
-include 'thermoo-patches-colorfulhearts-patch'
-//include 'thermoo-patches-fabric-seasons-patch'
-//include 'thermoo-patches-simple-seasons-patch'
-//include 'thermoo-patches-immersive-weathering-patch'
-//include 'thermoo-patches-armorpointspp-patch'
-//include 'thermoo-patches-origins-patch'
-//include 'thermoo-patches-stellaris-patch'
+include "thermoo-patches-base"
+include "thermoo-patches-serene-seasons-patch"
+include "thermoo-patches-homeostaticseasons-patch"
+include "thermoo-patches-friendsandfoes-patch"
+include "thermoo-patches-overflowing-bars-patch"
+include "thermoo-patches-nycto-patch"
+include "thermoo-patches-origins-legacy-patch"
+include "thermoo-patches-colorfulhearts-patch"
+include "thermoo-patches-stellaris-patch"
+//include "thermoo-patches-fabric-seasons-patch"
+//include "thermoo-patches-simple-seasons-patch"
+//include "thermoo-patches-immersive-weathering-patch"
+//include "thermoo-patches-armorpointspp-patch"
+//include "thermoo-patches-origins-patch"

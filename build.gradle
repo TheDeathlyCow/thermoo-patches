@@ -120,12 +120,12 @@ dependencies {
     api project(path: ":thermoo-patches-nycto-patch")
     api project(path: ":thermoo-patches-origins-legacy-patch")
     api project(path: ":thermoo-patches-colorfulhearts-patch")
+    api project(path: ":thermoo-patches-stellaris-patch")
 //    api project(path: ":thermoo-patches-fabric-seasons-patch")
 //    api project(path: ":thermoo-patches-simple-seasons-patch")
 //    api project(path: ":thermoo-patches-immersive-weathering-patch")
 //    api project(path: ":thermoo-patches-armorpointspp-patch")
 //    api project(path: ":thermoo-patches-origins-patch")
-//    api project(path: ":thermoo-patches-stellaris-patch")
 
     include(project(path: ":thermoo-patches-base"))
     include(project(path: ":thermoo-patches-serene-seasons-patch"))
@@ -135,12 +135,12 @@ dependencies {
     include(project(path: ":thermoo-patches-nycto-patch"))
     include(project(path: ":thermoo-patches-origins-legacy-patch"))
     include(project(path: ":thermoo-patches-colorfulhearts-patch"))
+    include(project(path: ":thermoo-patches-stellaris-patch"))
 //    include(project(path: ":thermoo-patches-fabric-seasons-patch"))
 //    include(project(path: ":thermoo-patches-simple-seasons-patch"))
 //    include(project(path: ":thermoo-patches-immersive-weathering-patch"))
 //    include(project(path: ":thermoo-patches-armorpointspp-patch"))
 //    include(project(path: ":thermoo-patches-origins-patch"))
-//    include(project(path: ":thermoo-patches-stellaris-patch"))
 }
 
 jar {
