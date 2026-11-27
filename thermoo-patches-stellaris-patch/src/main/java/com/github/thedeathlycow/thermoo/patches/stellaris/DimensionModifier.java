@@ -18,8 +18,9 @@ public final class DimensionModifier {
                 attributes.set(ThermooEnvironmentAttributes.ATMOSPHERIC_PRESSURE, 3e-12);
                 attributes.set(ThermooEnvironmentAttributes.TEMPERATURE, new TemperatureRecord(140, TemperatureUnit.KELVIN));
             } else if (dimension.is(EARTH_ORBIT)) {
+                // no night cycle in earth orbit, so constant daytime = very high temps
                 attributes.set(ThermooEnvironmentAttributes.ATMOSPHERIC_PRESSURE, 7e-9);
-                attributes.set(ThermooEnvironmentAttributes.TEMPERATURE, new TemperatureRecord(210, TemperatureUnit.KELVIN));
+                attributes.set(ThermooEnvironmentAttributes.TEMPERATURE, new TemperatureRecord(400, TemperatureUnit.KELVIN));
             }
         });
     }

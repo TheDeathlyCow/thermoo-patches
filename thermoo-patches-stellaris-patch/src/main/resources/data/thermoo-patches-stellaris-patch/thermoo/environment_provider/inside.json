@@ -1,0 +1,18 @@
+{
+    "type": "thermoo:constant",
+    "components": {
+        "thermoo:relative_humidity": 0.5,
+        "thermoo:temperature": {
+            "value": 20,
+            "unit": "celsius"
+        }
+    },
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "stellaris"
+            ]
+        }
+    ]
+}

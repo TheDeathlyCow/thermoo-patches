@@ -1,0 +1,37 @@
+{
+    "biomes": "#stellaris:is_moon",
+    "exclude_biomes": "#thermoo-patches-stellaris-patch:ignore_environment",
+    "priority": 500,
+    "provider": {
+        "type": "thermoo-patches-stellaris-patch:has_oxygen",
+        "inside": "thermoo-patches-stellaris-patch:inside",
+        "outside": {
+            "type": "thermoo:light_threshold",
+            "light_type": "sky",
+            "threshold": 10,
+            "apply_ambient_darkness": false,
+            "above": {
+                "type": "thermoo:constant",
+                "components": {}
+            },
+            "below": {
+                "type": "thermoo:constant",
+                "components": {
+                    "thermoo:relative_humidity": 0,
+                    "thermoo:temperature": {
+                        "value": 140,
+                        "unit": "kelvin"
+                    }
+                }
+            }
+        }
+    },
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "stellaris"
+            ]
+        }
+    ]
+}
